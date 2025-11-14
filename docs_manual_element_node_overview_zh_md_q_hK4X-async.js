@@ -1,0 +1,761 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/element/node/overview.zh.md?type=text'],
+{ "docs/manual/element/node/overview.zh.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/element/node/overview.zh.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "节点（Node）是图中的基本元素之一，表示图中的实体或者抽象概念，例如一个人、一个地点、一个组织等，节点可以包含一些属性，例如节点的 ID、名称、类型等。在 G6 中，节点可以具有多种形状和样式，并支持丰富的交互和自定义功能。",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "你可以在图中创建任意数量的节点，并通过边连接它们以表示关系。",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "G6 的节点体系包括三大类：内置节点、扩展节点和自定义节点。",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "大多数场景下，内置节点即可满足需求",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "。",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "G6 提供了丰富的内置节点类型，",
+        "paraId": 3,
+        "tocIndex": 2
+    },
+    {
+        "value": "无需注册，直接配置即可使用",
+        "paraId": 3,
+        "tocIndex": 2
+    },
+    {
+        "value": "：",
+        "paraId": 3,
+        "tocIndex": 2
+    },
+    {
+        "value": "节点类型",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "注册名称",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "描述",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "圆形节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "circle",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "常用于表示普通实体",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "矩形节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "rect",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "适合展示更多文本和细节",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "椭圆节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "ellipse",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "类似圆形的变体",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "菱形节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "diamond",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "常用于决策点或特殊节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "三角形节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "triangle",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "可用于指示方向或特殊标记",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "六边形节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "hexagon",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "适合网格布局和蜂窝图",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "星形节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "star",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "突出显示重要节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "甜甜圈节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "donut",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "可展示比例或进度信息",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "图片节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "image",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "使用图片作为节点主体",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "HTML节点",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "html",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "支持自定义HTML内容",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "@antv/g6-extension-3d",
+        "paraId": 5,
+        "tocIndex": 3
+    },
+    {
+        "value": " 提供了 3D 节点：",
+        "paraId": 5,
+        "tocIndex": 3
+    },
+    {
+        "value": "Capsule",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": " - 胶囊型节点",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": "Cone",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": " - 圆锥型节点",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": "Cube",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": " - 立方体节点",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": "Cylinder",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": " - 圆柱型节点",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": "Plane",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": " - 平面节点",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": "Sphere",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": " - 球体节点",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": "Torus",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": " - 圆环节点",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": "@antv/g6-extension-react",
+        "paraId": 7,
+        "tocIndex": 4
+    },
+    {
+        "value": " 提供了 React 节点，支持使用 React 组件作为节点的主体，详细教程请查看 ",
+        "paraId": 7,
+        "tocIndex": 4
+    },
+    {
+        "value": "使用 React 定义节点",
+        "paraId": 8,
+        "tocIndex": 4
+    },
+    {
+        "value": " 文档。",
+        "paraId": 7,
+        "tocIndex": 4
+    },
+    {
+        "value": "当内置节点和扩展节点无法满足需求时，G6提供了强大的自定义能力：",
+        "paraId": 9,
+        "tocIndex": 5
+    },
+    {
+        "value": "继承内置节点进行扩展",
+        "paraId": 10,
+        "tocIndex": 5
+    },
+    {
+        "value": "创建全新的节点类型",
+        "paraId": 10,
+        "tocIndex": 5
+    },
+    {
+        "value": "与内置节点不同，",
+        "paraId": 11,
+        "tocIndex": 5
+    },
+    {
+        "value": "自定义节点需要先注册后使用",
+        "paraId": 11,
+        "tocIndex": 5
+    },
+    {
+        "value": "。详细教程请参考 ",
+        "paraId": 11,
+        "tocIndex": 5
+    },
+    {
+        "value": "自定义节点",
+        "paraId": 12,
+        "tocIndex": 5
+    },
+    {
+        "value": " 文档。",
+        "paraId": 11,
+        "tocIndex": 5
+    },
+    {
+        "value": "定义节点时，需要在图的数据对象中添加 ",
+        "paraId": 13,
+        "tocIndex": 6
+    },
+    {
+        "value": "nodes",
+        "paraId": 13,
+        "tocIndex": 6
+    },
+    {
+        "value": " 字段。每个节点是一个对象，结构如下：",
+        "paraId": 13,
+        "tocIndex": 6
+    },
+    {
+        "value": "属性",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "描述",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "类型",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "默认值",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "必选",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "id",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "节点的唯一标识符，用于区分不同的节点",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "✓",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "type",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "节点类型，内置节点类型名称或者自定义节点的名称",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "data",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "节点数据，用于存储节点的自定义数据，例如节点的名称、描述等。可以在样式映射中通过回调函数获取",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "object",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "style",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "节点样式，包括位置、大小、颜色等视觉属性",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "object",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "states",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "节点初始状态，如选中、激活、悬停等",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "string[]",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "combo",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "所属的组合 ID，用于组织节点的层级关系，如果没有则为 null",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "string | null",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "children",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "子节点 ID 集合，仅在树图场景下使用",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "string[]",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "nodes",
+        "paraId": 15,
+        "tocIndex": 6
+    },
+    {
+        "value": " 数组中一个数据项的示例：",
+        "paraId": 15,
+        "tocIndex": 6
+    },
+    {
+        "value": "{\n  \"id\": \"node-1\",\n  \"type\": \"circle\",\n  \"data\": { \"name\": \"alice\", \"role\": \"Admin\" },\n  \"style\": { \"x\": 100, \"y\": 200, \"size\": 32, \"fill\": \"violet\" },\n  \"states\": [\"selected\"],\n  \"combo\": null\n}\n",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "配置节点的方式有三种，按优先级从高到低如下：",
+        "paraId": 17,
+        "tocIndex": 7
+    },
+    {
+        "value": "使用 ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "graph.setNode()",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " 动态配置",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "实例化图时全局配置",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "在数据中动态属性",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "这几个配置方法可以同时使用。有相同的配置项时，优先级高的方式将会覆盖优先级低的。",
+        "paraId": 19,
+        "tocIndex": 7
+    },
+    {
+        "value": "graph.setNode()",
+        "paraId": 20
+    },
+    {
+        "value": "可在图实例创建后，使用 ",
+        "paraId": 21,
+        "tocIndex": 8
+    },
+    {
+        "value": "graph.setNode()",
+        "paraId": 21,
+        "tocIndex": 8
+    },
+    {
+        "value": " 动态设置节点的样式映射逻辑。",
+        "paraId": 21,
+        "tocIndex": 8
+    },
+    {
+        "value": "该方法需要在 ",
+        "paraId": 22,
+        "tocIndex": 8
+    },
+    {
+        "value": "graph.render()",
+        "paraId": 22,
+        "tocIndex": 8
+    },
+    {
+        "value": " 之前调用才会生效，并拥有最高优先级。",
+        "paraId": 22,
+        "tocIndex": 8
+    },
+    {
+        "value": "graph.setNode({\n  style: {\n    type: 'circle',\n    style: { size: 60, fill: '#7FFFD4', stroke: '#5CACEE', lineWidth: 2 },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 23,
+        "tocIndex": 8
+    },
+    {
+        "value": "在实例化图时可以通过 ",
+        "paraId": 24,
+        "tocIndex": 9
+    },
+    {
+        "value": "node",
+        "paraId": 24,
+        "tocIndex": 9
+    },
+    {
+        "value": " 配置节点样式映射，这里的配置是全局的配置，将会在所有节点上生效。",
+        "paraId": 24,
+        "tocIndex": 9
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  node: {\n    type: 'circle',\n    style: { size: 60, fill: '#7FFFD4', stroke: '#5CACEE', lineWidth: 2 },\n  },\n});\n",
+        "paraId": 25,
+        "tocIndex": 9
+    },
+    {
+        "value": "如果需要为不同节点进行不同的配置，可以将配置写入到节点数据中。这种配置方式可以通过下面代码的形式直接写入数据：",
+        "paraId": 26,
+        "tocIndex": 10
+    },
+    {
+        "value": "const data = {\n  nodes: [\n    {\n      id: 'node-1',\n      type: 'circle',\n      style: { size: 60, fill: '#7FFFD4', stroke: '#5CACEE', lineWidth: 2 },\n    },\n  ],\n};\n",
+        "paraId": 27,
+        "tocIndex": 10
+    },
+    {
+        "value": "如果你想让数据中配置的优先级高于全局配置，你可以采取以下方式：",
+        "paraId": 28,
+        "tocIndex": 11
+    },
+    {
+        "value": "const data = {\n  nodes: [\n    {\n      id: 'node-1',\n      type: 'circle',\n      style: { size: 60, fill: '#7FFFD4', stroke: '#5CACEE', lineWidth: 2 },\n    },\n  ],\n};\n\nconst graph = new Graph({\n  node: {\n    type: 'circle',\n    style: {\n      stroke: (d) => d.style.stroke || '#5CACEE',\n      lineWidth: 2,\n    },\n  },\n});\n",
+        "paraId": 29,
+        "tocIndex": 11
+    },
+    {
+        "value": "G6 支持在运行时动态更新节点的样式和状态：",
+        "paraId": 30,
+        "tocIndex": 12
+    },
+    {
+        "value": "// 更新单个节点样式\ngraph.updateNodeData([\n  {\n    id: 'node-1',\n    style: {\n      fill: 'red',\n      size: 80,\n    },\n  },\n]);\ngraph.draw();\n\n// 设置节点状态\ngraph.setElementState('node-1', ['selected']);\n",
+        "paraId": 31,
+        "tocIndex": 12
+    },
+    {
+        "value": "更新节点时，只有指定的属性会被更新，未指定的属性保持不变。",
+        "paraId": 32
+    },
+    {
+        "value": "更多与节点相关的 API 请参考 ",
+        "paraId": 33
+    },
+    {
+        "value": "API - 元素操作",
+        "paraId": 34
+    },
+    {
+        "value": "。",
+        "paraId": 33
+    },
+    {
+        "value": "节点可以拥有不同的状态，例如选中、高亮、禁用等。可以通过配置状态样式来定义节点在不同状态下的显示效果：",
+        "paraId": 35,
+        "tocIndex": 13
+    },
+    {
+        "value": "const graph = new Graph({\n  node: {\n    style: {\n      // 默认样式\n      fill: '#C6E5FF',\n    },\n    // 状态样式\n    state: {\n      selected: {\n        fill: '#ffa940',\n        stroke: '#ff7a00',\n        haloStroke: '#ff7a00',\n      },\n      highlight: {\n        stroke: '#1890ff',\n        lineWidth: 3,\n      },\n    },\n  },\n});\n",
+        "paraId": 36,
+        "tocIndex": 13
+    },
+    {
+        "value": "状态系统是实现节点交互效果的基础，更多状态的介绍，请参考 ",
+        "paraId": 37,
+        "tocIndex": 13
+    },
+    {
+        "value": "元素状态",
+        "paraId": 38,
+        "tocIndex": 13
+    },
+    {
+        "value": "。",
+        "paraId": 37,
+        "tocIndex": 13
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_element_node_overview_zh_md_q_hK4X-async.js.map

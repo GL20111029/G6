@@ -1,0 +1,766 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/plugin/Watermark.zh.md?type=text'],
+{ "docs/manual/plugin/Watermark.zh.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/plugin/Watermark.zh.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "水印插件支持使用文本和图片作为水印，实现原理是在 Graph 容器的 div 上加上 ",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "background-image",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": " 属性，然后通过 CSS 来控制水印的位置和样式。对于文本水印，会使用隐藏 canvas 将文本转换为图片的方式来实现。",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "为图表添加版权或所有权标识",
+        "paraId": 1,
+        "tocIndex": 1
+    },
+    {
+        "value": "在演示或预览时标记图表的状态",
+        "paraId": 1,
+        "tocIndex": 1
+    },
+    {
+        "value": "为敏感数据添加防泄露标记",
+        "paraId": 1,
+        "tocIndex": 1
+    },
+    {
+        "value": "以下是一个简单的 Watermark 插件初始化示例：",
+        "paraId": 2,
+        "tocIndex": 2
+    },
+    {
+        "value": "const graph = new Graph({\n  plugins: [\n    {\n      type: 'watermark',\n      text: 'G6 Graph', // 水印文本\n      opacity: 0.2, // 透明度\n      rotate: Math.PI / 12, // 旋转角度\n    },\n  ],\n});\n",
+        "paraId": 3,
+        "tocIndex": 2
+    },
+    {
+        "value": "createGraph(\n  {\n    data: { nodes: [{ id: 'node-1' }] },\n    node: { style: { fill: '#7e3feb' } },\n    edge: { style: { stroke: '#8b9baf' } },\n    layout: { type: 'force' },\n    behaviors: ['drag-canvas'],\n    plugins: [{ type: 'watermark', key: 'watermark', text: 'G6: Graph Visualization' }],\n  },\n  { width: 600, height: 300 },\n  (gui, graph) => {\n    const options = {\n      type: 'watermark',\n      width: 200,\n      height: 100,\n      opacity: 0.2,\n      rotate: Math.PI / 12,\n      text: 'G6: Graph Visualization',\n    };\n    const optionFolder = gui.addFolder('Watermark Options');\n    optionFolder.add(options, 'type').disable(true);\n    optionFolder.add(options, 'width', 1, 1280, 1);\n    optionFolder.add(options, 'height', 1, 800, 1);\n    optionFolder.add(options, 'opacity', 0, 1, 0.1);\n    optionFolder.add(options, 'rotate', 0, 2 * Math.PI, Math.PI / 12);\n    optionFolder.add(options, 'text');\n\n    optionFolder.onChange(({ property, value }) => {\n      graph.updatePlugin({\n        key: 'watermark',\n        [property]: value,\n      });\n      graph.render();\n    });\n  },\n);\n",
+        "paraId": 4,
+        "tocIndex": 3
+    },
+    {
+        "value": "属性",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "描述",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "类型",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "默认值",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "必选",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "type",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "插件类型",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "watermark",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "✓",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "width",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "单个水印的宽度",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "number",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "200",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "height",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "单个水印的高度",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "number",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "100",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "opacity",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的透明度",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "number",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "0.2",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "rotate",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的旋转角度",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "number",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "Math.PI / 12",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "imageURL",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "图片水印的地址，优先级高于文本水印",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "text",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印文本内容",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "textFill",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "文本水印的颜色",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "#000",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "textFontSize",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "文本水印的字体大小",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "number",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "16",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "textFontFamily",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "文本水印的字体",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "textFontWeight",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "文本水印的字体粗细",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "textFontVariant",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "文本水印的字体变体",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "textAlign",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "文本水印的对齐方式",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "center",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "end",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "left",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "right",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "start",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "center",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "textBaseline",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "文本水印的基线对齐方式",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "alphabetic",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "bottom",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "hanging",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "ideographic",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "middle",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "top",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "middle",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundRepeat",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的重复方式",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "repeat",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundAttachment",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的背景定位行为",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundBlendMode",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的背景混合模式",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundClip",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的背景裁剪",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundColor",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的背景颜色",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundImage",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的背景图片",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundOrigin",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的背景原点",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundPosition",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的背景位置",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundPositionX",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的背景水平位置",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundPositionY",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的背景垂直位置",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "backgroundSize",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "水印的背景大小",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "最简单的文本水印配置：",
+        "paraId": 6,
+        "tocIndex": 6
+    },
+    {
+        "value": "const graph = new Graph({\n  plugins: [\n    {\n      type: 'watermark',\n      text: 'G6 Graph',\n    },\n  ],\n});\n",
+        "paraId": 7,
+        "tocIndex": 6
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst data = {\n  nodes: [{ id: 'node-0' }, { id: 'node-1' }, { id: 'node-2' }, { id: 'node-3' }, { id: 'node-4' }, { id: 'node-5' }],\n  edges: [\n    { source: 'node-0', target: 'node-1' },\n    { source: 'node-0', target: 'node-2' },\n    { source: 'node-0', target: 'node-3' },\n    { source: 'node-0', target: 'node-4' },\n    { source: 'node-1', target: 'node-0' },\n    { source: 'node-2', target: 'node-0' },\n    { source: 'node-3', target: 'node-0' },\n    { source: 'node-4', target: 'node-0' },\n    { source: 'node-5', target: 'node-0' },\n  ],\n};\n\nconst graph = new Graph({\n  container: 'container',\n  data,\n  layout: { type: 'grid' },\n  behaviors: ['zoom-canvas', 'drag-canvas', 'drag-element'],\n  plugins: [\n    {\n      type: 'watermark',\n      text: 'G6: Graph Visualization',\n      textFontSize: 14,\n      textFontFamily: 'Microsoft YaHei',\n      fill: 'rgba(0, 0, 0, 0.1)',\n      rotate: Math.PI / 12,\n    },\n  ],\n});\n\ngraph.render();\n",
+        "paraId": 8,
+        "tocIndex": 6
+    },
+    {
+        "value": "使用图片作为水印：",
+        "paraId": 9,
+        "tocIndex": 7
+    },
+    {
+        "value": "const graph = new Graph({\n  plugins: [\n    {\n      type: 'watermark',\n      imageURL: 'https://example.com/logo.png',\n      width: 100,\n      height: 50,\n      opacity: 0.1,\n    },\n  ],\n});\n",
+        "paraId": 10,
+        "tocIndex": 7
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst data = {\n  nodes: [{ id: 'node-0' }, { id: 'node-1' }, { id: 'node-2' }, { id: 'node-3' }, { id: 'node-4' }, { id: 'node-5' }],\n  edges: [\n    { source: 'node-0', target: 'node-1' },\n    { source: 'node-0', target: 'node-2' },\n    { source: 'node-0', target: 'node-3' },\n    { source: 'node-0', target: 'node-4' },\n    { source: 'node-1', target: 'node-0' },\n    { source: 'node-2', target: 'node-0' },\n    { source: 'node-3', target: 'node-0' },\n    { source: 'node-4', target: 'node-0' },\n    { source: 'node-5', target: 'node-0' },\n  ],\n};\n\nconst graph = new Graph({\n  container: 'container',\n  data,\n  layout: {\n    type: 'grid',\n  },\n  behaviors: ['zoom-canvas', 'drag-canvas', 'drag-element'],\n  plugins: [\n    {\n      type: 'watermark',\n      width: 200,\n      height: 100,\n      rotate: Math.PI / 12,\n      imageURL: 'https://gw.alipayobjects.com/os/s/prod/antv/assets/image/logo-with-text-73b8a.svg',\n    },\n  ],\n});\n\ngraph.render();\n",
+        "paraId": 11,
+        "tocIndex": 7
+    },
+    {
+        "value": "可以自定义水印的样式和位置：",
+        "paraId": 12,
+        "tocIndex": 8
+    },
+    {
+        "value": "const graph = new Graph({\n  plugins: [\n    {\n      type: 'watermark',\n      text: 'G6 Graph',\n      textFontSize: 20, // 设置字体大小\n      textFontFamily: 'Arial', // 设置字体\n      textFontWeight: 'bold', // 设置字体粗细\n      textFill: '#1890ff', // 设置文字颜色\n      rotate: Math.PI / 6, // 设置旋转角度\n      opacity: 0.15, // 设置透明度\n      width: 180, // 设置水印宽度\n      height: 100, // 设置水印高度\n      backgroundRepeat: 'space', // 设置重复方式\n      backgroundPosition: 'center', // 设置位置\n      textAlign: 'center', // 设置文本对齐\n      textBaseline: 'middle', // 设置基线对齐\n    },\n  ],\n});\n",
+        "paraId": 13,
+        "tocIndex": 8
+    },
+    {
+        "value": "文本水印",
+        "paraId": 14,
+        "tocIndex": 9
+    },
+    {
+        "value": "图片水印",
+        "paraId": 15,
+        "tocIndex": 9
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_plugin_Watermark_zh_md_q_hK4X-async.js.map

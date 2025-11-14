@@ -1,0 +1,3046 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/graph/option.en.md?type=text'],
+{ "docs/manual/graph/option.en.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/graph/option.en.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "{ type: 'view'; options?: ",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "FitViewOptions",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "; animation?: ",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "ViewportAnimationEffectTiming",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "; } | { type: 'center'; animation?: ",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "ViewportAnimationEffectTiming",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": "; } | 'view' | 'center'",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "Whether to automatically fit the canvas. ⚠️ ",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": "Note",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": ": Each time ",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": "render",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": " is executed, it will adapt according to ",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": "autoFit",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": ".",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": "Two basic adaptation modes:",
+        "paraId": 5,
+        "tocIndex": 0
+    },
+    {
+        "value": "'view'",
+        "paraId": 6,
+        "tocIndex": 0
+    },
+    {
+        "value": " - Automatically scale to ensure all content is visible within the view",
+        "paraId": 6,
+        "tocIndex": 0
+    },
+    {
+        "value": "'center'",
+        "paraId": 6,
+        "tocIndex": 0
+    },
+    {
+        "value": " - Center the content without changing the zoom level",
+        "paraId": 6,
+        "tocIndex": 0
+    },
+    {
+        "value": "More precise adaptation control can be achieved through object form:",
+        "paraId": 7,
+        "tocIndex": 0
+    },
+    {
+        "value": "const graph = new Graph({\n  autoFit: {\n    type: 'view', // Adaptation type: 'view' or 'center'\n    options: {\n      // Only applicable to 'view' type\n      when: 'overflow', // When to adapt: 'overflow' (only when content overflows) or 'always' (always adapt)\n      direction: 'x', // Adaptation direction: 'x', 'y', or 'both'\n    },\n    animation: {\n      // Adaptation animation effect\n      duration: 1000, // Animation duration (milliseconds)\n      easing: 'ease-in-out', // Animation easing function\n    },\n  },\n});\n",
+        "paraId": 8,
+        "tocIndex": 0
+    },
+    {
+        "value": "Property",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "Description",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "Type",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "Default",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "Required",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "when",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "Adaptation occurs under the following conditions ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " - ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'overflow'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " adapt only when content overflows ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " - ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'always'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " always adapt",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'overflow'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " | ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'always'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'always'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "direction",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "Adapt only in the specified direction ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " - ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'x'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " adapt only in x direction ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " - ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'y'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " adapt only in y direction ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " - ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'both'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " adapt in both x and y directions",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'x'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " | ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'y'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": " | ",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'both'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "'both'",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "type ViewportAnimationEffectTiming =\n  | boolean // true to enable default animation, false to disable animation\n  | {\n      easing?: string; // Animation easing function: 'ease-in-out', 'ease-in', 'ease-out', 'linear'\n      duration?: number; // Animation duration (milliseconds)\n    };\n",
+        "paraId": 10,
+        "tocIndex": 2
+    },
+    {
+        "value": "boolean",
+        "paraId": 11,
+        "tocIndex": 3
+    },
+    {
+        "value": " ",
+        "paraId": 11,
+        "tocIndex": 3
+    },
+    {
+        "value": "Default:",
+        "paraId": 11,
+        "tocIndex": 3
+    },
+    {
+        "value": " ",
+        "paraId": 11,
+        "tocIndex": 3
+    },
+    {
+        "value": "false",
+        "paraId": 11,
+        "tocIndex": 3
+    },
+    {
+        "value": "Whether to automatically resize the canvas.",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "Implemented based on the ",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": "window.onresize",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": " event. When the browser window size changes, the canvas will automatically resize to fit the container.",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": "string",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Canvas background color.",
+        "paraId": 15,
+        "tocIndex": 4
+    },
+    {
+        "value": "This color is used as the background color when exporting images. Any valid CSS color value can be used, such as hexadecimal, RGB, RGBA, etc.",
+        "paraId": 16,
+        "tocIndex": 4
+    },
+    {
+        "value": "CanvasConfig",
+        "paraId": 17,
+        "tocIndex": 5
+    },
+    {
+        "value": "Canvas configuration. Related configuration items under GraphOptions (such as ",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": "container",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": ", ",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": "width",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": ", ",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": "height",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": ", ",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": "devicePixelRatio",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": ", ",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": "background",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": ", ",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": "cursor",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": ") are shortcut configuration items and will be converted to canvas configuration items.",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": "Property",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Description",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Type",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Default",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Required",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "container",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Canvas container",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "string | HTMLElement",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "devicePixelRatio",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Device pixel ratio",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "width",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Canvas width",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "height",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Canvas height",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "cursor",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Cursor style, same as ",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "GraphOptions.cursor",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "background",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Canvas background color",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "renderer",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Renderer, same as ",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "GraphOptions.renderer",
+        "paraId": 21,
+        "tocIndex": 6
+    },
+    {
+        "value": "(layer: ",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "'background'",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": " | ",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "'main'",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": " | ",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "'label'",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": " | ",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "'transient'",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": ") => IRenderer",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "enableMultiLayer",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "Whether to enable multi-layer. Non-dynamic parameter, effective only during initialization",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "boolean",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 19,
+        "tocIndex": 6
+    },
+    {
+        "value": "string |",
+        "paraId": 22,
+        "tocIndex": 7
+    },
+    {
+        "value": " ",
+        "paraId": 22,
+        "tocIndex": 7
+    },
+    {
+        "value": "HTMLElement",
+        "paraId": 22,
+        "tocIndex": 7
+    },
+    {
+        "value": " ",
+        "paraId": 22,
+        "tocIndex": 7
+    },
+    {
+        "value": "|",
+        "paraId": 22,
+        "tocIndex": 7
+    },
+    {
+        "value": " Canvas",
+        "paraId": 22,
+        "tocIndex": 7
+    },
+    {
+        "value": "Canvas container, can be one of the following three assignments:",
+        "paraId": 23,
+        "tocIndex": 7
+    },
+    {
+        "value": "ID string of the DOM element, such as ",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": "'container'",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": "HTML element object, such as ",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": "document.getElementById('container')",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": "Canvas instance, such as ",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": "new Canvas(options)",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": ", where ",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": "options",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": " is of type ",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": "CanvasConfig",
+        "paraId": 25,
+        "tocIndex": 7
+    },
+    {
+        "value": ".",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": "string",
+        "paraId": 26,
+        "tocIndex": 8
+    },
+    {
+        "value": "Cursor style, controls the cursor shape when hovering over the canvas. Any valid CSS cursor value can be used.",
+        "paraId": 27,
+        "tocIndex": 8
+    },
+    {
+        "value": "Supported values include: ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'auto'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'default'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'none'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'context-menu'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'help'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'pointer'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'progress'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'wait'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'cell'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'crosshair'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'text'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'vertical-text'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'alias'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'copy'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'move'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'no-drop'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'not-allowed'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'grab'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'grabbing'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'all-scroll'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'col-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'row-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'n-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'e-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'s-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'w-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'ne-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'nw-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'se-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'sw-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'ew-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'ns-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'nesw-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'nwse-resize'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", ",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "'zoom-in'",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": ", `'zoom-out'.",
+        "paraId": 28,
+        "tocIndex": 8
+    },
+    {
+        "value": "Cursor values are referenced from ",
+        "paraId": 29,
+        "tocIndex": 8
+    },
+    {
+        "value": "MDN - cursor",
+        "paraId": 29,
+        "tocIndex": 8
+    },
+    {
+        "value": ".",
+        "paraId": 29,
+        "tocIndex": 8
+    },
+    {
+        "value": "number",
+        "paraId": 30,
+        "tocIndex": 9
+    },
+    {
+        "value": "Device pixel ratio.",
+        "paraId": 31,
+        "tocIndex": 9
+    },
+    {
+        "value": "Used for high-definition screens, the default is ",
+        "paraId": 32,
+        "tocIndex": 9
+    },
+    {
+        "value": "window.devicePixelRatio",
+        "paraId": 32,
+        "tocIndex": 9
+    },
+    {
+        "value": ".",
+        "paraId": 32,
+        "tocIndex": 9
+    },
+    {
+        "value": "number",
+        "paraId": 33,
+        "tocIndex": 10
+    },
+    {
+        "value": "Canvas width. If not set, the container width will be automatically obtained.",
+        "paraId": 34,
+        "tocIndex": 10
+    },
+    {
+        "value": "number",
+        "paraId": 35,
+        "tocIndex": 11
+    },
+    {
+        "value": "Canvas height. If not set, the container height will be automatically obtained.",
+        "paraId": 36,
+        "tocIndex": 11
+    },
+    {
+        "value": "(layer: 'background' | 'main' | 'label' | 'transient') =>",
+        "paraId": 37,
+        "tocIndex": 12
+    },
+    {
+        "value": " ",
+        "paraId": 37,
+        "tocIndex": 12
+    },
+    {
+        "value": "IRenderer",
+        "paraId": 37,
+        "tocIndex": 12
+    },
+    {
+        "value": "Manually specify the renderer",
+        "paraId": 38,
+        "tocIndex": 12
+    },
+    {
+        "value": "G6 uses a layered rendering approach, divided into four layers: ",
+        "paraId": 39,
+        "tocIndex": 12
+    },
+    {
+        "value": "background",
+        "paraId": 39,
+        "tocIndex": 12
+    },
+    {
+        "value": ", ",
+        "paraId": 39,
+        "tocIndex": 12
+    },
+    {
+        "value": "main",
+        "paraId": 39,
+        "tocIndex": 12
+    },
+    {
+        "value": ", ",
+        "paraId": 39,
+        "tocIndex": 12
+    },
+    {
+        "value": "label",
+        "paraId": 39,
+        "tocIndex": 12
+    },
+    {
+        "value": ", ",
+        "paraId": 39,
+        "tocIndex": 12
+    },
+    {
+        "value": "transient",
+        "paraId": 39,
+        "tocIndex": 12
+    },
+    {
+        "value": ". Users can set the renderer for each layer of the canvas through this configuration item.",
+        "paraId": 39,
+        "tocIndex": 12
+    },
+    {
+        "value": "Example",
+        "paraId": 40,
+        "tocIndex": 12
+    },
+    {
+        "value": ": Use SVG renderer for rendering",
+        "paraId": 40,
+        "tocIndex": 12
+    },
+    {
+        "value": "import { Renderer as SVGRenderer } from '@antv/g-svg';\nimport { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  renderer: () => new SVGRenderer(),\n});\n",
+        "paraId": 41,
+        "tocIndex": 12
+    },
+    {
+        "value": "number | number[]",
+        "paraId": 42,
+        "tocIndex": 13
+    },
+    {
+        "value": "Canvas padding",
+        "paraId": 43,
+        "tocIndex": 13
+    },
+    {
+        "value": "Usually, during adaptation, it will be adapted according to the padding. It can be a single value (same padding on all sides) or an array form (specify the padding for top, right, bottom, left in order).",
+        "paraId": 44,
+        "tocIndex": 13
+    },
+    {
+        "value": "Example:",
+        "paraId": 45,
+        "tocIndex": 13
+    },
+    {
+        "value": "// Single value\nconst graph1 = new Graph({\n  padding: 20, // 20 pixels of padding on all sides\n});\n\n// Array form\nconst graph2 = new Graph({\n  padding: [20, 40, 20, 40], // Padding for top, right, bottom, left\n});\n",
+        "paraId": 46,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 47,
+        "tocIndex": 14
+    },
+    {
+        "value": " ",
+        "paraId": 47,
+        "tocIndex": 14
+    },
+    {
+        "value": "Default:",
+        "paraId": 47,
+        "tocIndex": 14
+    },
+    {
+        "value": " ",
+        "paraId": 47,
+        "tocIndex": 14
+    },
+    {
+        "value": "0",
+        "paraId": 47,
+        "tocIndex": 14
+    },
+    {
+        "value": "Rotation angle (in radians)",
+        "paraId": 48,
+        "tocIndex": 14
+    },
+    {
+        "value": "number",
+        "paraId": 49,
+        "tocIndex": 15
+    },
+    {
+        "value": "Viewport x coordinate, sets the initial horizontal position of the viewport.",
+        "paraId": 50,
+        "tocIndex": 15
+    },
+    {
+        "value": "number",
+        "paraId": 51,
+        "tocIndex": 16
+    },
+    {
+        "value": "Viewport y coordinate, sets the initial vertical position of the viewport.",
+        "paraId": 52,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 53,
+        "tocIndex": 17
+    },
+    {
+        "value": " ",
+        "paraId": 53,
+        "tocIndex": 17
+    },
+    {
+        "value": "Default:",
+        "paraId": 53,
+        "tocIndex": 17
+    },
+    {
+        "value": " ",
+        "paraId": 53,
+        "tocIndex": 17
+    },
+    {
+        "value": "1",
+        "paraId": 53,
+        "tocIndex": 17
+    },
+    {
+        "value": "Sets the initial zoom level of the viewport, 1 means 100% (original size).",
+        "paraId": 54,
+        "tocIndex": 17
+    },
+    {
+        "value": "[number, number]",
+        "paraId": 55,
+        "tocIndex": 18
+    },
+    {
+        "value": " ",
+        "paraId": 55,
+        "tocIndex": 18
+    },
+    {
+        "value": "Default:",
+        "paraId": 55,
+        "tocIndex": 18
+    },
+    {
+        "value": " ",
+        "paraId": 55,
+        "tocIndex": 18
+    },
+    {
+        "value": "[0.01, 10]",
+        "paraId": 55,
+        "tocIndex": 18
+    },
+    {
+        "value": "Zoom range, limits the minimum and maximum scale that users can zoom.",
+        "paraId": 56,
+        "tocIndex": 18
+    },
+    {
+        "value": "boolean | ",
+        "paraId": 57,
+        "tocIndex": 19
+    },
+    {
+        "value": "AnimationEffectTiming",
+        "paraId": 58,
+        "tocIndex": 19
+    },
+    {
+        "value": "Enable or disable global animation",
+        "paraId": 59,
+        "tocIndex": 19
+    },
+    {
+        "value": "When configured as an animation option, animation will be enabled, and this animation configuration will be used as the base configuration for global animation.",
+        "paraId": 60,
+        "tocIndex": 19
+    },
+    {
+        "value": "Property",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Description",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Type",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Default",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Required",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "delay",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Animation delay time",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "direction",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Animation direction",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'alternate'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'alternate-reverse'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'normal'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'reverse'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'forward'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "duration",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Animation duration",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "easing",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Animation easing function",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "fill",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Fill mode after animation ends",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'auto'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'backwards'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'both'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'forwards'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'none'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "'none'",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "iterations",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Animation iteration count",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 20
+    },
+    {
+        "value": "Example:",
+        "paraId": 62,
+        "tocIndex": 20
+    },
+    {
+        "value": "// Simple enable\nconst graph1 = new Graph({\n  animation: true,\n});\n\n// Detailed configuration\nconst graph2 = new Graph({\n  animation: {\n    duration: 500, // Animation duration (milliseconds)\n    easing: 'ease-in-out', // Easing function\n  },\n});\n",
+        "paraId": 63,
+        "tocIndex": 20
+    },
+    {
+        "value": "GraphData",
+        "paraId": 64,
+        "tocIndex": 21
+    },
+    {
+        "value": "Data.",
+        "paraId": 65,
+        "tocIndex": 21
+    },
+    {
+        "value": "Property",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "Description",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "Type",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "Default",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "Required",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "nodes",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "Node data",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "NodeData",
+        "paraId": 67,
+        "tocIndex": 22
+    },
+    {
+        "value": "[]",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "-",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "✓",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "edges",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "Edge data",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "EdgeData",
+        "paraId": 68,
+        "tocIndex": 22
+    },
+    {
+        "value": "[]",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "-",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "✓",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "combos",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "Combo data",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "ComboData",
+        "paraId": 69,
+        "tocIndex": 22
+    },
+    {
+        "value": "[]",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "-",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "✓",
+        "paraId": 66,
+        "tocIndex": 22
+    },
+    {
+        "value": "Property",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Description",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Type",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Default",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Required",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "id",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Unique identifier for the node, used to distinguish different nodes",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "string",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "-",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "✓",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "type",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Node type, built-in node type name or custom node name",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "string",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "-",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "data",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Node data, used to store custom data for the node, such as node name, description, etc. Can be accessed in style mapping through callback functions",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "object",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "-",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "style",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Node style, including visual attributes such as position, size, color, etc.",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "object",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "-",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "states",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Initial state of the node, such as selected, activated, hovered, etc.",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "string[]",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "-",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "combo",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "ID of the combo to which it belongs, used to organize the hierarchical relationship of nodes, if none, it is null",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "string | null",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "-",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "children",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Collection of child node IDs, used only in tree graph scenarios",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "string[]",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "-",
+        "paraId": 70,
+        "tocIndex": 23
+    },
+    {
+        "value": "Property",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Description",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Type",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Default",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Required",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "source",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Starting node ID of the edge",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "string",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "-",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "✓",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "target",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Target node ID of the edge",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "string",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "-",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "✓",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "id",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Unique identifier for the edge",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "string",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "-",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "type",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge type, built-in edge type name or custom edge name",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "string",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "-",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "data",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge data, used to store custom data for the edge, can be accessed in style mapping through callback functions",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "object",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "-",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "style",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge style, including visual attributes such as line color, width, arrow, etc.",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "object",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "-",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "states",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Initial state of the edge",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "string[]",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "-",
+        "paraId": 71,
+        "tocIndex": 24
+    },
+    {
+        "value": "Property",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Description",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Type",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Default",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Required",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "id",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Unique identifier for the combo",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "string",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "✓",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "type",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Combo type, built-in combo type name or custom combo name",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "string",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "data",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Combo data, used to store custom data for the combo, can be accessed in style mapping through callback functions",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "object",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "style",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Combo style",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "object",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "states",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Initial state of the combo",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "string[]",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "combo",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Parent combo ID. If there is no parent combo, it is null",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "string | null",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 25
+    },
+    {
+        "value": "Example:",
+        "paraId": 73,
+        "tocIndex": 25
+    },
+    {
+        "value": "const graph = new Graph({\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 100, y: 100 } },\n      { id: 'node2', style: { x: 200, y: 200 } },\n    ],\n    edges: [{ id: 'edge1', source: 'node1', target: 'node2' }],\n    combos: [{ id: 'combo1', style: { x: 150, y: 150 } }],\n  },\n});\n",
+        "paraId": 74,
+        "tocIndex": 25
+    },
+    {
+        "value": "Read ",
+        "paraId": 75,
+        "tocIndex": 25
+    },
+    {
+        "value": "Data",
+        "paraId": 76,
+        "tocIndex": 25
+    },
+    {
+        "value": " to learn more about graph data, including but not limited to data formats, how to manipulate data, etc.",
+        "paraId": 75,
+        "tocIndex": 25
+    },
+    {
+        "value": "NodeOptions",
+        "paraId": 77,
+        "tocIndex": 26
+    },
+    {
+        "value": "Node configuration options.",
+        "paraId": 78,
+        "tocIndex": 26
+    },
+    {
+        "value": "Property",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Description",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Type",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Default",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Required",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "type",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Node type, built-in node type name or custom node name",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Type",
+        "paraId": 80,
+        "tocIndex": 27
+    },
+    {
+        "value": "circle",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "style",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Node style, including color, size, etc.",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Style",
+        "paraId": 81,
+        "tocIndex": 27
+    },
+    {
+        "value": "-",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "state",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Define the style of the node in different states",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "State",
+        "paraId": 82,
+        "tocIndex": 27
+    },
+    {
+        "value": "-",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "palette",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Define the color palette of the node, used to map colors based on different data",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Palette",
+        "paraId": 83,
+        "tocIndex": 27
+    },
+    {
+        "value": "-",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "animation",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Define the animation effect of the node",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "Animation",
+        "paraId": 84,
+        "tocIndex": 27
+    },
+    {
+        "value": "-",
+        "paraId": 79,
+        "tocIndex": 27
+    },
+    {
+        "value": "See ",
+        "paraId": 85,
+        "tocIndex": 27
+    },
+    {
+        "value": "Node",
+        "paraId": 86,
+        "tocIndex": 27
+    },
+    {
+        "value": " for details",
+        "paraId": 85,
+        "tocIndex": 27
+    },
+    {
+        "value": "Example:",
+        "paraId": 87,
+        "tocIndex": 27
+    },
+    {
+        "value": "const graph = new Graph({\n  node: {\n    type: 'circle', // Node type\n    style: {\n      fill: '#e6f7ff', // Fill color\n      stroke: '#91d5ff', // Border color\n      lineWidth: 1, // Border width\n      r: 20, // Radius\n      labelText: (d) => d.id, // Label text\n    },\n    // Node state style\n    state: {\n      hover: {\n        lineWidth: 2,\n        stroke: '#69c0ff',\n      },\n      selected: {\n        fill: '#bae7ff',\n        stroke: '#1890ff',\n        lineWidth: 2,\n      },\n    },\n  },\n});\n",
+        "paraId": 88,
+        "tocIndex": 27
+    },
+    {
+        "value": "EdgeOptions",
+        "paraId": 89,
+        "tocIndex": 28
+    },
+    {
+        "value": "Edge configuration options",
+        "paraId": 90,
+        "tocIndex": 28
+    },
+    {
+        "value": "Property",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Description",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Type",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Default",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Required",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "type",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Edge type, built-in edge type name or custom edge name",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Type",
+        "paraId": 92,
+        "tocIndex": 29
+    },
+    {
+        "value": "line",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "style",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Edge style, including color, size, etc.",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Style",
+        "paraId": 93,
+        "tocIndex": 29
+    },
+    {
+        "value": "-",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "state",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Define the style of the edge in different states",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "State",
+        "paraId": 94,
+        "tocIndex": 29
+    },
+    {
+        "value": "-",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "palette",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Define the color palette of the edge, used to map colors based on different data",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Palette",
+        "paraId": 95,
+        "tocIndex": 29
+    },
+    {
+        "value": "-",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "animation",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Define the animation effect of the edge",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "Animation",
+        "paraId": 96,
+        "tocIndex": 29
+    },
+    {
+        "value": "-",
+        "paraId": 91,
+        "tocIndex": 29
+    },
+    {
+        "value": "See ",
+        "paraId": 97,
+        "tocIndex": 29
+    },
+    {
+        "value": "Edge",
+        "paraId": 98,
+        "tocIndex": 29
+    },
+    {
+        "value": " for details",
+        "paraId": 97,
+        "tocIndex": 29
+    },
+    {
+        "value": "Example:",
+        "paraId": 99,
+        "tocIndex": 29
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    type: 'polyline', // Edge type\n    style: {\n      stroke: '#91d5ff', // Edge color\n      lineWidth: 2, // Edge width\n      endArrow: true, // Whether there is an arrow\n    },\n    // Edge state style\n    state: {\n      selected: {\n        stroke: '#1890ff',\n        lineWidth: 3,\n      },\n    },\n  },\n});\n",
+        "paraId": 100,
+        "tocIndex": 29
+    },
+    {
+        "value": "ComboOptions",
+        "paraId": 101,
+        "tocIndex": 30
+    },
+    {
+        "value": "Combo configuration options",
+        "paraId": 102,
+        "tocIndex": 30
+    },
+    {
+        "value": "Property",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Description",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Type",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Default",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Required",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "type",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Combo type, built-in combo type name or custom combo name",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Type",
+        "paraId": 104,
+        "tocIndex": 30
+    },
+    {
+        "value": "circle",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "style",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Combo style, including color, size, etc.",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Style",
+        "paraId": 105,
+        "tocIndex": 30
+    },
+    {
+        "value": "-",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "state",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Define the style of the combo in different states",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "State",
+        "paraId": 106,
+        "tocIndex": 30
+    },
+    {
+        "value": "-",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "palette",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Define the color palette of the combo, used to map colors based on different data",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Palette",
+        "paraId": 107,
+        "tocIndex": 30
+    },
+    {
+        "value": "-",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "animation",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Define the animation effect of the combo",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "Animation",
+        "paraId": 108,
+        "tocIndex": 30
+    },
+    {
+        "value": "-",
+        "paraId": 103,
+        "tocIndex": 30
+    },
+    {
+        "value": "See ",
+        "paraId": 109,
+        "tocIndex": 30
+    },
+    {
+        "value": "Combo",
+        "paraId": 110,
+        "tocIndex": 30
+    },
+    {
+        "value": " for details",
+        "paraId": 109,
+        "tocIndex": 30
+    },
+    {
+        "value": "Example:",
+        "paraId": 111,
+        "tocIndex": 30
+    },
+    {
+        "value": "const graph = new Graph({\n  combo: {\n    type: 'circle', // Combo type\n    style: {\n      fill: '#f0f0f0', // Background color\n      stroke: '#d9d9d9', // Border color\n      lineWidth: 1, // Border width\n    },\n    // Combo state style\n    state: {\n      selected: {\n        stroke: '#1890ff',\n        lineWidth: 2,\n      },\n    },\n  },\n});\n",
+        "paraId": 112,
+        "tocIndex": 30
+    },
+    {
+        "value": "CustomLayoutOptions | CustomLayoutOptions[]",
+        "paraId": 113,
+        "tocIndex": 31
+    },
+    {
+        "value": "Layout configuration options, can be an object (normal layout) or an array (pipeline layout).",
+        "paraId": 114,
+        "tocIndex": 31
+    },
+    {
+        "value": "Example",
+        "paraId": 115,
+        "tocIndex": 31
+    },
+    {
+        "value": ":",
+        "paraId": 115,
+        "tocIndex": 31
+    },
+    {
+        "value": "const graph = new Graph({\n  container: 'container',\n  layout: {\n    type: 'force', // Force-directed layout\n    preventOverlap: true, // Prevent node overlap\n    nodeStrength: -50, // Repulsion between nodes\n    edgeStrength: 0.5, // Elastic coefficient of edges\n    iterations: 200, // Number of iterations\n    animation: true, // Enable layout animation\n  },\n});\n",
+        "paraId": 116,
+        "tocIndex": 31
+    },
+    {
+        "value": "false | 'light' | 'dark' | string",
+        "paraId": 117,
+        "tocIndex": 32
+    },
+    {
+        "value": "Set the theme of the chart, can be the built-in ",
+        "paraId": 118,
+        "tocIndex": 32
+    },
+    {
+        "value": "'light'",
+        "paraId": 118,
+        "tocIndex": 32
+    },
+    {
+        "value": ", ",
+        "paraId": 118,
+        "tocIndex": 32
+    },
+    {
+        "value": "'dark'",
+        "paraId": 118,
+        "tocIndex": 32
+    },
+    {
+        "value": " theme, or the name of a custom theme. Set to ",
+        "paraId": 118,
+        "tocIndex": 32
+    },
+    {
+        "value": "false",
+        "paraId": 118,
+        "tocIndex": 32
+    },
+    {
+        "value": " to use no theme.",
+        "paraId": 118,
+        "tocIndex": 32
+    },
+    {
+        "value": "(string | ",
+        "paraId": 119,
+        "tocIndex": 33
+    },
+    {
+        "value": "CustomExtensionOptions",
+        "paraId": 120,
+        "tocIndex": 33
+    },
+    {
+        "value": " | ((this:Graph) =>CustomExtensionOptions))[]",
+        "paraId": 119,
+        "tocIndex": 33
+    },
+    {
+        "value": "Configure the interaction behaviors of the chart, can be a string (using default configuration), an object (custom configuration), or a function (dynamic configuration, the graph instance can be accessed within the function).",
+        "paraId": 121,
+        "tocIndex": 33
+    },
+    {
+        "value": "Example:",
+        "paraId": 122,
+        "tocIndex": 33
+    },
+    {
+        "value": "const graph = new Graph({\n  behaviors: [\n    'drag-canvas', // Enable canvas dragging with default configuration\n    'zoom-canvas', // Enable canvas zooming with default configuration\n    {\n      type: 'drag-element', // Custom configuration for dragging elements\n      key: 'drag-node-only',\n      enable: (event) => event.targetType === 'node', // Only allow dragging nodes\n    },\n    function () {\n      console.log(this); // Output graph instance\n      return {\n        type: 'hover-activate',\n      };\n    },\n  ],\n});\n",
+        "paraId": 123,
+        "tocIndex": 33
+    },
+    {
+        "value": "View ",
+        "paraId": 124,
+        "tocIndex": 33
+    },
+    {
+        "value": "Interaction Overview",
+        "paraId": 125,
+        "tocIndex": 33
+    },
+    {
+        "value": " to learn more about interaction principles",
+        "paraId": 124,
+        "tocIndex": 33
+    },
+    {
+        "value": "Browse ",
+        "paraId": 124,
+        "tocIndex": 33
+    },
+    {
+        "value": "Built-in Interactions",
+        "paraId": 126,
+        "tocIndex": 33
+    },
+    {
+        "value": " to get a list of all built-in interactions and their configuration options",
+        "paraId": 124,
+        "tocIndex": 33
+    },
+    {
+        "value": "(string | ",
+        "paraId": 127,
+        "tocIndex": 34
+    },
+    {
+        "value": "CustomExtensionOptions",
+        "paraId": 128,
+        "tocIndex": 34
+    },
+    {
+        "value": " | ((this:Graph) =>CustomExtensionOptions))[]",
+        "paraId": 127,
+        "tocIndex": 34
+    },
+    {
+        "value": "Set the plugins of the chart, can be a string (using default configuration), an object (custom configuration), or a function (dynamic configuration, the graph instance can be accessed within the function).",
+        "paraId": 129,
+        "tocIndex": 34
+    },
+    {
+        "value": "Example:",
+        "paraId": 130,
+        "tocIndex": 34
+    },
+    {
+        "value": "const graph = new Graph({\n  container: 'container',\n  plugins: [\n    'minimap', // Enable minimap with default configuration\n    {\n      type: 'grid', // Enable grid background\n      key: 'grid-plugin',\n      line: {\n        stroke: '#d9d9d9',\n        lineWidth: 1,\n      },\n    },\n    {\n      type: 'toolbar', // Enable toolbar\n      key: 'graph-toolbar',\n      position: 'top-right', // Position\n    },\n  ],\n});\n",
+        "paraId": 131,
+        "tocIndex": 34
+    },
+    {
+        "value": "View ",
+        "paraId": 132,
+        "tocIndex": 34
+    },
+    {
+        "value": "Plugin Overview",
+        "paraId": 133,
+        "tocIndex": 34
+    },
+    {
+        "value": " to learn more about plugin principles",
+        "paraId": 132,
+        "tocIndex": 34
+    },
+    {
+        "value": "Browse ",
+        "paraId": 132,
+        "tocIndex": 34
+    },
+    {
+        "value": "Built-in Plugins",
+        "paraId": 134,
+        "tocIndex": 34
+    },
+    {
+        "value": " to get a list of all built-in plugins and their configuration options",
+        "paraId": 132,
+        "tocIndex": 34
+    },
+    {
+        "value": "(string | ",
+        "paraId": 135,
+        "tocIndex": 35
+    },
+    {
+        "value": "CustomExtensionOptions",
+        "paraId": 136,
+        "tocIndex": 35
+    },
+    {
+        "value": " | ((this:Graph) =>CustomExtensionOptions))[]",
+        "paraId": 135,
+        "tocIndex": 35
+    },
+    {
+        "value": "Configure data processing, used to process data before rendering, does not affect the original data. Can be a string (using default configuration), an object (custom configuration), or a function (dynamic configuration, the graph instance can be accessed within the function).",
+        "paraId": 137,
+        "tocIndex": 35
+    },
+    {
+        "value": "Example:",
+        "paraId": 138,
+        "tocIndex": 35
+    },
+    {
+        "value": "const graph = new Graph({\n  transforms: [\n    'process-parallel-edges', // Process parallel edges with default configuration\n    {\n      type: 'map-node-size', // Map node size based on node data\n      field: 'value', // Use the value of the field\n      max: 50, // Maximum radius\n      min: 20, // Minimum radius\n    },\n  ],\n});\n",
+        "paraId": 139,
+        "tocIndex": 35
+    },
+    {
+        "value": "View ",
+        "paraId": 140,
+        "tocIndex": 35
+    },
+    {
+        "value": "Data Processing Overview",
+        "paraId": 141,
+        "tocIndex": 35
+    },
+    {
+        "value": " to learn more about data processing principles",
+        "paraId": 140,
+        "tocIndex": 35
+    },
+    {
+        "value": "Browse ",
+        "paraId": 140,
+        "tocIndex": 35
+    },
+    {
+        "value": "Built-in Data Processing",
+        "paraId": 142,
+        "tocIndex": 35
+    },
+    {
+        "value": " to get a list of all built-in data processing and their configuration options",
+        "paraId": 140,
+        "tocIndex": 35
+    },
+    {
+        "value": "interface CustomExtensionOption extends Record<string, any> {\n  /** Extension type */\n  type: string;\n  /** Extension key, i.e., unique identifier */\n  key?: string;\n}\n",
+        "paraId": 143,
+        "tocIndex": 36
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_graph_option_en_md_q_hK4X-async.js.map

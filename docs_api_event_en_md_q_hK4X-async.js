@@ -1,0 +1,2671 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/api/event.en.md?type=text'],
+{ "docs/api/event.en.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/api/event.en.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "G6 provides a powerful event mechanism that allows you to respond to various interactive behaviors occurring in the chart, such as node clicks, edge hovers, canvas drags, etc. Through the event system, you can implement complex interactive logic to enhance user experience.",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "Events in G6 can be broadly categorized into the following types:",
+        "paraId": 1,
+        "tocIndex": 1
+    },
+    {
+        "value": "Element Events",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": ": Events related to nodes, edges, and Combos, such as ",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "node:click",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": ", ",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "edge:mouseenter",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "Canvas Events",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": ": Events related to the entire canvas, such as ",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "canvas:drag",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": ", ",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "canvas:zoom",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "Lifecycle Events",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": ": Events related to the chart lifecycle, such as ",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "beforerender",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": ", ",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "afterrender",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "G6 events follow the ",
+        "paraId": 3,
+        "tocIndex": 2
+    },
+    {
+        "value": "[object]:[event]",
+        "paraId": 3,
+        "tocIndex": 2
+    },
+    {
+        "value": " format, for example:",
+        "paraId": 3,
+        "tocIndex": 2
+    },
+    {
+        "value": "node:click",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": " - Node click event",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "edge:mouseenter",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": " - Mouse enters edge event",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "canvas:drag",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": " - Canvas drag event",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "G6 provides a complete set of event constant enums, and it is ",
+        "paraId": 5,
+        "tocIndex": 3
+    },
+    {
+        "value": "strongly recommended",
+        "paraId": 5,
+        "tocIndex": 3
+    },
+    {
+        "value": " to use these constants instead of directly using string event names:",
+        "paraId": 5,
+        "tocIndex": 3
+    },
+    {
+        "value": "import { NodeEvent, EdgeEvent, CanvasEvent, GraphEvent } from '@antv/g6';\n\n// Use constant enums to listen to events\ngraph.on(NodeEvent.CLICK, handleNodeClick);\ngraph.on(EdgeEvent.POINTER_OVER, handleEdgeHover);\ngraph.on(CanvasEvent.DRAG, handleCanvasDrag);\ngraph.on(GraphEvent.AFTER_RENDER, handleAfterRender);\n",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": "Advantages",
+        "paraId": 7,
+        "tocIndex": 3
+    },
+    {
+        "value": ":",
+        "paraId": 7,
+        "tocIndex": 3
+    },
+    {
+        "value": "Type safety, avoiding string spelling errors",
+        "paraId": 8,
+        "tocIndex": 3
+    },
+    {
+        "value": "Provides intelligent code hints and auto-completion",
+        "paraId": 8,
+        "tocIndex": 3
+    },
+    {
+        "value": "Listen to a specified event and execute a callback function when the event is triggered.",
+        "paraId": 9,
+        "tocIndex": 5
+    },
+    {
+        "value": "on<T extends IEvent = IEvent>(eventName: string, callback: (event: T) => void, once?: boolean): this;\n",
+        "paraId": 10,
+        "tocIndex": 5
+    },
+    {
+        "value": "Parameter",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "Description",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "Type",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "Default",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "Required",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "eventName",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "Name of the event to listen to",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "✓",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "callback",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "Callback function executed when the event is triggered",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "(event: T) => void",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "✓",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "once",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "Whether to listen only once",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "boolean",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 11,
+        "tocIndex": 6
+    },
+    {
+        "value": "Type:",
+        "paraId": 12,
+        "tocIndex": 7
+    },
+    {
+        "value": " this (Graph instance)",
+        "paraId": 12,
+        "tocIndex": 7
+    },
+    {
+        "value": "Description:",
+        "paraId": 12,
+        "tocIndex": 7
+    },
+    {
+        "value": " Returns the graph instance itself, supporting chain calls",
+        "paraId": 12,
+        "tocIndex": 7
+    },
+    {
+        "value": "import { NodeEvent, EdgeEvent, CanvasEvent } from '@antv/g6';\n\n// Listen to node click event\ngraph.on(NodeEvent.CLICK, (evt) => {\n  const { target } = evt; // Get the ID of the clicked node\n  console.log(`Node ${target.id} was clicked`);\n\n  // Get node data\n  const nodeData = graph.getNodeData(target.id);\n  console.log('Node data:', nodeData);\n\n  // Modify node state\n  graph.setElementState(target.id, 'selected');\n});\n\n// Listen to edge mouse enter event\ngraph.on(EdgeEvent.POINTER_OVER, (evt) => {\n  const { target } = evt;\n  graph.setElementState(target.id, 'highlight');\n});\n\n// Listen to canvas drag event\ngraph.on(CanvasEvent.DRAG, (evt) => {\n  console.log('Canvas is being dragged');\n});\n",
+        "paraId": 13,
+        "tocIndex": 8
+    },
+    {
+        "value": "Listen to an event once, and automatically remove the listener after the event is triggered once.",
+        "paraId": 14,
+        "tocIndex": 9
+    },
+    {
+        "value": "once<T extends IEvent = IEvent>(eventName: string, callback: (event: T) => void): this;\n",
+        "paraId": 15,
+        "tocIndex": 9
+    },
+    {
+        "value": "Parameter",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "Description",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "Type",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "Default",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "Required",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "eventName",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "Name of the event to listen to",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "string",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "✓",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "callback",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "Callback function executed when the event is triggered",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "(event: T) => void",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "✓",
+        "paraId": 16,
+        "tocIndex": 10
+    },
+    {
+        "value": "Type:",
+        "paraId": 17,
+        "tocIndex": 11
+    },
+    {
+        "value": " this (Graph instance)",
+        "paraId": 17,
+        "tocIndex": 11
+    },
+    {
+        "value": "Description:",
+        "paraId": 17,
+        "tocIndex": 11
+    },
+    {
+        "value": " Returns the graph instance itself, supporting chain calls",
+        "paraId": 17,
+        "tocIndex": 11
+    },
+    {
+        "value": "import { GraphEvent, NodeEvent } from '@antv/g6';\n\n// Listen to the chart's first load completion event, executed only once\ngraph.once(GraphEvent.AFTER_RENDER, () => {\n  console.log('Chart rendered for the first time');\n  // Execute one-time initialization operations\n  highlightImportantNodes();\n});\n\n// Wait for the user to click a node for the first time and then perform operations\ngraph.once(NodeEvent.CLICK, (evt) => {\n  console.log('User clicked a node for the first time:', evt.target.id);\n  showTutorialTip('You can drag nodes to change their position');\n});\n",
+        "paraId": 18,
+        "tocIndex": 12
+    },
+    {
+        "value": "Remove all event listeners.",
+        "paraId": 19,
+        "tocIndex": 13
+    },
+    {
+        "value": "off(): this;\n",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "Type:",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": " this (Graph instance)",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "Description:",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": " Returns the graph instance itself, supporting chain calls",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "// Remove all event listeners\ngraph.off();\nconsole.log('All event listeners have been removed');\n",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "Remove all listeners of a specified event type.",
+        "paraId": 23,
+        "tocIndex": 16
+    },
+    {
+        "value": "off(eventName: string): this;\n",
+        "paraId": 24,
+        "tocIndex": 16
+    },
+    {
+        "value": "Parameter",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "Description",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "Type",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "Default",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "Required",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "eventName",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "Name of the event to remove",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "string",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "-",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "✓",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "Type:",
+        "paraId": 26,
+        "tocIndex": 18
+    },
+    {
+        "value": " this (Graph instance)",
+        "paraId": 26,
+        "tocIndex": 18
+    },
+    {
+        "value": "Description:",
+        "paraId": 26,
+        "tocIndex": 18
+    },
+    {
+        "value": " Returns the graph instance itself, supporting chain calls",
+        "paraId": 26,
+        "tocIndex": 18
+    },
+    {
+        "value": "import { NodeEvent } from '@antv/g6';\n\n// Remove all node click event listeners\ngraph.off(NodeEvent.CLICK);\nconsole.log('All node click event listeners have been removed');\n\n// Remove related temporary event listeners after a certain operation mode ends\nfunction exitEditMode() {\n  // Remove all listeners in edit mode\n  graph.off(NodeEvent.DRAG_END);\n  graph.off(NodeEvent.DROP);\n  console.log('Exited edit mode');\n}\n",
+        "paraId": 27,
+        "tocIndex": 19
+    },
+    {
+        "value": "Remove a specific callback function for a specific event.",
+        "paraId": 28,
+        "tocIndex": 20
+    },
+    {
+        "value": "off(eventName: string, callback: (...args: any[]) => void): this;\n",
+        "paraId": 29,
+        "tocIndex": 20
+    },
+    {
+        "value": "Parameter",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "Description",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "Type",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "Default",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "Required",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "eventName",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "Name of the event to remove",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "string",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "-",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "✓",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "callback",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "Callback function to remove",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "(...args: any[]) => void",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "-",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "✓",
+        "paraId": 30,
+        "tocIndex": 21
+    },
+    {
+        "value": "Type:",
+        "paraId": 31,
+        "tocIndex": 22
+    },
+    {
+        "value": " this (Graph instance)",
+        "paraId": 31,
+        "tocIndex": 22
+    },
+    {
+        "value": "Description:",
+        "paraId": 31,
+        "tocIndex": 22
+    },
+    {
+        "value": " Returns the graph instance itself, supporting chain calls",
+        "paraId": 31,
+        "tocIndex": 22
+    },
+    {
+        "value": "import { NodeEvent } from '@antv/g6';\n\n// Define callback function\nconst handleNodeClick = (evt) => {\n  console.log('Node clicked:', evt.target.id);\n};\n\n// Add listener\ngraph.on(NodeEvent.CLICK, handleNodeClick);\n\n// Later, remove this specific listener at a certain point\ngraph.off(NodeEvent.CLICK, handleNodeClick);\nconsole.log('Specific node click event listener has been removed');\n",
+        "paraId": 32,
+        "tocIndex": 23
+    },
+    {
+        "value": "G6 provides various event constant enums to facilitate developers in using standardized event names. Below is a detailed description of all event constants:",
+        "paraId": 33,
+        "tocIndex": 24
+    },
+    {
+        "value": "Constant Name",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Event Name",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Description",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "CLICK",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:click",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when a node is clicked",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "DBLCLICK",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:dblclick",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when a node is double-clicked",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "POINTER_OVER",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:pointerover",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when the pointer enters a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "POINTER_LEAVE",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:pointerleave",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when the pointer leaves a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "POINTER_ENTER",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:pointerenter",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when the pointer enters a node or its child elements (non-bubbling)",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "POINTER_MOVE",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:pointermove",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when the pointer moves over a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "POINTER_OUT",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:pointerout",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when the pointer leaves a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "POINTER_DOWN",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:pointerdown",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when the pointer is pressed down on a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "POINTER_UP",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:pointerup",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when the pointer is released on a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "CONTEXT_MENU",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:contextmenu",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when the context menu is opened on a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "DRAG_START",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:dragstart",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when dragging a node starts",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "DRAG",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:drag",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered during node dragging",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "DRAG_END",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:dragend",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when node dragging ends",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "DRAG_ENTER",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:dragenter",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when a draggable item enters a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "DRAG_OVER",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:dragover",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when a draggable item is over a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "DRAG_LEAVE",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:dragleave",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when a draggable item leaves a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "DROP",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "node:drop",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Triggered when a draggable item is dropped on a node",
+        "paraId": 34,
+        "tocIndex": 25
+    },
+    {
+        "value": "Constant Name",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Event Name",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Description",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "CLICK",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:click",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when an edge is clicked",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "DBLCLICK",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:dblclick",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when an edge is double-clicked",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "POINTER_OVER",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:pointerover",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when the pointer enters an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "POINTER_LEAVE",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:pointerleave",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when the pointer leaves an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "POINTER_ENTER",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:pointerenter",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when the pointer enters an edge or its child elements (non-bubbling)",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "POINTER_MOVE",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:pointermove",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when the pointer moves over an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "POINTER_OUT",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:pointerout",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when the pointer leaves an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "POINTER_DOWN",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:pointerdown",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when the pointer is pressed down on an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "POINTER_UP",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:pointerup",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when the pointer is released on an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "CONTEXT_MENU",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:contextmenu",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when the context menu is opened on an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "DRAG_ENTER",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:dragenter",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when a draggable item enters an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "DRAG_OVER",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:dragover",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when a draggable item is over an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "DRAG_LEAVE",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:dragleave",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when a draggable item leaves an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "DROP",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "edge:drop",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Triggered when a draggable item is dropped on an edge",
+        "paraId": 35,
+        "tocIndex": 26
+    },
+    {
+        "value": "Constant Name",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Event Name",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Description",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "CLICK",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:click",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when a Combo is clicked",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "DBLCLICK",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:dblclick",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when a Combo is double-clicked",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "POINTER_OVER",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:pointerover",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when the pointer enters a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "POINTER_LEAVE",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:pointerleave",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when the pointer leaves a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "POINTER_ENTER",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:pointerenter",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when the pointer enters a Combo or its child elements (non-bubbling)",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "POINTER_MOVE",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:pointermove",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when the pointer moves over a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "POINTER_OUT",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:pointerout",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when the pointer leaves a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "POINTER_DOWN",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:pointerdown",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when the pointer is pressed down on a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "POINTER_UP",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:pointerup",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when the pointer is released on a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "CONTEXT_MENU",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:contextmenu",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when the context menu is opened on a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "DRAG_START",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:dragstart",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when dragging a Combo starts",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "DRAG",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:drag",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered during Combo dragging",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "DRAG_END",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:dragend",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when Combo dragging ends",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "DRAG_ENTER",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:dragenter",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when a draggable item enters a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "DRAG_OVER",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:dragover",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when a draggable item is over a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "DRAG_LEAVE",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:dragleave",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when a draggable item leaves a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "DROP",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "combo:drop",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Triggered when a draggable item is dropped on a Combo",
+        "paraId": 36,
+        "tocIndex": 27
+    },
+    {
+        "value": "Constant Name",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Event Name",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Description",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "CLICK",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:click",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when clicking on the canvas blank area",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "DBLCLICK",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:dblclick",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when double-clicking on the canvas blank area",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "POINTER_OVER",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:pointerover",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when the pointer enters the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "POINTER_LEAVE",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:pointerleave",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when the pointer leaves the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "POINTER_ENTER",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:pointerenter",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when the pointer enters the canvas or its child elements (non-bubbling)",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "POINTER_MOVE",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:pointermove",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when the pointer moves over the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "POINTER_OUT",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:pointerout",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when the pointer leaves the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "POINTER_DOWN",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:pointerdown",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when the pointer is pressed down on the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "POINTER_UP",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:pointerup",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when the pointer is released on the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "CONTEXT_MENU",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:contextmenu",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when the context menu is opened on the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "DRAG_START",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:dragstart",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when dragging the canvas starts",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "DRAG",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:drag",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered during canvas dragging",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "DRAG_END",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:dragend",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when canvas dragging ends",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "DRAG_ENTER",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:dragenter",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when a draggable item enters the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "DRAG_OVER",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:dragover",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when a draggable item is over the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "DRAG_LEAVE",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:dragleave",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when a draggable item leaves the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "DROP",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:drop",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when a draggable item is dropped on the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "WHEEL",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "canvas:wheel",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Triggered when scrolling the mouse wheel on the canvas",
+        "paraId": 37,
+        "tocIndex": 28
+    },
+    {
+        "value": "Constant Name",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Event Name",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Description",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_CANVAS_INIT",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforecanvasinit",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before canvas initialization",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_CANVAS_INIT",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "aftercanvasinit",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after canvas initialization",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_SIZE_CHANGE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforesizechange",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before viewport size change",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_SIZE_CHANGE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "aftersizechange",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after viewport size change",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_ELEMENT_CREATE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforeelementcreate",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before element creation",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_ELEMENT_CREATE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afterelementcreate",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after element creation",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_ELEMENT_UPDATE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforeelementupdate",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before element update",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_ELEMENT_UPDATE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afterelementupdate",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after element update",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_ELEMENT_DESTROY",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforeelementdestroy",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before element destruction",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_ELEMENT_DESTROY",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afterelementdestroy",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after element destruction",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_ELEMENT_TRANSLATE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforeelementtranslate",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before element translation",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_ELEMENT_TRANSLATE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afterelementtranslate",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after element translation",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_DRAW",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforedraw",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before drawing starts",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_DRAW",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afterdraw",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after drawing ends",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_RENDER",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforerender",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before rendering starts",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_RENDER",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afterrender",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after rendering completes",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_ANIMATE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforeanimate",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before animation starts",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_ANIMATE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afteranimate",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after animation ends",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_LAYOUT",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforelayout",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before layout starts",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_LAYOUT",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afterlayout",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after layout ends",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_STAGE_LAYOUT",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforestagelayout",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before each stage in pipeline layout",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_STAGE_LAYOUT",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afterstagelayout",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after each stage in pipeline layout",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_TRANSFORM",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforetransform",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before viewport transformation",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_TRANSFORM",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "aftertransform",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after viewport transformation",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BATCH_START",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "batchstart",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered when batch operation starts",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BATCH_END",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "batchend",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered when batch operation ends",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_DESTROY",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforedestroy",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before chart destruction",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_DESTROY",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afterdestroy",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after chart destruction",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "BEFORE_RENDERER_CHANGE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "beforerendererchange",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered before renderer change",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "AFTER_RENDERER_CHANGE",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "afterrendererchange",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Triggered after renderer change",
+        "paraId": 38,
+        "tocIndex": 29
+    },
+    {
+        "value": "Constant Name",
+        "paraId": 39,
+        "tocIndex": 30
+    },
+    {
+        "value": "Event Name",
+        "paraId": 39,
+        "tocIndex": 30
+    },
+    {
+        "value": "Description",
+        "paraId": 39,
+        "tocIndex": 30
+    },
+    {
+        "value": "KEY_DOWN",
+        "paraId": 39,
+        "tocIndex": 30
+    },
+    {
+        "value": "keydown",
+        "paraId": 39,
+        "tocIndex": 30
+    },
+    {
+        "value": "Triggered when a keyboard key is pressed down",
+        "paraId": 39,
+        "tocIndex": 30
+    },
+    {
+        "value": "KEY_UP",
+        "paraId": 39,
+        "tocIndex": 30
+    },
+    {
+        "value": "keyup",
+        "paraId": 39,
+        "tocIndex": 30
+    },
+    {
+        "value": "Triggered when a keyboard key is released",
+        "paraId": 39,
+        "tocIndex": 30
+    },
+    {
+        "value": "These are events without prefixes and can be used to listen to global events:",
+        "paraId": 40,
+        "tocIndex": 31
+    },
+    {
+        "value": "Constant Name",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Event Name",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Description",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "CLICK",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "click",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when any element is clicked",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "DBLCLICK",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "dblclick",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when any element is double-clicked",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "POINTER_OVER",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "pointerover",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when the pointer enters any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "POINTER_LEAVE",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "pointerleave",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when the pointer leaves any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "POINTER_ENTER",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "pointerenter",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when the pointer enters any element or its child elements (non-bubbling)",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "POINTER_MOVE",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "pointermove",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when the pointer moves over any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "POINTER_OUT",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "pointerout",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when the pointer leaves any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "POINTER_DOWN",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "pointerdown",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when the pointer is pressed down on any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "POINTER_UP",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "pointerup",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when the pointer is released on any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "CONTEXT_MENU",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "contextmenu",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when the context menu is opened on any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "DRAG_START",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "dragstart",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when dragging any element starts",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "DRAG",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "drag",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered during any element dragging",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "DRAG_END",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "dragend",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when any element dragging ends",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "DRAG_ENTER",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "dragenter",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when a draggable item enters any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "DRAG_OVER",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "dragover",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when a draggable item is over any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "DRAG_LEAVE",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "dragleave",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when a draggable item leaves any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "DROP",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "drop",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when a draggable item is dropped on any element",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "KEY_DOWN",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "keydown",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when a keyboard key is pressed down",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "KEY_UP",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "keyup",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when a keyboard key is released",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "WHEEL",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "wheel",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when scrolling the mouse wheel",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "PINCH",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "pinch",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "Triggered when pinching or spreading fingers on a multi-touch screen",
+        "paraId": 41,
+        "tocIndex": 31
+    },
+    {
+        "value": "G6's event API supports chain calls, allowing you to register multiple events consecutively:",
+        "paraId": 42,
+        "tocIndex": 33
+    },
+    {
+        "value": "import { NodeEvent, EdgeEvent, CanvasEvent } from '@antv/g6';\n\n// Use constant enums + chain calls\ngraph.on(NodeEvent.CLICK, handleNodeClick).on(EdgeEvent.CLICK, handleEdgeClick).on(CanvasEvent.WHEEL, handleCanvasZoom);\n",
+        "paraId": 43,
+        "tocIndex": 33
+    },
+    {
+        "value": "You can use the event bubbling mechanism to listen to all child element events on the parent element:",
+        "paraId": 44,
+        "tocIndex": 34
+    },
+    {
+        "value": "import { CommonEvent } from '@antv/g6';\n\n// Handle all element click events uniformly\ngraph.on(CommonEvent.CLICK, (evt) => {\n  const { targetType, target } = evt;\n  if (targetType === 'node') {\n    console.log('Clicked on node:', target.id);\n  } else if (targetType === 'edge') {\n    console.log('Clicked on edge:', target.id);\n  } else {\n    console.log('Clicked on canvas blank area');\n  }\n});\n",
+        "paraId": 45,
+        "tocIndex": 34
+    },
+    {
+        "value": "Most event callback functions receive an event object containing the following common properties:",
+        "paraId": 46,
+        "tocIndex": 35
+    },
+    {
+        "value": "target",
+        "paraId": 47,
+        "tocIndex": 35
+    },
+    {
+        "value": " - The element that triggered the event",
+        "paraId": 47,
+        "tocIndex": 35
+    },
+    {
+        "value": "targetType",
+        "paraId": 47,
+        "tocIndex": 35
+    },
+    {
+        "value": " - The type of the element that triggered the event (node/edge/combo/canvas)",
+        "paraId": 47,
+        "tocIndex": 35
+    },
+    {
+        "value": "originalTarget",
+        "paraId": 47,
+        "tocIndex": 35
+    },
+    {
+        "value": " - The original graphic that triggered the event",
+        "paraId": 47,
+        "tocIndex": 35
+    },
+    {
+        "value": "currentTarget",
+        "paraId": 47,
+        "tocIndex": 35
+    },
+    {
+        "value": " - The current object that triggered the event",
+        "paraId": 47,
+        "tocIndex": 35
+    },
+    {
+        "value": "originalEvent",
+        "paraId": 47,
+        "tocIndex": 35
+    },
+    {
+        "value": " - The original browser event object",
+        "paraId": 47,
+        "tocIndex": 35
+    },
+    {
+        "value": "With these properties, you can precisely control interactive behavior.",
+        "paraId": 48,
+        "tocIndex": 35
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_api_event_en_md_q_hK4X-async.js.map

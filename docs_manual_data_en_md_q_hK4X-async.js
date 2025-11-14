@@ -1,0 +1,811 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/data.en.md?type=text'],
+{ "docs/manual/data.en.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/data.en.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "G6 is a data-driven charting library, where data is one of the most important concepts. In G6, data is the core of the chart, and both display and interaction are based on data.",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "Common graph data formats include:CSV, ",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "DOT",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": ", GDF, GML, ",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "GraphML",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": ", ",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "GEXF",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": " etc。",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "G6 uses JSON format to describe the graph structure, which includes information about nodes and edges. Here is a simple JSON data example:",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "{\n  \"nodes\": [{ \"id\": \"node1\" }, { \"id\": \"node2\" }],\n  \"edges\": [{ \"source\": \"node1\", \"target\": \"node2\" }]\n}\n",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": "Compared to the other formats mentioned above, the JSON format has a more intuitive and understandable data structure. It is also more flexible, allowing for easy expansion of node and edge attributes.",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": "It is a data exchange format widely supported by computers, so you do not have to worry about data format compatibility issues.",
+        "paraId": 5,
+        "tocIndex": 0
+    },
+    {
+        "value": "In G6, graph data consists of three parts: ",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "nodes",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": " (node data), ",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "edges",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": " (edge data), and ",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "combos",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": " (combo data). Each part corresponds to different elements in the graph, and their types and data determine how the graph is displayed.",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "interface GraphData {\n  nodes: NodeData[]; // Node data\n  edges?: EdgeData[]; // Edge data (optional)\n  combos?: ComboData[]; // Combo data (optional)\n}\n",
+        "paraId": 7,
+        "tocIndex": 1
+    },
+    {
+        "value": "A node is the basic building block of a graph and represents an entity within the graph. Each node has a unique ",
+        "paraId": 8,
+        "tocIndex": 2
+    },
+    {
+        "value": "id",
+        "paraId": 8,
+        "tocIndex": 2
+    },
+    {
+        "value": " used to identify it, and nodes can also have data, styles, and states.",
+        "paraId": 8,
+        "tocIndex": 2
+    },
+    {
+        "value": "Attribute",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Type",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Description",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Required",
+        "paraId": 10,
+        "tocIndex": 2
+    },
+    {
+        "value": " id",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "string",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Unique identifier for the node, used to distinguish different nodes",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "type",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "string",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Node type. It can be the type of built-in Node, or the custom Node",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "data",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Object",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Custom data for the node, such as name, description, etc. Can be accessed in style mappings via callback functions",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "style",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Object",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Node style, including position, size, color, and other visual properties",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "states",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "string[]",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Initial states for the node, such as selected, active, hover, etc.",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "combo",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "string",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": " | ",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "null",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "ID of the combo the node belongs to. Used to organize hierarchical relationships. If none, it is null",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "children",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "string[]",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Collection of child node IDs, used only in tree diagrams",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Example:",
+        "paraId": 11,
+        "tocIndex": 2
+    },
+    {
+        "value": "{\n  \"id\": \"node-1\",\n  \"type\": \"circle\",\n  \"data\": { \"name\": \"alice\", \"role\": \"Admin\" },\n  \"style\": { \"x\": 100, \"y\": 200, \"size\": 32, \"fill\": \"violet\" },\n  \"states\": [\"selected\"],\n  \"combo\": null\n}\n",
+        "paraId": 12,
+        "tocIndex": 2
+    },
+    {
+        "value": "An edge connects nodes and represents the relationship between them. Each edge is associated with two nodes (source and target), and edges themselves can have data, styles, and states. Edge data is often used to represent logical relationships, such as user connections in social networks or step flows in flowcharts.",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": "Attribute",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Type",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Description",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Required",
+        "paraId": 15,
+        "tocIndex": 3
+    },
+    {
+        "value": " source",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "string",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Source node ID",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Required",
+        "paraId": 16,
+        "tocIndex": 3
+    },
+    {
+        "value": " target",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "string",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Target node ID",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "id",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "string",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Unique identifier for the edge. If not specified, ",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "id",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": " is automatically generated with the format ",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "${source}-${target}",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "type",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "string",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Edge type.It can be the type of built-in Edge, or the custom Edge",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "data",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Object",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Custom data for the edge, accessible in style mappings via callback functions",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "style",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Object",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Edge style, including stroke color, line width, arrowhead, etc.",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "states",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "string[]",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Initial states for the edge",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "Example:",
+        "paraId": 17,
+        "tocIndex": 3
+    },
+    {
+        "value": "{\n  \"source\": \"alice\",\n  \"target\": \"bob\",\n  \"type\": \"line\",\n  \"data\": { \"relationship\": \"friend\", \"strength\": 5 },\n  \"style\": { \"stroke\": \"green\", \"lineWidth\": 2 },\n  \"states\": [\"hover\"]\n}\n",
+        "paraId": 18,
+        "tocIndex": 3
+    },
+    {
+        "value": "Combos allow you to create a logical unit for multiple nodes, used for layering, grouping, or other structural purposes. A combo can contain child nodes or other combos, forming a nested structure.",
+        "paraId": 19,
+        "tocIndex": 4
+    },
+    {
+        "value": "Attribute",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Type",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Description",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Required",
+        "paraId": 21,
+        "tocIndex": 4
+    },
+    {
+        "value": " id",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Unique identifier for the combo",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "type",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Combo type.It can be the type of built-in Combo, or the custom Combo",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "data",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Object",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Custom data for the combo, accessible in style mappings via callback functions",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "style",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Object",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Combo style",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "states",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "string[]",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Initial states for the combo",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "combo",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "null",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Parent combo ID. If there is no parent combo, it is null",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "Example:",
+        "paraId": 22,
+        "tocIndex": 4
+    },
+    {
+        "value": "{\n  \"id\": \"combo1\",\n  \"type\": \"circle\",\n  \"data\": { \"groupName\": \"Group A\" },\n  \"style\": { \"fill\": \"lightblue\", \"stroke\": \"blue\", \"collapsed\": true },\n  \"states\": [],\n  \"combo\": null\n}\n",
+        "paraId": 23,
+        "tocIndex": 4
+    },
+    {
+        "value": "To ensure correct rendering and interaction of the graph, it is recommended to organize the data according to G6's standard data structure. Each element (node, edge, combo) should contain a ",
+        "paraId": 24,
+        "tocIndex": 5
+    },
+    {
+        "value": "data",
+        "paraId": 24,
+        "tocIndex": 5
+    },
+    {
+        "value": " field to store business data and custom properties.",
+        "paraId": 24,
+        "tocIndex": 5
+    },
+    {
+        "value": "Avoid using identifiers that conflict with internal G6 field names",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": ", such as ",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": "id",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": ", ",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": "type",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": ", ",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": "style",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": ", etc., to prevent naming conflicts.",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": "Store business data (such as user information, social network relationships, etc.) in the ",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": "data",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": " field. This ensures flexibility and scalability of the data.",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": "Example:",
+        "paraId": 26,
+        "tocIndex": 5
+    },
+    {
+        "value": "{\n  \"nodes\": [\n    {\n      \"id\": \"node1\",\n      \"data\": { \"name\": \"Alice\", \"role\": \"Admin\" }\n    },\n    {\n      \"id\": \"node2\",\n      \"data\": { \"name\": \"Bob\", \"role\": \"User\" }\n    }\n  ],\n  \"edges\": [\n    {\n      \"source\": \"node1\",\n      \"target\": \"node2\",\n      \"data\": { \"relationship\": \"friend\" }\n    }\n  ]\n}\n",
+        "paraId": 27,
+        "tocIndex": 5
+    },
+    {
+        "value": "G6 provides a series of APIs to access and manipulate data, including:",
+        "paraId": 28,
+        "tocIndex": 6
+    },
+    {
+        "value": "getData",
+        "paraId": 29,
+        "tocIndex": 6
+    },
+    {
+        "value": "setData",
+        "paraId": 30,
+        "tocIndex": 6
+    },
+    {
+        "value": "getNodeData",
+        "paraId": 31,
+        "tocIndex": 6
+    },
+    {
+        "value": "getEdgeData",
+        "paraId": 32,
+        "tocIndex": 6
+    },
+    {
+        "value": "getComboData",
+        "paraId": 33,
+        "tocIndex": 6
+    },
+    {
+        "value": "addData",
+        "paraId": 34,
+        "tocIndex": 6
+    },
+    {
+        "value": "addNodeData",
+        "paraId": 35,
+        "tocIndex": 6
+    },
+    {
+        "value": "addEdgeData",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "addComboData",
+        "paraId": 37,
+        "tocIndex": 6
+    },
+    {
+        "value": "updateData",
+        "paraId": 38,
+        "tocIndex": 6
+    },
+    {
+        "value": "updateNodeData",
+        "paraId": 39,
+        "tocIndex": 6
+    },
+    {
+        "value": "updateEdgeData",
+        "paraId": 40,
+        "tocIndex": 6
+    },
+    {
+        "value": "updateComboData",
+        "paraId": 41,
+        "tocIndex": 6
+    },
+    {
+        "value": "removeData",
+        "paraId": 42,
+        "tocIndex": 6
+    },
+    {
+        "value": "removeNodeData",
+        "paraId": 43,
+        "tocIndex": 6
+    },
+    {
+        "value": "removeEdgeData",
+        "paraId": 44,
+        "tocIndex": 6
+    },
+    {
+        "value": "removeComboData",
+        "paraId": 45,
+        "tocIndex": 6
+    },
+    {
+        "value": "Through different APIs, you can conveniently access and manipulate graph data, performing operations such as adding, deleting, modifying, and querying the graph.",
+        "paraId": 46,
+        "tocIndex": 6
+    },
+    {
+        "value": "G6 does not provide functionality for data retrieval and parsing. For local JSON data, you can directly import and use it as follows:",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": "import data from './path/to/data.json' assert { type: 'json' };\n",
+        "paraId": 48,
+        "tocIndex": 7
+    },
+    {
+        "value": "For remote data, you can use ",
+        "paraId": 49,
+        "tocIndex": 7
+    },
+    {
+        "value": "fetch",
+        "paraId": 49,
+        "tocIndex": 7
+    },
+    {
+        "value": " or other networking libraries to retrieve the data:",
+        "paraId": 49,
+        "tocIndex": 7
+    },
+    {
+        "value": "fetch('https://path/to/data.json')\n  .then((res) => res.json())\n  .then((data) => {\n    // Use data\n  });\n",
+        "paraId": 50,
+        "tocIndex": 7
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_data_en_md_q_hK4X-async.js.map

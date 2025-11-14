@@ -1,0 +1,641 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/transform/MapNodeSize.zh.md?type=text'],
+{ "docs/manual/transform/MapNodeSize.zh.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/transform/MapNodeSize.zh.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "在图可视化中，节点的大小通常用于传达节点的重要性或影响力。通过根据节点中心性调整节点的大小，我们可以更直观地展示网络中各个节点的重要性，从而帮助用户更好地理解和分析复杂的网络结构。",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "需要通过节点大小来突出节点的重要性和影响力时，可使用此数据处理。",
+        "paraId": 1,
+        "tocIndex": 1
+    },
+    {
+        "value": "以下为常见的场景：",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "社交网络分析",
+        "paraId": 3,
+        "tocIndex": 1
+    },
+    {
+        "value": "：比如分析社交媒体平台中用户的活跃度与影响力，通过节点大小突出高互动用户。",
+        "paraId": 3,
+        "tocIndex": 1
+    },
+    {
+        "value": "金融风险传导网络",
+        "paraId": 4,
+        "tocIndex": 1
+    },
+    {
+        "value": "：比如识别金融系统中承担关键资金流转职能的机构，预防系统性风险。",
+        "paraId": 4,
+        "tocIndex": 1
+    },
+    {
+        "value": "交通枢纽规划",
+        "paraId": 5,
+        "tocIndex": 1
+    },
+    {
+        "value": "：比如优化城市地铁网络设计，识别换乘压力点。",
+        "paraId": 5,
+        "tocIndex": 1
+    },
+    {
+        "value": "属性",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "描述",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "类型",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "默认值",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "必选",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "type",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "数据处理类型",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "map-node-size",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "-",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "✓",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "centrality",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "节点中心性的度量方法，",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "配置项",
+        "paraId": 7,
+        "tocIndex": 2
+    },
+    {
+        "value": "NodeCentralityOptions",
+        "paraId": 8,
+        "tocIndex": 2
+    },
+    {
+        "value": " | ((graphData: ",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "GraphData",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": ") => Map<string, number>)",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "{ type: 'degree' }",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "mapLabelSize",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "是否同步调整标签大小",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "boolean | [number, number]",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "false",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "maxSize",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "节点最大尺寸",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "number | [number, number] | [number, number, number]",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "80",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "minSize",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "节点最小尺寸",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "number | [number, number] | [number, number, number]",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "20",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "scale",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "插值函数，用于将节点中心性映射到节点大小，",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "配置项",
+        "paraId": 10,
+        "tocIndex": 2
+    },
+    {
+        "value": "linear",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": " | ",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "log",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": " | ",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "pow",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": " | ",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "sqrt",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": " | ((value: number, domain: [number, number], range: [number, number]) => number)",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "log",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "节点中心性的度量方法",
+        "paraId": 11,
+        "tocIndex": 3
+    },
+    {
+        "value": "'degree'",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "：度中心性，通过节点的度数（连接的边的数量）来衡量其重要性。度中心性高的节点通常具有较多的直接连接，在网络中可能扮演着重要的角色",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "'betweenness'",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "：介数中心性，通过节点在所有最短路径中出现的次数来衡量其重要性。介数中心性高的节点通常在网络中起到桥梁作用，控制着信息的流动",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "'closeness'",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "：接近中心性，通过节点到其他所有节点的最短路径长度总和的倒数来衡量其重要性。接近中心性高的节点通常能够更快地到达网络中的其他节点",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "'eigenvector'",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "：特征向量中心性，通过节点与其他中心节点的连接程度来衡量其重要性。特征向量中心性高的节点通常连接着其他重要节点",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "'pagerank'",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "：PageRank 中心性，通过节点被其他节点引用的次数来衡量其重要性，常用于有向图。PageRank 中心性高的节点通常在网络中具有较高的影响力，类似于网页排名算法",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "自定义中心性计算方法：",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "(graphData: GraphData) => Map<ID, number>",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "，其中 ",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "graphData",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": " 为图数据，",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "Map<ID, number>",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": " 为节点 ID 到中心性值的映射",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "示例：",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": "const graph = new Graph({\n  // 其他配置...\n  transforms: [\n    {\n      type: 'map-node-size',\n      centrality: {\n        type: 'degree',\n        direction: 'both',\n      },\n    },\n  ],\n});\n",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "效果如下（可切换度量方法查看不同效果，示例中节点 label 为",
+        "paraId": 15,
+        "tocIndex": 3
+    },
+    {
+        "value": "${节点 id } - ${节点大小}",
+        "paraId": 15,
+        "tocIndex": 3
+    },
+    {
+        "value": "）：",
+        "paraId": 15,
+        "tocIndex": 3
+    },
+    {
+        "value": "createGraph(\n  {\n    autoFit: 'center',\n    data: {\n      nodes: [{ id: 'node1' }, { id: 'node2' }, { id: 'node3' }, { id: 'node4' }, { id: 'node5' }],\n      edges: [\n        { source: 'node1', target: 'node2' },\n        { source: 'node2', target: 'node3' },\n        { source: 'node3', target: 'node4' },\n        { source: 'node4', target: 'node5' },\n        { source: 'node1', target: 'node4' },\n        { source: 'node1', target: 'node3' },\n      ],\n    },\n    node: {\n      type: 'circle',\n      style: {\n        labelText: (d) => d.id + ' - ' + d.style.size[0].toFixed(0),\n      },\n    },\n    layout: {\n      type: 'circular',\n      radius: 180,\n    },\n    behaviors: ['drag-canvas'],\n    transforms: [\n      {\n        key: 'map-node-size',\n        type: 'map-node-size',\n        centrality: {\n          type: 'pagerank',\n        },\n      },\n    ],\n  },\n  { width: 600, height: 460 },\n  (gui, graph) => {\n    const options = {\n      type: 'degree',\n    };\n    const optionFolder = gui.addFolder('Centrality Options');\n    optionFolder.add(options, 'type', ['degree', 'betweenness', 'closeness', 'eigenvector', 'pagerank']);\n    optionFolder.onChange(async ({ property, value }) => {\n      graph.updateTransform({\n        key: 'map-node-size',\n        centrality: {\n          [property]: value,\n        },\n      });\n      graph.render();\n    });\n  },\n);\n",
+        "paraId": 16,
+        "tocIndex": 3
+    },
+    {
+        "value": "type NodeCentralityOptions =\n  | { type: 'degree'; direction?: 'in' | 'out' | 'both' }\n  | { type: 'betweenness'; directed?: boolean; weightPropertyName?: string }\n  | { type: 'closeness'; directed?: boolean; weightPropertyName?: string }\n  | { type: 'eigenvector'; directed?: boolean }\n  | { type: 'pagerank'; epsilon?: number; linkProb?: number };\n",
+        "paraId": 17,
+        "tocIndex": 4
+    },
+    {
+        "value": "direction",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": "：表示统计哪些方向的边，",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": "in",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": " -入边、 ",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": "out",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": " -出边、 ",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": "both",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": " -入边和出边都考虑进去",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": "directed",
+        "paraId": 19,
+        "tocIndex": 4
+    },
+    {
+        "value": "：是否为有向图",
+        "paraId": 19,
+        "tocIndex": 4
+    },
+    {
+        "value": "weightPropertyName",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "：边的权重属性名",
+        "paraId": 20,
+        "tocIndex": 4
+    },
+    {
+        "value": "epsilon",
+        "paraId": 21,
+        "tocIndex": 4
+    },
+    {
+        "value": "：PageRank 算法的收敛容差",
+        "paraId": 21,
+        "tocIndex": 4
+    },
+    {
+        "value": "linkProb",
+        "paraId": 22,
+        "tocIndex": 4
+    },
+    {
+        "value": "：PageRank 算法的阻尼系数，指任意时刻，用户访问到某节点后继续访问该节点链接的下一个节点的概率，经验值 0.85",
+        "paraId": 22,
+        "tocIndex": 4
+    },
+    {
+        "value": "'linear'",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "：线性插值函数，将一个值从一个范围线性映射到另一个范围，常用于处理中心性值的差异较小的情况",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "'log'",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "：对数插值函数，将一个值从一个范围对数映射到另一个范围，常用于处理中心性值的差异较大的情况",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "'pow'",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "：幂律插值函数，将一个值从一个范围幂律映射到另一个范围，常用于处理中心性值的差异较大的情况",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "'sqrt'",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "：平方根插值函数，将一个值从一个范围平方根映射到另一个范围，常用于处理中心性值的差异较大的情况",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "自定义插值函数：",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "(value: number, domain: [number, number], range: [number, number]) => number",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "，其中 ",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "value",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": " 为需要映射的值，",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "domain",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": " 为输入值的范围，",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "range",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": " 为输出值的范围",
+        "paraId": 23,
+        "tocIndex": 5
+    },
+    {
+        "value": "示例：",
+        "paraId": 24,
+        "tocIndex": 5
+    },
+    {
+        "value": "const graph = new Graph({\n  // 其他配置...\n  transforms: [\n    {\n      type: 'map-node-size',\n      centrality: {\n        type: 'degree',\n      },\n      scale: 'linear',\n    },\n  ],\n});\n",
+        "paraId": 25,
+        "tocIndex": 5
+    },
+    {
+        "value": "效果如下（该示例为基于度中心性 ",
+        "paraId": 26,
+        "tocIndex": 5
+    },
+    {
+        "value": "degree",
+        "paraId": 26,
+        "tocIndex": 5
+    },
+    {
+        "value": " ，可切换插值函数查看不同效果，示例中节点 label 为",
+        "paraId": 26,
+        "tocIndex": 5
+    },
+    {
+        "value": "${节点 id } - ${节点大小}",
+        "paraId": 26,
+        "tocIndex": 5
+    },
+    {
+        "value": "）：",
+        "paraId": 26,
+        "tocIndex": 5
+    },
+    {
+        "value": "createGraph(\n  {\n    autoFit: 'center',\n    data: {\n      nodes: [\n        { id: 'node1' },\n        { id: 'node2' },\n        { id: 'node3' },\n        { id: 'node4' },\n        { id: 'node5' },\n        { id: 'node6' },\n        { id: 'node7' },\n      ],\n      edges: [\n        { source: 'node1', target: 'node2' },\n        { source: 'node1', target: 'node3' },\n        { source: 'node1', target: 'node4' },\n        { source: 'node2', target: 'node5' },\n        { source: 'node3', target: 'node6' },\n        { source: 'node4', target: 'node7' },\n      ],\n    },\n    node: {\n      type: 'circle',\n      style: {\n        labelText: (d) => d.id + ' - ' + d.style.size[0].toFixed(0),\n      },\n    },\n    layout: {\n      type: 'antv-dagre',\n    },\n    behaviors: ['drag-canvas'],\n    transforms: [\n      {\n        key: 'map-node-size',\n        type: 'map-node-size',\n        centrality: {\n          type: 'degree',\n        },\n        scale: 'log',\n      },\n    ],\n  },\n  { width: 600, height: 400 },\n  (gui, graph) => {\n    const options = {\n      scale: 'log',\n    };\n    const optionFolder = gui.addFolder('MapNodeSize Options');\n    optionFolder.add(options, 'scale', ['log', 'linear', 'pow', 'sqrt']);\n    optionFolder.onChange(async ({ property, value }) => {\n      graph.updateTransform({\n        key: 'map-node-size',\n        [property]: value,\n      });\n      graph.render();\n    });\n  },\n);\n",
+        "paraId": 27,
+        "tocIndex": 5
+    },
+    {
+        "value": "场景案例：独角兽和他们的投资者",
+        "paraId": 28,
+        "tocIndex": 6
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_transform_MapNodeSize_zh_md_q_hK4X-async.js.map

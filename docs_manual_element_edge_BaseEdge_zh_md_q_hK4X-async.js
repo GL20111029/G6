@@ -1,0 +1,4725 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/element/edge/BaseEdge.zh.md?type=text'],
+{ "docs/manual/element/edge/BaseEdge.zh.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/element/edge/BaseEdge.zh.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "本文介绍内置边通用属性配置。",
+        "paraId": 0
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  edge: {\n    type: 'line', // 边类型\n    style: {}, // 边样式\n    state: {}, // 状态样式\n    palette: {}, // 色板配置\n    animation: {}, // 动画配置\n  },\n});\n",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "属性",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "描述",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "类型",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "默认值",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "必选",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "type",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "边类型，内置边类型名称或自定义边的名称",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Type",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": "line",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "style",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "边样式配置，包括颜色、粗细等",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Style",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": "-",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "state",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "不同状态下的样式配置",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "State",
+        "paraId": 5,
+        "tocIndex": 0
+    },
+    {
+        "value": "-",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "palette",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "定义边的色板，用于根据不同数据映射颜色",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Palette",
+        "paraId": 6,
+        "tocIndex": 0
+    },
+    {
+        "value": "-",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "animation",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "定义边的动画效果",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Animation",
+        "paraId": 7,
+        "tocIndex": 0
+    },
+    {
+        "value": "-",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "指定边类型，内置边类型名称或自定义边的名称。默认为 ",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": "line",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": "（直线边）。",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": "⚠️ 注意",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": "：这里决定了主图形的形状。",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    type: 'polyline',\n  },\n});\n",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "⚠️ 动态配置说明",
+        "paraId": 10,
+        "tocIndex": 1
+    },
+    {
+        "value": "：",
+        "paraId": 10,
+        "tocIndex": 1
+    },
+    {
+        "value": "type",
+        "paraId": 10,
+        "tocIndex": 1
+    },
+    {
+        "value": " 属性同样支持动态配置，可以根据边数据动态选择边类型：",
+        "paraId": 10,
+        "tocIndex": 1
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    // 静态配置\n    type: 'line',\n\n    // 动态配置 - 箭头函数形式\n    type: (datum) => datum.data.edgeType || 'line',\n\n    // 动态配置 - 普通函数形式（可访问 graph 实例）\n    type: function (datum) {\n      console.log(this); // graph 实例\n      return datum.data.importance > 5 ? 'polyline' : 'line';\n    },\n  },\n});\n",
+        "paraId": 11,
+        "tocIndex": 1
+    },
+    {
+        "value": "可选值有：",
+        "paraId": 12,
+        "tocIndex": 1
+    },
+    {
+        "value": "line",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "：",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "直线边",
+        "paraId": 14,
+        "tocIndex": 1
+    },
+    {
+        "value": "polyline",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "：",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "折线边",
+        "paraId": 15,
+        "tocIndex": 1
+    },
+    {
+        "value": "cubic",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "：",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "三次贝塞尔曲线边",
+        "paraId": 16,
+        "tocIndex": 1
+    },
+    {
+        "value": "cubic-horizontal",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "：",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "水平三次贝塞尔曲线边",
+        "paraId": 17,
+        "tocIndex": 1
+    },
+    {
+        "value": "cubic-vertical",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "：",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "垂直三次贝塞尔曲线边",
+        "paraId": 18,
+        "tocIndex": 1
+    },
+    {
+        "value": "quadratic",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "：",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "二次贝塞尔曲线边",
+        "paraId": 19,
+        "tocIndex": 1
+    },
+    {
+        "value": "定义边的样式，包括颜色、粗细等。",
+        "paraId": 20,
+        "tocIndex": 2
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    style: {},\n  },\n});\n",
+        "paraId": 21,
+        "tocIndex": 2
+    },
+    {
+        "value": "⚠️ 动态配置说明",
+        "paraId": 22,
+        "tocIndex": 2
+    },
+    {
+        "value": "：以下所有样式属性都支持动态配置，即可以传入函数来根据边数据动态计算属性值：",
+        "paraId": 22,
+        "tocIndex": 2
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    style: {\n      // 静态配置\n      stroke: '#1783FF',\n\n      // 动态配置 - 箭头函数形式\n      lineWidth: (datum) => (datum.data.isImportant ? 3 : 1),\n\n      // 动态配置 - 普通函数形式（可访问 graph 实例）\n      lineDash: function (datum) {\n        console.log(this); // graph 实例\n        return datum.data.type === 'dashed' ? [5, 5] : [];\n      },\n\n      // 嵌套属性也支持动态配置\n      labelText: (datum) => `边: ${datum.id}`,\n      endArrow: (datum) => datum.data.hasArrow,\n    },\n  },\n});\n",
+        "paraId": 23,
+        "tocIndex": 2
+    },
+    {
+        "value": "其中 ",
+        "paraId": 24,
+        "tocIndex": 2
+    },
+    {
+        "value": "datum",
+        "paraId": 24,
+        "tocIndex": 2
+    },
+    {
+        "value": " 参数为边数据对象 (",
+        "paraId": 24,
+        "tocIndex": 2
+    },
+    {
+        "value": "EdgeData",
+        "paraId": 24,
+        "tocIndex": 2
+    },
+    {
+        "value": ")，包含边的所有数据信息。",
+        "paraId": 24,
+        "tocIndex": 2
+    },
+    {
+        "value": "一个完整的边由以下几部分构成：",
+        "paraId": 25,
+        "tocIndex": 2
+    },
+    {
+        "value": "key",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": " ：边的主图形，表示边的主要路径，例如直线、曲线等；",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "label",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": " ：文本标签，通常用于展示边的名称或描述；",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "badge",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": " ：边上的徽标；",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "halo",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": " ：主图形周围展示的光晕效果的图形；",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "startArrow",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": " ：边起始端的箭头；",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "endArrow",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": " ：边结束端的箭头。",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "以下样式配置将按原子图形依次说明：",
+        "paraId": 27,
+        "tocIndex": 2
+    },
+    {
+        "value": "主图形是边的核心部分，定义了边的基本路径和外观。以下是常见的配置场景：",
+        "paraId": 28,
+        "tocIndex": 3
+    },
+    {
+        "value": "设置边的基本外观：",
+        "paraId": 29,
+        "tocIndex": 4
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 40 } },\n      { id: 'node2', style: { x: 180, y: 40 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#5B8FF9', // 蓝色边\n      lineWidth: 2, // 边宽度\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 30,
+        "tocIndex": 4
+    },
+    {
+        "value": "创建带虚线样式的边：",
+        "paraId": 31,
+        "tocIndex": 5
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 40 } },\n      { id: 'node2', style: { x: 180, y: 40 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#F5222D',\n      lineWidth: 2,\n      lineDash: [6, 4], // 虚线样式\n      lineDashOffset: 0,\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 32,
+        "tocIndex": 5
+    },
+    {
+        "value": "为边添加阴影效果：",
+        "paraId": 33,
+        "tocIndex": 6
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 40 } },\n      { id: 'node2', style: { x: 180, y: 40 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#722ED1',\n      lineWidth: 3,\n      shadowColor: 'rgba(114, 46, 209, 0.3)',\n      shadowBlur: 8,\n      shadowOffsetX: 2,\n      shadowOffsetY: 2,\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 34,
+        "tocIndex": 6
+    },
+    {
+        "value": "以下为完整的主图形样式配置：",
+        "paraId": 35,
+        "tocIndex": 6
+    },
+    {
+        "value": "属性",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "描述",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "类型",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "默认值",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "必选",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "cursor",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边鼠标移入样式，",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "配置项",
+        "paraId": 37,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "default",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "increasedLineWidthForHitTesting",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "当 lineWidth 较小时，可交互区域也随之变小，有时我们想增大这个区域，让\"细线\"更容易被拾取到",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "0",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "lineDash",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边虚线样式",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number[]",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "lineDashOffset",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边虚线偏移量",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "0",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "lineWidth",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边宽度",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "1",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "opacity",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边透明度",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number | string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "1",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "pointerEvents",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边如何响应指针事件，",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "配置项",
+        "paraId": 38,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "auto",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "shadowBlur",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边阴影模糊度",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "shadowColor",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边阴影颜色",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "shadowOffsetX",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边阴影在 x 轴方向上的偏移量",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number | string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "shadowOffsetY",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边阴影在 y 轴方向上的偏移量",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number | string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "shadowType",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边阴影类型",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "inner",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": " | ",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "outer",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "outer",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "sourcePort",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边起始连接的连接桩",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "stroke",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边颜色",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "#000",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "strokeOpacity",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边颜色透明度",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number | string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "1",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "targetPort",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边终点连接的连接桩",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "transform",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "transform 属性允许你旋转、缩放、倾斜或平移给定边",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "transformOrigin",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "旋转与缩放中心，也称作变换中心",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "visibility",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边是否可见",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "visible",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": " | ",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "hidden",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "visible",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "zIndex",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "边渲染层级",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "1",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "pointerEvents",
+        "paraId": 39,
+        "tocIndex": 7
+    },
+    {
+        "value": " 属性控制图形如何响应交互事件，可参考 ",
+        "paraId": 39,
+        "tocIndex": 7
+    },
+    {
+        "value": "MDN 文档",
+        "paraId": 39,
+        "tocIndex": 7
+    },
+    {
+        "value": "。",
+        "paraId": 39,
+        "tocIndex": 7
+    },
+    {
+        "value": "可选值有：",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblepainted",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblestroke",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "non-transparent-pixel",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblefill",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "painted",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "fill",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "all",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "none",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "auto",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "inherit",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "initial",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "unset",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "简而言之，",
+        "paraId": 41,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 41,
+        "tocIndex": 7
+    },
+    {
+        "value": " 和 ",
+        "paraId": 41,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 41,
+        "tocIndex": 7
+    },
+    {
+        "value": " 都可以独立或组合影响拾取判定行为。目前支持以下关键词：",
+        "paraId": 41,
+        "tocIndex": 7
+    },
+    {
+        "value": "auto",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "：默认值，等同于 ",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblepainted",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "none",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "：永远不会成为响应事件的目标",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblepainted",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "：满足以下条件才会响应事件：\n",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": " 设置为 ",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "，即图形为可见的",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "在图形描边区域触发同时 ",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": " 取非 ",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "none",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": " 的值",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblestroke",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "：满足以下条件才会响应事件：\n",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": " 设置为 ",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": "，即图形为可见的",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": "在图形描边区域触发，不受 ",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": " 取值的影响",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "：满足以下条件才会响应事件：\n",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": " 设置为 ",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": "，即图形为可见的",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": "在图形描边区域触发，不受 ",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": " 取值的影响",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": "painted",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "：满足以下条件才会响应事件：\n",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "在图形描边区域触发同时 ",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": " 取非 ",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": "none",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": " 的值",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": "不受 ",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": " 取值的影响",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "：满足以下条件才会响应事件：\n",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "在图形描边区域触发，不受 ",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": " 取值的影响",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": "不受 ",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": " 取值的影响",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": "all",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "：只要进入图形的描边区域就会响应事件，不会受 ",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "、",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": " 的取值影响",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "使用示例：",
+        "paraId": 48,
+        "tocIndex": 7
+    },
+    {
+        "value": "// 示例1：只有描边区域响应事件\nconst graph = new Graph({\n  edge: {\n    style: {\n      stroke: '#000',\n      lineWidth: 2,\n      pointerEvents: 'stroke', // 只有描边响应事件\n    },\n  },\n});\n\n// 示例2：完全不响应事件\nconst graph = new Graph({\n  edge: {\n    style: {\n      pointerEvents: 'none', // 边不响应任何事件\n    },\n  },\n});\n",
+        "paraId": 49,
+        "tocIndex": 7
+    },
+    {
+        "value": "可选值有：",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "auto",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "default",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "none",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "context-menu",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "help",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "pointer",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "progress",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "wait",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "cell",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "crosshair",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "text",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "vertical-text",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "alias",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "copy",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "move",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "no-drop",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "not-allowed",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "grab",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "grabbing",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "all-scroll",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "col-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "row-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "n-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "e-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "s-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "w-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "ne-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "nw-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "se-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "sw-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "ew-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "ns-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "nesw-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "nwse-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "zoom-in",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "zoom-out",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "标签用于显示边的文本信息，支持多种样式配置和布局方式。以下是常见的使用场景：",
+        "paraId": 51,
+        "tocIndex": 9
+    },
+    {
+        "value": "最简单的文本标签配置：",
+        "paraId": 52,
+        "tocIndex": 10
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 120,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 60 } },\n      { id: 'node2', style: { x: 180, y: 60 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      labelText: '边标签',\n      labelFill: '#262626',\n      labelFontSize: 12,\n      labelPlacement: 'center',\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 53,
+        "tocIndex": 10
+    },
+    {
+        "value": "当文本较长时，可以设置自动换行：",
+        "paraId": 54,
+        "tocIndex": 11
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 120,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 60 } },\n      { id: 'node2', style: { x: 180, y: 60 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      labelText: '这是一个很长的边标签需要换行显示',\n      labelWordWrap: true,\n      labelMaxWidth: '200%',\n      labelMaxLines: 2,\n      labelTextOverflow: 'ellipsis',\n      labelFill: '#434343',\n      labelPlacement: 'center',\n      labelTextAlign: 'center',\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 55,
+        "tocIndex": 11
+    },
+    {
+        "value": "为标签添加背景，提高可读性：",
+        "paraId": 56,
+        "tocIndex": 12
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 120,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 60 } },\n      { id: 'node2', style: { x: 180, y: 60 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      labelText: '重要连接',\n      labelBackground: true,\n      labelBackgroundFill: 'rgba(250, 140, 22, 0.1)',\n      labelBackgroundRadius: 6,\n      labelPadding: [4, 8],\n      labelFill: '#D4380D',\n      labelFontWeight: 'bold',\n      labelPlacement: 'center',\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 57,
+        "tocIndex": 12
+    },
+    {
+        "value": "标签可以自动旋转以保持与边方向一致：",
+        "paraId": 58,
+        "tocIndex": 13
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 120,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 30 } },\n      { id: 'node2', style: { x: 180, y: 90 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      labelText: '自动旋转',\n      labelAutoRotate: true, // 自动旋转\n      labelFill: '#1890FF',\n      labelFontWeight: 'bold',\n      labelPlacement: 'center',\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 59,
+        "tocIndex": 13
+    },
+    {
+        "value": "以下为完整的标签样式配置：",
+        "paraId": 60,
+        "tocIndex": 13
+    },
+    {
+        "value": "属性",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "描述",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "类型",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "默认值",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "必选",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "label",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签是否显示",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "boolean",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "true",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelAutoRotate",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签是否自动旋转，保持与边的方向一致",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "boolean",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "true",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelCursor",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "鼠标移入边标签时显示的样式，",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "配置项",
+        "paraId": 62,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "default",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFill",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签文字颜色",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFontFamily",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签字体族",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFontSize",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签字体大小",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "12",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFontStyle",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签字体样式",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "normal",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "italic",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "oblique",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFontVariant",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签字体变种",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "normal",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "small-caps",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFontWeight",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签字体粗细",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "normal",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "bold",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "bolder",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "lighter",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelLeading",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "行间距",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelLetterSpacing",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签字间距",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number | string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelLineHeight",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签行高",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number | string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelMaxLines",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签最大行数",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "1",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelMaxWidth",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签最大宽度，",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "配置项",
+        "paraId": 63,
+        "tocIndex": 13
+    },
+    {
+        "value": "number | string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "200%",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelOffsetX",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签在 x 轴方向上的偏移量",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelOffsetY",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签在 y 轴方向上的偏移量",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelPadding",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签内边距",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number | number[]",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelPlacement",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签相对于边的位置，",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "配置项",
+        "paraId": 64,
+        "tocIndex": 13
+    },
+    {
+        "value": "string | number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "center",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelText",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签文字内容",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "(datum) => string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextAlign",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签文本水平对齐方式",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "start",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "center",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "middle",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "end",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "left",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "right",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "left",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextBaseline",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签文本基线",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "top",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "hanging",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "middle",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "alphabetic",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "ideographic",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "bottom",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextDecorationColor",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签文本装饰线颜色",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextDecorationLine",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签文本装饰线",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextDecorationStyle",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签文本装饰线样式",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "solid",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "double",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "dotted",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "dashed",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "wavy",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextOverflow",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签文本溢出处理方式",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "clip",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "ellipsis",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextPath",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签文本路径",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Path",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelWordWrap",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签是否开启自动折行。开启 labelWordWrap 后，超出 labelMaxWidth 的部分自动换行",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "boolean",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "false",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelZIndex",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签渲染层级",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "边标签相对于边的位置，可以设置为：",
+        "paraId": 65,
+        "tocIndex": 14
+    },
+    {
+        "value": "start",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "：标签位于边的起始位置",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "center",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "：标签位于边的中心位置（默认）",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "end",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "：标签位于边的结束位置",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "number",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "：取值范围为 0-1，表示标签在边上的具体位置比例，0 为起始位置，1 为结束位置",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "开启自动折行 ",
+        "paraId": 67,
+        "tocIndex": 15
+    },
+    {
+        "value": "labelWordWrap",
+        "paraId": 67,
+        "tocIndex": 15
+    },
+    {
+        "value": " 后，超出该宽度则换行:",
+        "paraId": 67,
+        "tocIndex": 15
+    },
+    {
+        "value": "string: 表示以相对于边长度的百分比形式定义最大宽度。例如 ",
+        "paraId": 68,
+        "tocIndex": 15
+    },
+    {
+        "value": "50%",
+        "paraId": 68,
+        "tocIndex": 15
+    },
+    {
+        "value": " 表示标签宽度不超过边长度的一半",
+        "paraId": 68,
+        "tocIndex": 15
+    },
+    {
+        "value": "number: 表示以像素值为单位定义最大宽度。例如 100 表示标签的最大宽度为 100 像素",
+        "paraId": 68,
+        "tocIndex": 15
+    },
+    {
+        "value": "比如，设置多行标签文字：",
+        "paraId": 69,
+        "tocIndex": 15
+    },
+    {
+        "value": "{\n  \"labelWordWrap\": true,\n  \"labelMaxWidth\": 200,\n  \"labelMaxLines\": 3\n}\n",
+        "paraId": 70,
+        "tocIndex": 15
+    },
+    {
+        "value": "标签背景用于显示边标签的背景：",
+        "paraId": 71,
+        "tocIndex": 16
+    },
+    {
+        "value": "属性",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "描述",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "类型",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "默认值",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackground",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景是否显示",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "boolean",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "false",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundCursor",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景鼠标移入样式，",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "配置项",
+        "paraId": 73,
+        "tocIndex": 16
+    },
+    {
+        "value": "string",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "default",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundFill",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景填充色",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "string",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundFillOpacity",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景透明度",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "1",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundHeight",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景高度",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "string | number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundLineDash",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景虚线配置",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number | string |(number | string )[]",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundLineDashOffset",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景虚线偏移量",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundLineWidth",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景描边线宽",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundRadius",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景圆角半径 ",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": " - number: 统一设置四个圆角半径 ",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": " - number[]: 分别设置四个圆角半径，不足则自动补充",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number | number[]",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "0",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundShadowBlur",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景阴影模糊程度",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundShadowColor",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景阴影颜色",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "string",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundShadowOffsetX",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景阴影 X 方向偏移",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundShadowOffsetY",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景阴影 Y 方向偏移",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundStroke",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景描边颜色",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "string",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundStrokeOpacity",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景描边透明度",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number | string",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "1",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundVisibility",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景是否可见",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "visible",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": " | ",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "hidden",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundZIndex",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "边标签背景渲染层级",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "1",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "光晕是围绕边主图形显示的效果，通常用于高亮显示或表示边的特殊状态。",
+        "paraId": 74,
+        "tocIndex": 17
+    },
+    {
+        "value": "为边添加基本的光晕效果：",
+        "paraId": 75,
+        "tocIndex": 18
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 50 } },\n      { id: 'node2', style: { x: 180, y: 50 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      lineWidth: 2,\n      halo: true,\n      haloStroke: '#1890FF',\n      haloLineWidth: 6,\n      haloStrokeOpacity: 0.3,\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 76,
+        "tocIndex": 18
+    },
+    {
+        "value": "以下为完整的光晕样式配置：",
+        "paraId": 77,
+        "tocIndex": 18
+    },
+    {
+        "value": "属性",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "描述",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "类型",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "默认值",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "必选",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "halo",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕是否显示",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "boolean",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "false",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloCursor",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕鼠标移入样式，",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "配置项",
+        "paraId": 79,
+        "tocIndex": 18
+    },
+    {
+        "value": "string",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "default",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloDraggable",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕是否允许拖拽",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "boolean",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "true",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloDroppable",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕是否允许接收被拖拽的元素",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "boolean",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "true",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloFillRule",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕填充规则",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "nonzero",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": " | ",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "evenodd",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "-",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloFilter",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕滤镜",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "string",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "-",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloLineWidth",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕描边宽度",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "number",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "3",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloPointerEvents",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕效果是否响应指针事件，",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "配置项",
+        "paraId": 80,
+        "tocIndex": 18
+    },
+    {
+        "value": "string",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "none",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloStroke",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕描边色，",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "此属性用于设置边周围光晕的颜色",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "string",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "与主图形的描边色 ",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "stroke",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": " 一致",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloStrokeOpacity",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕描边色透明度",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "number",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "0.25",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloVisibility",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕可见性",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "visible",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": " | ",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "hidden",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "visible",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloZIndex",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边光晕渲染层级",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "number",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "-1",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "边支持在起始端和结束端添加箭头，用于表示边的方向性。",
+        "paraId": 81,
+        "tocIndex": 19
+    },
+    {
+        "value": "为边的结束端添加基本箭头：",
+        "paraId": 82,
+        "tocIndex": 20
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 50 } },\n      { id: 'node2', style: { x: 180, y: 50 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#1890FF',\n      lineWidth: 2,\n      endArrow: true, // 结束端箭头\n      endArrowType: 'vee', // 箭头类型\n      endArrowSize: 10, // 箭头大小\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 83,
+        "tocIndex": 20
+    },
+    {
+        "value": "为边的两端都添加箭头：",
+        "paraId": 84,
+        "tocIndex": 21
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 50 } },\n      { id: 'node2', style: { x: 180, y: 50 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#52C41A',\n      lineWidth: 2,\n      startArrow: true, // 起始端箭头\n      startArrowType: 'circle',\n      startArrowSize: 8,\n      endArrow: true, // 结束端箭头\n      endArrowType: 'triangle',\n      endArrowSize: 10,\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 85,
+        "tocIndex": 21
+    },
+    {
+        "value": "自定义箭头的颜色和类型：",
+        "paraId": 86,
+        "tocIndex": 22
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 50 } },\n      { id: 'node2', style: { x: 180, y: 50 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#722ED1',\n      lineWidth: 3,\n      endArrow: true,\n      endArrowType: 'diamond', // 菱形箭头\n      endArrowSize: 12,\n      endArrowFill: '#FF4D4F', // 红色箭头填充\n      endArrowStroke: '#722ED1', // 箭头描边颜色\n      endArrowStrokeOpacity: 0.8,\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 87,
+        "tocIndex": 22
+    },
+    {
+        "value": "属性",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "描述",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "类型",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "默认值",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "必选",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrow",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "边起始箭头是否显示",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "boolean",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "false",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowCursor",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "边起始箭头鼠标移入样式，",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "配置项",
+        "paraId": 89,
+        "tocIndex": 23
+    },
+    {
+        "value": "string",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "default",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowFill",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "边起始箭头填充颜色",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "string",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "默认与边的颜色一致",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowFillOpacity",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "边起始箭头填充透明度",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "number",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "1",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowOffset",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "边起始箭头的偏移量",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "number",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "0",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowSize",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "边起始箭头大小",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "number | [number, number]",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "10",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowStroke",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "边起始箭头描边颜色",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "string",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "默认与边的颜色一致",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowStrokeOpacity",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "边起始箭头描边透明度",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "number",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "1",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowType",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "边起始箭头类型",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "triangle",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "circle",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "diamond",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "vee",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "rect",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "triangleRect",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "simple",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "vee",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "属性",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "描述",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "类型",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "默认值",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "必选",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrow",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "边结束箭头是否显示",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "boolean",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "false",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowCursor",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "边结束箭头鼠标移入样式，",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "配置项",
+        "paraId": 91,
+        "tocIndex": 24
+    },
+    {
+        "value": "string",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "default",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowFill",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "边结束箭头填充颜色",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "string",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "默认与边的颜色一致",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowFillOpacity",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "边结束箭头填充透明度",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "number",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "1",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowOffset",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "边结束箭头的偏移量",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "number",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "0",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowSize",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "边结束箭头大小",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "number | [number, number]",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "10",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowStroke",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "边结束箭头描边颜色",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "string",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "默认与边的颜色一致",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowStrokeOpacity",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "边结束箭头描边透明度",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "number",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "1",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowType",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "边结束箭头类型",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "triangle",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "circle",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "diamond",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "vee",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "rect",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "triangleRect",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "simple",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "vee",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "自环边是指起始节点和结束节点为同一个节点的特殊边。",
+        "paraId": 92,
+        "tocIndex": 25
+    },
+    {
+        "value": "创建基本的自环边：",
+        "paraId": 93,
+        "tocIndex": 26
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 200,\n  height: 100,\n  data: {\n    nodes: [{ id: 'node1', style: { x: 100, y: 50 } }],\n    edges: [{ source: 'node1', target: 'node1' }],\n  },\n  edge: {\n    style: {\n      stroke: '#1890FF',\n      lineWidth: 2,\n      endArrow: true,\n      loopPlacement: 'top', // 自环位置\n      loopDist: 30, // 自环大小\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 94,
+        "tocIndex": 26
+    },
+    {
+        "value": "为同一节点创建多个不同位置的自环边：",
+        "paraId": 95,
+        "tocIndex": 27
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 200,\n  height: 120,\n  data: {\n    nodes: [{ id: 'node1', style: { x: 100, y: 60 } }],\n    edges: [\n      { id: 'edge1', source: 'node1', target: 'node1' },\n      { id: 'edge2', source: 'node1', target: 'node1' },\n      { id: 'edge3', source: 'node1', target: 'node1' },\n    ],\n  },\n  edge: {\n    style: {\n      lineWidth: 2,\n      endArrow: true,\n      loopPlacement: (datum) => {\n        const placements = ['top', 'right', 'bottom'];\n        return placements[parseInt(datum.id.slice(-1)) - 1];\n      },\n      loopDist: 25,\n      stroke: (datum) => {\n        const colors = ['#1890FF', '#52C41A', '#722ED1'];\n        return colors[parseInt(datum.id.slice(-1)) - 1];\n      },\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 96,
+        "tocIndex": 27
+    },
+    {
+        "value": "以下为完整的自环边样式配置：",
+        "paraId": 97,
+        "tocIndex": 27
+    },
+    {
+        "value": "属性",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "描述",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "类型",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "默认值",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "必选",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "loop",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "是否启用自环边",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "boolean",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "true",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "loopClockwise",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "指定是否顺时针绘制环",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "boolean",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "true",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "loopDist",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "从节点边缘到自环顶部的距离，用于指定自环的曲率",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "number",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "默认为节点尺寸的最大值",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "loopPlacement",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "自环边的位置",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "left",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "right",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "top",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "bottom",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "left-top",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "left-bottom",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "right-top",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "right-bottom",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "top-left",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "top-right",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "bottom-left",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "bottom-right",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "top",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "在一些交互行为中，比如点击选中一个边或鼠标悬停激活一个边，仅仅是在该元素做了某些状态的标识。为了将这些状态反应到终端用户所见的视觉空间中，我们需要为不同的状态设置不同的图元素样式，以响应该图元素状态的变化。",
+        "paraId": 99,
+        "tocIndex": 28
+    },
+    {
+        "value": "G6 提供了几种内置的状态，包括选中（selected）、高亮（highlight）、激活（active）、不活跃（inactive）和禁用（disabled）。此外，它还支持自定义状态，以满足更特定的需求。对于每个状态，开发者可以定义一套样式规则，这些规则会覆盖元素的默认样式。",
+        "paraId": 100,
+        "tocIndex": 28
+    },
+    {
+        "value": "数据结构如下：",
+        "paraId": 101,
+        "tocIndex": 28
+    },
+    {
+        "value": "type EdgeState = {\n  [state: string]: EdgeStyle;\n};\n",
+        "paraId": 102,
+        "tocIndex": 28
+    },
+    {
+        "value": "例如，当边处于 ",
+        "paraId": 103,
+        "tocIndex": 28
+    },
+    {
+        "value": "focus",
+        "paraId": 103,
+        "tocIndex": 28
+    },
+    {
+        "value": " 状态时，可以为其添加一个宽度为 6 且颜色为橙色的光晕。",
+        "paraId": 103,
+        "tocIndex": 28
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    state: {\n      focus: {\n        halo: true,\n        haloLineWidth: 6,\n        haloStroke: 'orange',\n        haloStrokeOpacity: 0.6,\n      },\n    },\n  },\n});\n",
+        "paraId": 104,
+        "tocIndex": 28
+    },
+    {
+        "value": "效果如下图所示：",
+        "paraId": 105,
+        "tocIndex": 28
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 300,\n  height: 100,\n  data: {\n    nodes: [{ id: 'node1' }, { id: 'node2' }],\n    edges: [{ source: 'node1', target: 'node2', states: ['focus'] }],\n  },\n  edge: {\n    state: {\n      focus: {\n        halo: true,\n        haloLineWidth: 6,\n        haloStroke: 'orange',\n      },\n    },\n  },\n  layout: {\n    type: 'grid',\n    cols: 2,\n  },\n});\n\ngraph.render();\n",
+        "paraId": 106,
+        "tocIndex": 28
+    },
+    {
+        "value": "定义边的动画效果，支持下列两种配置方式：",
+        "paraId": 107,
+        "tocIndex": 29
+    },
+    {
+        "value": "关闭边全部动画",
+        "paraId": 108,
+        "tocIndex": 29
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"animation\": false\n  }\n}\n",
+        "paraId": 109,
+        "tocIndex": 29
+    },
+    {
+        "value": "配置阶段动画",
+        "paraId": 110,
+        "tocIndex": 29
+    },
+    {
+        "value": "阶段动画是指边在进入画布、更新、离开画布时的动画效果。目前支持的阶段包括：",
+        "paraId": 111,
+        "tocIndex": 29
+    },
+    {
+        "value": "enter",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": 边进入画布时的动画",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "update",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": 边更新时的动画",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "exit",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": 边离开画布时的动画",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "show",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": 边从隐藏状态显示时的动画",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "hide",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": 边隐藏时的动画",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "collapse",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": 边收起时的动画",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "expand",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": 边展开时的动画",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "你可以参考 ",
+        "paraId": 113,
+        "tocIndex": 29
+    },
+    {
+        "value": "动画范式",
+        "paraId": 114,
+        "tocIndex": 29
+    },
+    {
+        "value": " 使用动画语法来配置边，如：",
+        "paraId": 113,
+        "tocIndex": 29
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"animation\": {\n      \"update\": [\n        {\n          \"fields\": [\"stroke\"], // 更新时只对 stroke 属性进行动画\n          \"duration\": 1000, // 动画持续时间\n          \"easing\": \"linear\" // 缓动函数\n        }\n      ]\n    }\n  }\n}\n",
+        "paraId": 115,
+        "tocIndex": 29
+    },
+    {
+        "value": "也可以使用内置的动画效果：",
+        "paraId": 116,
+        "tocIndex": 29
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"animation\": {\n      \"enter\": \"fade\", // 使用渐变动画\n      \"update\": \"path-in\", // 使用路径动画\n      \"exit\": \"fade\" // 使用渐变动画\n    }\n  }\n}\n",
+        "paraId": 117,
+        "tocIndex": 29
+    },
+    {
+        "value": "你可以传入 false 来关闭特定阶段的动画：",
+        "paraId": 118,
+        "tocIndex": 29
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"animation\": {\n      \"enter\": false // 关闭边入场动画\n    }\n  }\n}\n",
+        "paraId": 119,
+        "tocIndex": 29
+    },
+    {
+        "value": "定义边的色板，即预定义边颜色池，并根据规则进行分配，将颜色映射到 ",
+        "paraId": 120,
+        "tocIndex": 30
+    },
+    {
+        "value": "stroke",
+        "paraId": 120,
+        "tocIndex": 30
+    },
+    {
+        "value": " 属性。",
+        "paraId": 120,
+        "tocIndex": 30
+    },
+    {
+        "value": "有关色板的定义，请参考 ",
+        "paraId": 121,
+        "tocIndex": 30
+    },
+    {
+        "value": "色板",
+        "paraId": 122,
+        "tocIndex": 30
+    },
+    {
+        "value": "。",
+        "paraId": 121,
+        "tocIndex": 30
+    },
+    {
+        "value": "属性",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "描述",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "类型",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "默认值",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "color",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "色板颜色。如果色板注册过，可以直接指定其注册名，也接受一个颜色数组",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "string | string[]",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "-",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "field",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "指定元素数据中的分组字段。若不指定，默认取 id 作为分组字段",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "string | ((datum) => string)",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "id",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "invert",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "是否反转色板",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "boolean",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "false",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "type",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "指定当前色板类型。",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": " - ",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "group",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": ": 离散色板 ",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": " - ",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "value",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": ": 连续色板",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "group",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": " | ",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "value",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "group",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "如将一组数据按 ",
+        "paraId": 124,
+        "tocIndex": 30
+    },
+    {
+        "value": "direction",
+        "paraId": 124,
+        "tocIndex": 30
+    },
+    {
+        "value": " 字段分配边颜色，使得同类别的边颜色相同：",
+        "paraId": 124,
+        "tocIndex": 30
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"palette\": {\n      \"type\": \"group\",\n      \"field\": \"direction\",\n      \"color\": [\"#F08F56\", \"#00C9C9\", \"#D580FF\"]\n    }\n  }\n}\n",
+        "paraId": 125,
+        "tocIndex": 30
+    },
+    {
+        "value": "效果如下图所示：",
+        "paraId": 126,
+        "tocIndex": 30
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 600,\n  height: 300,\n  data: {\n    nodes: new Array(6).fill(0).map((_, i) => ({ id: `node-${i + 1}` })),\n    edges: [\n      { source: 'node-1', target: 'node-2', data: { direction: 'out' } },\n      { source: 'node-1', target: 'node-3', data: { direction: 'out' } },\n      { source: 'node-1', target: 'node-4', data: { direction: 'out' } },\n      { source: 'node-5', target: 'node-1', data: { direction: 'in' } },\n      { source: 'node-6', target: 'node-1', data: { direction: 'in' } },\n    ],\n  },\n  layout: {\n    type: 'radial',\n    unitRadius: 120,\n    linkDistance: 120,\n  },\n  edge: {\n    style: {\n      endArrow: true,\n    },\n    palette: {\n      type: 'group',\n      field: 'direction',\n      color: ['#F08F56', '#00C9C9'],\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 127,
+        "tocIndex": 30
+    },
+    {
+        "value": "也可以使用默认配置：",
+        "paraId": 128,
+        "tocIndex": 30
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"palette\": \"tableau\" // tableau 为色板名，默认根据 ID 分配颜色\n  }\n}\n",
+        "paraId": 129,
+        "tocIndex": 30
+    },
+    {
+        "value": "效果如下图所示：",
+        "paraId": 130,
+        "tocIndex": 30
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 600,\n  height: 300,\n  data: {\n    nodes: new Array(6).fill(0).map((_, i) => ({ id: `node-${i + 1}` })),\n    edges: [\n      { source: 'node-1', target: 'node-2', data: { direction: 'out' } },\n      { source: 'node-1', target: 'node-3', data: { direction: 'out' } },\n      { source: 'node-1', target: 'node-4', data: { direction: 'out' } },\n      { source: 'node-5', target: 'node-1', data: { direction: 'in' } },\n      { source: 'node-6', target: 'node-1', data: { direction: 'in' } },\n    ],\n  },\n  layout: {\n    type: 'radial',\n    unitRadius: 120,\n    linkDistance: 120,\n  },\n  edge: {\n    style: {\n      endArrow: true,\n    },\n    palette: 'tableau',\n  },\n});\n\ngraph.render();\n",
+        "paraId": 131,
+        "tocIndex": 30
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_element_edge_BaseEdge_zh_md_q_hK4X-async.js.map

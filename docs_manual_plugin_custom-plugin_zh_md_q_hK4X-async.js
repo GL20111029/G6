@@ -1,0 +1,311 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/plugin/custom-plugin.zh.md?type=text'],
+{ "docs/manual/plugin/custom-plugin.zh.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/plugin/custom-plugin.zh.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "自定义插件可以实现一些额外的功能，例如添加额外的组件、渲染逻辑等。通过自定义插件可以很好地实现功能解耦，更好地进行管理、编排代码以及后续维护。",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "额外的组件",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "：如内置插件的",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "提示框",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "、",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "小地图",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "、",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "对齐线",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "、",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "网格线",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "、",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "上下文菜单",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "、",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "水印",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "等",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "渲染逻辑",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "：如内置插件的",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "边绑定",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "，以及",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "远程数据加载",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "（",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "示例",
+        "paraId": 2,
+        "tocIndex": 2
+    },
+    {
+        "value": "）等",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "当内置插件无法完全满足业务需求时，用户也可以通过自定义插件（继承内置插件）进行调整和修改。",
+        "paraId": 3,
+        "tocIndex": 3
+    },
+    {
+        "value": "（如果需要内置插件支持的特性是较通用的，或者内置插件存在 Bug ，这种时候欢迎大家到 ",
+        "paraId": 4,
+        "tocIndex": 3
+    },
+    {
+        "value": "Github",
+        "paraId": 4,
+        "tocIndex": 3
+    },
+    {
+        "value": " 提 Issue 或者 PR ）",
+        "paraId": 4,
+        "tocIndex": 3
+    },
+    {
+        "value": "与交互类似，插件的实现也相当灵活，你可以以你喜欢的风格实现你的插件。",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "下面列举几个简单的自定义插件实现：",
+        "paraId": 6,
+        "tocIndex": 4
+    },
+    {
+        "value": "在图实例化过程中自动加载远程数据：",
+        "paraId": 7,
+        "tocIndex": 5
+    },
+    {
+        "value": "import { BasePlugin } from '@antv/g6';\nimport type { BasePluginOptions, RuntimeContext } from '@antv/g6';\n\ninterface RemoteDataSourceOptions extends BasePluginOptions {}\n\nclass RemoteDataSource extends BasePlugin<RemoteDataSourceOptions> {\n  constructor(context: RuntimeContext, options: RemoteDataSourceOptions) {\n    super(context, options);\n    this.loadData();\n  }\n\n  private async loadData() {\n    // mock remote data\n    const data = {\n      nodes: [\n        { id: 'node-1', x: 100, y: 100 },\n        { id: 'node-2', x: 200, y: 200 },\n      ],\n      edges: [{ source: 'node-1', target: 'node-2' }],\n    };\n\n    const { graph } = this.context;\n    graph.setData(data);\n    await graph.render();\n  }\n}\n",
+        "paraId": 8,
+        "tocIndex": 5
+    },
+    {
+        "value": "在这个例子中，我们模拟实现了一个数据加载插件，在使用该插件后，实例化 Graph 时不用再传入数据，该插件会自动加载远程数据。",
+        "paraId": 9,
+        "tocIndex": 5
+    },
+    {
+        "value": "BasePlugin",
+        "paraId": 10,
+        "tocIndex": 5
+    },
+    {
+        "value": " 是所有插件的基类，每个自定义插件都需要继承这个基类实现。",
+        "paraId": 10,
+        "tocIndex": 5
+    },
+    {
+        "value": "import { BasePlugin, Graph, register, ExtensionCategory } from '@antv/g6';\n\nclass RemoteDataSource extends BasePlugin {\n  constructor(context, options) {\n    super(context, options);\n    this.loadData();\n  }\n\n  async loadData() {\n    // mock remote data\n    const data = {\n      nodes: [\n        { id: 'node-1', style: { x: 25, y: 50 } },\n        { id: 'node-2', style: { x: 175, y: 50 } },\n      ],\n      edges: [{ source: 'node-1', target: 'node-2' }],\n    };\n\n    const { graph } = this.context;\n    graph.setData(data);\n    await graph.render();\n  }\n}\n\nregister(ExtensionCategory.PLUGIN, 'remote-data-source', RemoteDataSource);\n\nconst graph = new Graph({\n  container: 'container',\n  width: 200,\n  height: 100,\n  plugins: ['remote-data-source'],\n});\n\ngraph.render();\n",
+        "paraId": 11,
+        "tocIndex": 5
+    },
+    {
+        "value": "import type { BasePluginOptions, RuntimeContext } from '@antv/g6';\nimport { BasePlugin, GraphEvent } from '@antv/g6';\n\ninterface AutoSwitchAnimationOptions extends BasePluginOptions {\n  maxLength: number; // 节点数量达到这个值后关闭全局动画\n}\n\nclass AutoSwitchAnimation extends BasePlugin<AutoSwitchAnimationOptions> {\n  static defaultOptions: Partial<AutoSwitchAnimationOptions> = {\n    maxLength: 1000,\n  };\n  constructor(context: RuntimeContext, options: AutoSwitchAnimationOptions) {\n    super(context, options);\n    this.bindEvents();\n  }\n  private bindEvents() {\n    const { graph } = this.context;\n    graph.on(GraphEvent.BEFORE_RENDER, this.switchAnimation);\n  }\n  private switchAnimation() {\n    const { graph } = this.context;\n    graph.setOptions({\n      animation: graph.getNodeData().length < this.options.maxLength,\n    });\n  }\n  private unbindEvents() {\n    const { graph } = this.context;\n    graph.off(GraphEvent.BEFORE_RENDER, this.switchAnimation);\n  }\n  destroy() {\n    this.unbindEvents();\n    super.destroy();\n  }\n}\n",
+        "paraId": 12,
+        "tocIndex": 6
+    },
+    {
+        "value": "在这个例子中，我们监听 ",
+        "paraId": 13,
+        "tocIndex": 6
+    },
+    {
+        "value": "GraphEvent.BEFORE_RENDER",
+        "paraId": 13,
+        "tocIndex": 6
+    },
+    {
+        "value": " 事件，在响应中判断当前节点数量是否大于指定值，是的话则关闭全局动画，否则开启",
+        "paraId": 13,
+        "tocIndex": 6
+    },
+    {
+        "value": "maxLength",
+        "paraId": 13,
+        "tocIndex": 6
+    },
+    {
+        "value": " 是定义的配置项，可在初始化画布实例时传入具体配置，",
+        "paraId": 13,
+        "tocIndex": 6
+    },
+    {
+        "value": "插件配置",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "通过 G6 提供的 register 方法注册即可",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "import { register, ExtensionCategory } from '@antv/g6';\nimport { MyCustomPlugin } from './my-custom-plugin';\n\nregister(ExtensionCategory.PLUGIN, 'my-custom-plugin', MyCustomPlugin);\n",
+        "paraId": 16,
+        "tocIndex": 7
+    },
+    {
+        "value": "可在 ",
+        "paraId": 17,
+        "tocIndex": 8
+    },
+    {
+        "value": "plugins",
+        "paraId": 17,
+        "tocIndex": 8
+    },
+    {
+        "value": " 中传入插件类型名称或配置参数对象，详见",
+        "paraId": 17,
+        "tocIndex": 8
+    },
+    {
+        "value": "配置插件",
+        "paraId": 18,
+        "tocIndex": 8
+    },
+    {
+        "value": "比如前面的",
+        "paraId": 19,
+        "tocIndex": 8
+    },
+    {
+        "value": "自动判断节点数量开启或关闭动画",
+        "paraId": 20,
+        "tocIndex": 8
+    },
+    {
+        "value": "，配置如下：",
+        "paraId": 19,
+        "tocIndex": 8
+    },
+    {
+        "value": "const graph = new Graph({\n  // 其他配置\n  plugins: [\n    {\n      type: 'auto-switch-animation',\n      maxLength: 500,\n    },\n  ],\n});\n",
+        "paraId": 21,
+        "tocIndex": 8
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_plugin_custom-plugin_zh_md_q_hK4X-async.js.map

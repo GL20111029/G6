@@ -1,0 +1,316 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/whats-new/feature.zh.md?type=text'],
+{ "docs/manual/whats-new/feature.zh.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/whats-new/feature.zh.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "G6 5.0 重新设计了图配置范式，在保证能力完善的基础上，优化配置项结构，更加直观、易于理解。",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "仅需快速了解基本",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "核心概念",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "，即可快速上手 G6，快速实现图可视化。",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "😰 4.0 配置项",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": " 嵌套结构复杂，语义化能力较弱",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": "{\n  defaultNode: {\n    size: 30,\n    style: {\n      fill: 'steelblue',\n      stroke: '#666',\n      lineWidth: 1\n    },\n    labelCfg: {\n      style: {\n        fill: '#fff',\n      }\n    }\n  },\n  nodeStateStyles: {\n    hover: {\n      fill: 'lightsteelblue'\n    }\n  },\n  modes: {\n    default: ['zoom-canvas', 'drag-canvas', 'drag-node'],\n  },\n}\n",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": "😄 5.0 配置项",
+        "paraId": 5,
+        "tocIndex": 0
+    },
+    {
+        "value": " 结构清晰，易于理解",
+        "paraId": 5,
+        "tocIndex": 0
+    },
+    {
+        "value": "{\n  node: {\n    style: {\n      size: 30,\n      fill: 'steelblue',\n      stroke: '#666',\n      lineWidth: 1\n      labelFill: '#fff',\n    },\n    state: {\n      hover: {\n        fill: 'lightsteelblue'\n      }\n    }\n  },\n  behaviors: ['zoom-canvas', 'drag-canvas', 'drag-element'],\n}\n",
+        "paraId": 6,
+        "tocIndex": 0
+    },
+    {
+        "value": "G6 5.0 采用了更加简洁、易用的 API 设计，更加符合现代前端框架的设计风格。",
+        "paraId": 7,
+        "tocIndex": 1
+    },
+    {
+        "value": "树图本质上是一种单向无环图，G6 5.0 融合了图与树图的设计，降低了理解和使用成本。",
+        "paraId": 8,
+        "tocIndex": 2
+    },
+    {
+        "value": "现在，你可以在 G6 中直接使用 ",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "Graph",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": " 来实例化绘制树图，而不需要再使用 ",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "TreeGraph",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "，仅需指定布局为树图布局即可。",
+        "paraId": 9,
+        "tocIndex": 2
+    },
+    {
+        "value": "此外，G6 提供了 ",
+        "paraId": 10,
+        "tocIndex": 2
+    },
+    {
+        "value": "treeToGraphData",
+        "paraId": 10,
+        "tocIndex": 2
+    },
+    {
+        "value": " 工具方法，帮助你快速将树图数据转换为图数据。",
+        "paraId": 10,
+        "tocIndex": 2
+    },
+    {
+        "value": "import { Graph, treeToGraphData } from '@antv/g6';\n\nconst data = {\n  id: 'root',\n  children: [\n    { id: 'node1', children: [{ id: 'node1-1' }, { id: 'node1-2' }] },\n    { id: 'node2', children: [{ id: 'node2-1' }, { id: 'node2-2' }] },\n  ],\n};\n\nconst graph = new Graph({\n  container: 'container',\n  layout: {\n    type: 'compact-box',\n    direction: 'TB',\n  },\n  data: treeToGraphData(data),\n  edge: {\n    type: 'cubic-vertical',\n  },\n});\n\ngraph.render();\n",
+        "paraId": 11,
+        "tocIndex": 2
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 200,\n  height: 200,\n  autoFit: 'view',\n  data: g6.treeToGraphData({\n    id: 'root',\n    children: [\n      { id: 'node1', children: [{ id: 'node1-1' }, { id: 'node1-2' }] },\n      { id: 'node2', children: [{ id: 'node2-1' }, { id: 'node2-2' }] },\n    ],\n  }),\n  layout: {\n    type: 'compact-box',\n    direction: 'TB',\n  },\n  node: {\n    style: {\n      ports: [{ placement: 'center' }],\n    },\n  },\n  edge: {\n    type: 'cubic-vertical',\n  },\n});\n\ngraph.render();\n",
+        "paraId": 12,
+        "tocIndex": 2
+    },
+    {
+        "value": "G6 5.0 采用了新一代设计的 @antv/g 渲染引擎，提供了 ",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": "Canvas",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": " ",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": "SVG",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": " ",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": "WebGL",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": " 多种渲染器支持，并且分层画布支持不同渲染器的混合使用。",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": "import { Renderer } from '@antv/g-webgl';\nimport { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  // ... 其他配置\n  // 使用 WebGL 渲染器\n  renderer: () => new Renderer(),\n});\n",
+        "paraId": 14,
+        "tocIndex": 3
+    },
+    {
+        "value": "G6 5.0 采用了全新布局引擎，部分布局提供 Rust 实现，提供了更高性能的布局计算。另有布局支持 WebGPU 加速。",
+        "paraId": 15,
+        "tocIndex": 4
+    },
+    {
+        "value": "🚀 高性能布局需要安装 ",
+        "paraId": 16,
+        "tocIndex": 4
+    },
+    {
+        "value": "@antv/layout-wasm",
+        "paraId": 16,
+        "tocIndex": 4
+    },
+    {
+        "value": " 包",
+        "paraId": 16,
+        "tocIndex": 4
+    },
+    {
+        "value": "import { ForceAtlas2Layout, initThreads, supportsThreads } from '@antv/layout-wasm';\nimport { Graph, register, ExtensionCategory } from '@antv/g6';\n\nregister(ExtensionCategory.LAYOUT, 'forceatlas2-wasm', ForceAtlas2Layout);\n\nconst supported = await supportsThreads();\nconst threads = await initThreads(supported);\n\nconst graph = new Graph({\n  // ... 其他配置\n  layout: {\n    type: 'forceatlas2-wasm',\n    threads,\n    // ... 其他布局配置\n  },\n});\n",
+        "paraId": 17,
+        "tocIndex": 4
+    },
+    {
+        "value": "GPU 加速布局需要安装 ",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": "@antv/layout-gpu",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": " 包",
+        "paraId": 18,
+        "tocIndex": 4
+    },
+    {
+        "value": "import { FruchtermanLayout } from '@antv/layout-gpu';\nimport { Graph, register, ExtensionCategory } from '@antv/g6';\n\nregister(ExtensionCategory.LAYOUT, 'fruchterman-gpu', FruchtermanLayout);\n\nconst graph = new Graph({\n  // ... 其他配置\n  layout: {\n    type: 'fruchterman-gpu',\n    // ... 其他布局配置\n  },\n});\n",
+        "paraId": 19,
+        "tocIndex": 4
+    },
+    {
+        "value": "G6 5.0 内置了亮色、暗色两套主题，并可基于使用场景进行灵活定制，具体可参考",
+        "paraId": 20,
+        "tocIndex": 5
+    },
+    {
+        "value": "自定义主题",
+        "paraId": 21,
+        "tocIndex": 5
+    },
+    {
+        "value": "。",
+        "paraId": 20,
+        "tocIndex": 5
+    },
+    {
+        "value": "G6 5.0 提供了 3D 大图渲染、布局、交互能力，从 ",
+        "paraId": 22,
+        "tocIndex": 6
+    },
+    {
+        "value": "@antv/g6-extension-3d",
+        "paraId": 22,
+        "tocIndex": 6
+    },
+    {
+        "value": " 中引入 3D 元素、渲染器、交互等注册即可使用，详见：",
+        "paraId": 22,
+        "tocIndex": 6
+    },
+    {
+        "value": "使用 3D",
+        "paraId": 23,
+        "tocIndex": 6
+    },
+    {
+        "value": "。",
+        "paraId": 22,
+        "tocIndex": 6
+    },
+    {
+        "value": "G6 5.0 对现有插件进行了优化增强，解除了 Graph 与插件之间的耦合，并优化配置的同时提供了更加丰富了能力。",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": "敬请前往",
+        "paraId": 25,
+        "tocIndex": 7
+    },
+    {
+        "value": "插件",
+        "paraId": 26,
+        "tocIndex": 7
+    },
+    {
+        "value": "体验更多插件的能力。",
+        "paraId": 25,
+        "tocIndex": 7
+    },
+    {
+        "value": "得益于 G6 5.0 良好的模块化的设计以及扩展注册机制，对于未使用的模块，不会被打包到最终的构建文件中，减小了包体积。",
+        "paraId": 27,
+        "tocIndex": 8
+    },
+    {
+        "value": "与 4.0 相比，UMD 包体积从 1.8 MB 减小到 0.96 MB，减小了近 50%。",
+        "paraId": 28,
+        "tocIndex": 8
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_whats-new_feature_zh_md_q_hK4X-async.js.map

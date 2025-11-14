@@ -1,0 +1,1146 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/plugin/Minimap.zh.md?type=text'],
+{ "docs/manual/plugin/Minimap.zh.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/plugin/Minimap.zh.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "Minimap（小地图）的主要作用是为用户提供以缩略图形式展示当前图内容的整体布局，可以快速定位图操作位置。",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "⚠️ 需要注意",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "，Minimap 插件当前不兼容 React Node 渲染机制，在需要使用 Minimap 功能的场景中，建议通过 ",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "内置节点",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": " 或者",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "自定义节点",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": " 实现节点渲染。",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "Minimap（小地图）插件主要适用于以下场景：",
+        "paraId": 4,
+        "tocIndex": 1
+    },
+    {
+        "value": "提供全局视野，快速定位区域",
+        "paraId": 5,
+        "tocIndex": 1
+    },
+    {
+        "value": "导航与交互辅助，通过操作小地图可以快速定位到目标位置",
+        "paraId": 5,
+        "tocIndex": 1
+    },
+    {
+        "value": "以下是一个简单的 Minimap 插件初始化示例：",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "const graph = new Graph({\n  plugins: [\n    {\n      key: 'minimap',\n      type: 'minimap',\n      size: [240, 160],\n    },\n  ],\n});\n",
+        "paraId": 7,
+        "tocIndex": 2
+    },
+    {
+        "value": "minimap.md",
+        "paraId": 8,
+        "tocIndex": 3
+    },
+    {
+        "value": "createGraph(\n  {\n    data: {\n      nodes: Array.from({ length: 50 }).map((_, i) => ({\n        id: `node-${i}`,\n        x: Math.random() * 500,\n        y: Math.random() * 300,\n      })),\n      edges: Array.from({ length: 100 }).map((_, i) => ({\n        id: `edge-${i}`,\n        source: `node-${Math.floor(Math.random() * 50)}`,\n        target: `node-${Math.floor(Math.random() * 50)}`,\n      })),\n    },\n    node: { style: { fill: '#7e3feb' } },\n    edge: { style: { stroke: '#8b9baf' } },\n    layout: { type: 'force' },\n    behaviors: ['drag-canvas'],\n    plugins: [{ type: 'minimap', key: 'minimap', size: [240, 160], position: 'right-bottom' }],\n  },\n  { width: 600, height: 300 },\n  (gui, graph) => {\n    const options = {\n      type: 'minimap',\n      width: 240,\n      height: 160,\n      shape: 'key',\n      padding: 10,\n      position: 'right-bottom',\n      maskStyleBorder: '1px solid #ddd',\n      maskStyleBackground: 'rgba(0, 0, 0, 0.1)',\n      containerStyleBorder: '1px solid #ddd',\n      containerStyleBackground: '#fff',\n      delay: 128,\n    };\n    const optionFolder = gui.addFolder('Minimap Options');\n    optionFolder.add(options, 'type').disable(true);\n    optionFolder\n      .add(options, 'width', 100, 500, 1)\n      .listen()\n      .onChange((value) => {\n        graph.updatePlugin({\n          key: 'minimap',\n          size: [value, options.height],\n        });\n        graph.render();\n      });\n    optionFolder\n      .add(options, 'height', 100, 500, 1)\n      .listen()\n      .onChange((value) => {\n        graph.updatePlugin({\n          key: 'minimap',\n          size: [options.width, value],\n        });\n        graph.render();\n      });\n    optionFolder\n      .add(options, 'shape', ['key'])\n      .listen()\n      .onChange((value) => {\n        graph.updatePlugin({\n          key: 'minimap',\n          shape: value,\n        });\n        graph.render();\n      });\n    optionFolder\n      .add(options, 'padding', 0, 50, 1)\n      .listen()\n      .onChange((value) => {\n        graph.updatePlugin({\n          key: 'minimap',\n          padding: value,\n        });\n        graph.render();\n      });\n    optionFolder\n      .add(options, 'position', ['right-bottom', 'left-bottom', 'right-top', 'left-top'])\n      .listen()\n      .onChange((value) => {\n        graph.updatePlugin({\n          key: 'minimap',\n          position: value,\n        });\n        graph.render();\n      });\n    optionFolder\n      .addColor(options, 'maskStyleBorder')\n      .listen()\n      .onChange((value) => {\n        graph.updatePlugin({\n          key: 'minimap',\n          maskStyle: { ...options.maskStyle, border: value },\n        });\n        graph.render();\n      });\n    optionFolder\n      .addColor(options, 'maskStyleBackground')\n      .listen()\n      .onChange((value) => {\n        graph.updatePlugin({\n          key: 'minimap',\n          maskStyle: { ...options.maskStyle, background: value },\n        });\n        graph.render();\n      });\n    optionFolder\n      .addColor(options, 'containerStyleBorder')\n      .listen()\n      .onChange((value) => {\n        graph.updatePlugin({\n          key: 'minimap',\n          containerStyle: { ...options.containerStyle, border: value },\n        });\n        graph.render();\n      });\n    optionFolder\n      .addColor(options, 'containerStyleBackground')\n      .listen()\n      .onChange((value) => {\n        graph.updatePlugin({\n          key: 'minimap',\n          containerStyle: { ...options.containerStyle, background: value },\n        });\n        graph.render();\n      });\n    optionFolder\n      .add(options, 'delay', 0, 500, 1)\n      .listen()\n      .onChange((value) => {\n        graph.updatePlugin({\n          key: 'minimap',\n          delay: value,\n        });\n        graph.render();\n      });\n\n    // Update the maskStyle and containerStyle in the options object\n    Object.defineProperty(options, 'maskStyle', {\n      get: () => ({\n        border: options.maskStyleBorder,\n        background: options.maskStyleBackground,\n      }),\n      set: (value) => {\n        options.maskStyleBorder = value.border;\n        options.maskStyleBackground = value.background;\n      },\n    });\n\n    Object.defineProperty(options, 'containerStyle', {\n      get: () => ({\n        border: options.containerStyleBorder,\n        background: options.containerStyleBackground,\n      }),\n      set: (value) => {\n        options.containerStyleBorder = value.border;\n        options.containerStyleBackground = value.background;\n      },\n    });\n  },\n);\n",
+        "paraId": 9,
+        "tocIndex": 3
+    },
+    {
+        "value": "属性",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "描述",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "类型",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "默认值",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "必选",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "type",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "插件类型",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "minimap",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "✓",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "key",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "插件唯一标识符，用于后续更新",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "className",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "缩略图画布类名，传入外置容器时不生效",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "container",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "缩略图挂载的容器，无则挂载到 Graph 所在容器",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "HTMLElement | string",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "containerStyle",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "缩略图的容器样式，传入外置容器时不生效",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "Partial<CSSStyleDeclaration>",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "delay",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "延迟更新时间(毫秒)，用于性能优化",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "number",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "128",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "filter",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "过滤器，用于过滤不必显示的元素",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "(id: string, elementType: ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "node",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "edge",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "combo",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": ") => boolean",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "maskStyle",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "遮罩的样式",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "Partial<CSSStyleDeclaration>",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "padding",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "内边距",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "number | number[]",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "10",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "position",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "缩略图相对于画布的位置",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "[number, number] | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "left",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "right",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "top",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "bottom",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "left-top",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "left-bottom",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "right-top",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "right-bottom",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "top-left",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "top-right",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "bottom-left",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "bottom-right",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "center",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "right-bottom",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "renderer",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "渲染器，默认使用 Canvas 渲染器",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "IRenderer",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "shape",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "元素缩略图形的生成方法",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "key",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ((id: string, elementType: ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "node",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "edge",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "combo",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": ", element: DisplayObject) => DisplayObject)",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "key",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "size",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "宽度和高度",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "[number, number]",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "[240, 160]",
+        "paraId": 10,
+        "tocIndex": 4
+    },
+    {
+        "value": "设置缩略图的容器样式，传入外置容器时不生效。继承了所有 CSS 样式属性（CSSStyleDeclaration），你可以使用任何合法的 CSS 属性来配置缩略图容器的样式。",
+        "paraId": 11,
+        "tocIndex": 5
+    },
+    {
+        "value": "以下是一些常用配置：",
+        "paraId": 12,
+        "tocIndex": 5
+    },
+    {
+        "value": "属性",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "描述",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "类型",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "默认值",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "必选",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "border",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "容器边框样式",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "string",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "1px solid #ddd",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "✓",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "background",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "容器背景颜色",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "string",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "#fff",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "✓",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "borderRadius",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "容器圆角大小",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "string",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "-",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "boxShadow",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "容器阴影效果",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "string",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "-",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "padding",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "容器内边距",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "string",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "-",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "margin",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "容器外边距",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "string",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "-",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "opacity",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "透明度",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "string",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "-",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "指定遮罩的样式。继承了所有 CSS 样式属性（CSSStyleDeclaration），你可以使用任何合法的 CSS 属性来配置缩略图容器的样式。",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "以下是一些常用配置：",
+        "paraId": 15,
+        "tocIndex": 6
+    },
+    {
+        "value": "属性",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "描述",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "类型",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "默认值",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "必选",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "border",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "容器边框样式",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "1px solid #ddd",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "✓",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "background",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "容器背景颜色",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "rgba(0, 0, 0, 0.1)",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "✓",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "borderRadius",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "容器圆角大小",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "boxShadow",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "容器阴影效果",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "padding",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "容器内边距",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "margin",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "容器外边距",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "opacity",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "透明度",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 16,
+        "tocIndex": 6
+    },
+    {
+        "value": "缩略图相对于画布的位置，缩略图位置配置支持数组形式和预设值形式。",
+        "paraId": 17,
+        "tocIndex": 7
+    },
+    {
+        "value": "数组形式 [number, number] 表示相对位置，取值范围为 0~1。举例：[0, 0] 代表画布左上角，[1, 1] 代表画布右下角。",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "预设值形式用于设定缩略图所在画布固定方位，可选值有：",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "left",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "right",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "top",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "bottom",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "left-top",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "left-bottom",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "right-top",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "right-bottom",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "top-left",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "top-right",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "bottom-left",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "bottom-right",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "center",
+        "paraId": 18,
+        "tocIndex": 7
+    },
+    {
+        "value": "const graph = new Graph({\n  plugins:[\n    {\n      ... // 其他配置\n      key: 'minimap',\n      type: 'minimap',\n      position: 'right-bottom'  // 这里进行修改minimap所在位置\n    }\n  ]\n})\n",
+        "paraId": 19,
+        "tocIndex": 7
+    },
+    {
+        "value": "效果如下：",
+        "paraId": 20,
+        "tocIndex": 7
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 600,\n  height: 300,\n  data: {\n    nodes: Array.from({ length: 50 }).map((_, i) => ({\n      id: `node-${i}`,\n      x: Math.random() * 500,\n      y: Math.random() * 300,\n    })),\n    edges: Array.from({ length: 100 }).map((_, i) => ({\n      id: `edge-${i}`,\n      source: `node-${Math.floor(Math.random() * 50)}`,\n      target: `node-${Math.floor(Math.random() * 50)}`,\n    })),\n  },\n  node: { style: { fill: '#7e3feb' } },\n  edge: { style: { stroke: '#8b9baf' } },\n  layout: { type: 'force' },\n  behaviors: ['drag-canvas'],\n  plugins: [{ type: 'minimap', key: 'minimap', size: [240, 160], position: 'right-bottom' }],\n});\n\ngraph.render();\n",
+        "paraId": 21,
+        "tocIndex": 7
+    },
+    {
+        "value": "设置小地图的宽度和高度，默认值为 [240, 160]",
+        "paraId": 22,
+        "tocIndex": 8
+    },
+    {
+        "value": "const graph = new Graph({\n  plugins:[\n    {\n      ... // 其他配置\n      key: 'minimap',\n      type: 'minimap',\n      size: [200, 120]  // minimap的宽度和高度的设置\n    }\n  ]\n})\n",
+        "paraId": 23,
+        "tocIndex": 8
+    },
+    {
+        "value": "效果如下：",
+        "paraId": 24,
+        "tocIndex": 8
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 600,\n  height: 300,\n  data: {\n    nodes: Array.from({ length: 50 }).map((_, i) => ({\n      id: `node-${i}`,\n      x: Math.random() * 500,\n      y: Math.random() * 300,\n    })),\n    edges: Array.from({ length: 100 }).map((_, i) => ({\n      id: `edge-${i}`,\n      source: `node-${Math.floor(Math.random() * 50)}`,\n      target: `node-${Math.floor(Math.random() * 50)}`,\n    })),\n  },\n  node: { style: { fill: '#7e3feb' } },\n  edge: { style: { stroke: '#8b9baf' } },\n  layout: { type: 'force' },\n  behaviors: ['drag-canvas'],\n  plugins: [{ type: 'minimap', key: 'minimap', size: [200, 120], position: 'right-bottom' }],\n});\n\ngraph.render();\n",
+        "paraId": 25,
+        "tocIndex": 8
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  data: { nodes: Array.from({ length: 20 }).map((_, i) => ({ id: `node${i}` })) },\n  behaviors: ['drag-canvas', 'zoom-canvas', 'drag-element'],\n  plugins: [\n    {\n      type: 'minimap',\n      size: [240, 160],\n    },\n  ],\n  node: {\n    palette: 'spectral',\n  },\n  layout: {\n    type: 'circular',\n  },\n  autoFit: 'view',\n});\n\ngraph.render();\n",
+        "paraId": 26,
+        "tocIndex": 9
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_plugin_Minimap_zh_md_q_hK4X-async.js.map

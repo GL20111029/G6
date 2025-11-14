@@ -1,0 +1,1265 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/layout/D3ForceLayout.zh.md?type=text'],
+{ "docs/manual/layout/D3ForceLayout.zh.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/layout/D3ForceLayout.zh.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "D3Force 布局是基于 ",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "d3-force",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": " 实现的力导向布局。它通过模拟物理力的作用（如引力、斥力、碰撞等），使图布局达到一个能量最小的稳定状态。",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "这种布局的主要特点是：",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "自动排列",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "：不需要手动设置节点位置，系统会自动找到合适的位置",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "实时调整",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "：当你拖动某个节点时，其他节点会实时跟随调整位置",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "灵活配置",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "：\n",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "可以调整节点间的吸引力和排斥力",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": "可以设置边的理想长度",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": "可以固定某些重要节点的位置",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": "动画效果",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "：节点移动时会有平滑的动画，让变化更自然",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "D3Force 布局通过模拟五种不同的力来实现自动布局。想象一个物理世界，这些力同时作用，最终达到平衡：",
+        "paraId": 4,
+        "tocIndex": 2
+    },
+    {
+        "value": "注：图中不同颜色的箭头代表不同类型的力，实际布局中这些力是无形的，同时也会受其他力影响。",
+        "paraId": 5,
+        "tocIndex": 2
+    },
+    {
+        "value": "链接力",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "（Link Force）：想象节点之间连着橡皮筋，可以把相连的节点拉到合适的距离。橡皮筋的松紧度就是力的强度（strength），理想长度就是我们设置的距离（distance）。",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "多体力",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "（Many-Body Force）：类似磁铁的效果，可以让所有节点互相吸引或排斥。力的强度为负值时节点会互相排斥（像相同磁极），为正值时会互相吸引（像相反磁极）。这个力决定了图的疏密程度。",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "中心力",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "（Center Force）：就像所有节点都被一根看不见的绳子拴在画布中心。这个力可以防止节点飘得太远，让整个图保持在画布的中心位置。",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "碰撞力",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "（Collision Force）：让节点变成有实体大小的小球，当节点太近时会自动弹开。这个力主要用来防止节点重叠，提高图的可读性。",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "径向力",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "（Radial Force）：想象有一个看不见的圆环，这个力会把节点吸引到圆环上。通过设置圆的半径和力的强度，可以让节点形成漂亮的环形布局。",
+        "paraId": 6,
+        "tocIndex": 2
+    },
+    {
+        "value": "布局计算是一个反复调整的过程，包含两个关键概念：",
+        "paraId": 7,
+        "tocIndex": 3
+    },
+    {
+        "value": "就像布局的\"能量\"，决定节点移动的剧烈程度：",
+        "paraId": 8,
+        "tocIndex": 4
+    },
+    {
+        "value": "初始状态",
+        "paraId": 9,
+        "tocIndex": 4
+    },
+    {
+        "value": "：Alpha = 1，节点移动剧烈",
+        "paraId": 9,
+        "tocIndex": 4
+    },
+    {
+        "value": "计算过程",
+        "paraId": 9,
+        "tocIndex": 4
+    },
+    {
+        "value": "：Alpha 值逐渐降低，节点移动变缓",
+        "paraId": 9,
+        "tocIndex": 4
+    },
+    {
+        "value": "结束状态",
+        "paraId": 9,
+        "tocIndex": 4
+    },
+    {
+        "value": "：当 Alpha < alphaMin 时，节点停止移动",
+        "paraId": 9,
+        "tocIndex": 4
+    },
+    {
+        "value": "控制每次计算时力的作用次数：",
+        "paraId": 10,
+        "tocIndex": 5
+    },
+    {
+        "value": "作用",
+        "paraId": 11,
+        "tocIndex": 5
+    },
+    {
+        "value": "：值越大，布局越精确，但计算越慢",
+        "paraId": 11,
+        "tocIndex": 5
+    },
+    {
+        "value": "调节",
+        "paraId": 11,
+        "tocIndex": 5
+    },
+    {
+        "value": "：\n",
+        "paraId": 11,
+        "tocIndex": 5
+    },
+    {
+        "value": "简单图：使用默认值即可",
+        "paraId": 12,
+        "tocIndex": 5
+    },
+    {
+        "value": "复杂图：可以适当增加迭代次数",
+        "paraId": 12,
+        "tocIndex": 5
+    },
+    {
+        "value": "实时交互：建议使用较小的迭代次数",
+        "paraId": 12,
+        "tocIndex": 5
+    },
+    {
+        "value": "提示：迭代次数（iterations）和活力值（alpha）是相互配合的。增加迭代次数可以让每一步计算更精确，而活力值则控制整体计算的进度。",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "属性",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "描述",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "类型",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "默认值",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "必选",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "type",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "布局类型",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "'d3-force'",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "✓",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "nodeSize",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "节点大小（直径），用于碰撞检测防止节点重叠",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "number | ((node, index, nodes) => number)",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "iterations",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "力的迭代次数，值越大布局越精确但性能消耗越大",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "onTick",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "每次迭代的回调函数，用于实时获取布局结果",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "(data: LayoutMapping) => void",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "forceSimulation",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "自定义力模拟方法，若不指定则使用 d3.js 的方法",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "Simulation<NodeDatum, EdgeDatum>",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "randomSource",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "用于生成随机数的函数",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "() => number",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 14,
+        "tocIndex": 6
+    },
+    {
+        "value": "属性",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "描述",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "类型",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "默认值",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "必选",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "alpha",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "当前迭代的收敛阈值，控制布局的活跃程度",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "number",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "1",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "alphaMin",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "停止迭代的最小阈值，当 alpha 小于该值时停止迭代",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "number",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "0.001",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "alphaDecay",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "收敛阈值的衰减率，范围 [0, 1]，0.028 对应约 300 次迭代",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "number",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "0.028",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "alphaTarget",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "目标收敛阈值，系统会尝试将 alpha 收敛到该值",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "number",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "0",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "velocityDecay",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "速度衰减因子，值越大节点运动越缓慢",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "number",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "0.4",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "属性",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "描述",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "类型",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "默认值",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "必选",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "link.id",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "边的 id 生成函数",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "(edge, index, edges) => string",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "(e) => e.id",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "link.distance",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "理想边长，边会趋向于该长度",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "number | ((edge, index, edges) => number)",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "30",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "link.strength",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "力的强度，值越大边长越接近理想边长",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "number | ((edge, index, edges) => number)",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "1",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "link.iterations",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "链接力的迭代次数",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "number",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "1",
+        "paraId": 16,
+        "tocIndex": 9
+    },
+    {
+        "value": "属性",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "描述",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "类型",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "默认值",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "必选",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "manyBody.strength",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "力的强度，负值为斥力，正值为引力",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "number | ((node, index, nodes) => number)",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "-30",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "manyBody.theta",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "Barnes-Hut 算法的精度参数，值越小越精确但性能消耗越大",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "number",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "0.9",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "manyBody.distanceMin",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "最小作用距离，防止力过大",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "number",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "1",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "manyBody.distanceMax",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "最大作用距离，超过该距离的节点不产生力",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "number",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "Infinity",
+        "paraId": 17,
+        "tocIndex": 10
+    },
+    {
+        "value": "属性",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "描述",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "类型",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "默认值",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "必选",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "center.x",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "中心点 x 坐标",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "number",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "0",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "center.y",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "中心点 y 坐标",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "number",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "0",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "center.strength",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "力的强度，值越大节点越趋向于中心点",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "number",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "1",
+        "paraId": 18,
+        "tocIndex": 11
+    },
+    {
+        "value": "属性",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "描述",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "类型",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "默认值",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "必选",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "collide.radius",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "碰撞半径，小于该距离的节点会产生排斥力",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "number | ((node, index, nodes) => number)",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "10",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "collide.strength",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "力的强度，值越大排斥效果越明显",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "number",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "1",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "collide.iterations",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "碰撞检测的迭代次数",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "number",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "1",
+        "paraId": 19,
+        "tocIndex": 12
+    },
+    {
+        "value": "属性",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "描述",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "类型",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "默认值",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "必选",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "radial.strength",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "力的强度，值越大节点越趋向于目标半径",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "number | ((node, index, nodes) => number)",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "0.1",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "radial.radius",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "目标半径，节点会被吸引到该半径的圆周上",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "number | ((node, index, nodes) => number)",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "100",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "radial.x",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "圆心 x 坐标",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "radial.y",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "圆心 y 坐标",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 20,
+        "tocIndex": 13
+    },
+    {
+        "value": "属性",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "描述",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "类型",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "默认值",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "必选",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "x.strength",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "X 轴方向的力强度",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "number | ((node, index, nodes) => number)",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "-",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "x.x",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "目标 x 坐标，节点会被吸引到这个位置",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "number | ((node, index, nodes) => number)",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "-",
+        "paraId": 21,
+        "tocIndex": 14
+    },
+    {
+        "value": "属性",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "描述",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "类型",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "默认值",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "必选",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "y.strength",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "Y 轴方向的力强度",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "number | ((node, index, nodes) => number)",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "-",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "y.y",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "目标 y 坐标，节点会被吸引到这个位置",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "number | ((node, index, nodes) => number)",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "-",
+        "paraId": 22,
+        "tocIndex": 15
+    },
+    {
+        "value": "{\n  layout: {\n    type: 'd3-force',\n    collide: {\n      // Prevent nodes from overlapping by specifying a collision radius for each node.\n      radius: (d) => d.size / 2,\n    },\n  },\n}\n",
+        "paraId": 23,
+        "tocIndex": 17
+    },
+    {
+        "value": "效果见 ",
+        "paraId": 24,
+        "tocIndex": 17
+    },
+    {
+        "value": "示例 - 力导向布局防止节点重叠",
+        "paraId": 25,
+        "tocIndex": 17
+    },
+    {
+        "value": "该示例展示了如何使用力导向布局实现团队聚类效果，不同团队的节点会自动聚集在一起。",
+        "paraId": 26,
+        "tocIndex": 18
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 500,\n  height: 250,\n  autoFit: 'view',\n  data: {\n    nodes: [\n      // 团队 A\n      { id: 'A1', team: 'A', label: 'A1', size: 30 },\n      { id: 'A2', team: 'A', label: 'A2', size: 20 },\n      { id: 'A3', team: 'A', label: 'A3', size: 20 },\n      { id: 'A4', team: 'A', label: 'A4', size: 20 },\n      // 团队 B\n      { id: 'B1', team: 'B', label: 'B1', size: 30 },\n      { id: 'B2', team: 'B', label: 'B2', size: 20 },\n      { id: 'B3', team: 'B', label: 'B3', size: 20 },\n      { id: 'B4', team: 'B', label: 'B4', size: 20 },\n      // 团队 C\n      { id: 'C1', team: 'C', label: 'C1', size: 30 },\n      { id: 'C2', team: 'C', label: 'C2', size: 20 },\n      { id: 'C3', team: 'C', label: 'C3', size: 20 },\n      { id: 'C4', team: 'C', label: 'C4', size: 20 },\n    ],\n    edges: [\n      // 团队 A 内部连接\n      { source: 'A1', target: 'A2' },\n      { source: 'A1', target: 'A3' },\n      { source: 'A1', target: 'A4' },\n      // 团队 B 内部连接\n      { source: 'B1', target: 'B2' },\n      { source: 'B1', target: 'B3' },\n      { source: 'B1', target: 'B4' },\n      // 团队 C 内部连接\n      { source: 'C1', target: 'C2' },\n      { source: 'C1', target: 'C3' },\n      { source: 'C1', target: 'C4' },\n      // 团队间的少量连接\n      { source: 'A1', target: 'B1' },\n      { source: 'B1', target: 'C1' },\n    ],\n  },\n  node: {\n    style: {\n      size: (d) => d.size,\n      fill: (d) => {\n        // 不同团队使用不同颜色\n        const colors = {\n          A: '#FF6B6B',\n          B: '#4ECDC4',\n          C: '#45B7D1',\n        };\n        return colors[d.team];\n      },\n      labelText: (d) => d.label,\n      labelPlacement: 'center',\n      labelFill: '#fff',\n    },\n  },\n  edge: {\n    style: {\n      stroke: '#aaa',\n    },\n  },\n  layout: {\n    type: 'd3-force',\n    // 配置链接力 - 团队内部节点更靠近\n    link: {\n      distance: (d) => {\n        // 同一团队内的连接距离更短\n        if (d.source.team === d.target.team) return 50;\n        // 不同团队间的连接距离更长\n        return 200;\n      },\n      strength: (d) => {\n        // 同一团队内的连接强度更大\n        if (d.source.team === d.target.team) return 0.7;\n        // 不同团队间的连接强度更小\n        return 0.1;\n      },\n    },\n    // 配置多体力 - 控制节点间的排斥力\n    manyBody: {\n      strength: (d) => {\n        // 团队领导节点（编号1）的排斥力更强\n        if (d.label.endsWith('1')) return -100;\n        return -30;\n      },\n    },\n    // 配置碰撞力 - 防止节点重叠\n    collide: {\n      radius: 35,\n      strength: 0.8,\n    },\n    // 配置中心力 - 保持图形在画布中心\n    center: {\n      strength: 0.05,\n    },\n  },\n  behaviors: ['drag-element-force'],\n});\n\ngraph.render();\n",
+        "paraId": 27,
+        "tocIndex": 18
+    },
+    {
+        "value": "展开查看完整代码",
+        "paraId": 28
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\n// 创建模拟数据，包含不同团队的节点\nconst data = {\n  nodes: [\n    // 团队 A\n    { id: 'A1', team: 'A', label: 'A1', size: 30 },\n    { id: 'A2', team: 'A', label: 'A2', size: 20 },\n    { id: 'A3', team: 'A', label: 'A3', size: 20 },\n    { id: 'A4', team: 'A', label: 'A4', size: 20 },\n    // 团队 B\n    { id: 'B1', team: 'B', label: 'B1', size: 30 },\n    { id: 'B2', team: 'B', label: 'B2', size: 20 },\n    { id: 'B3', team: 'B', label: 'B3', size: 20 },\n    { id: 'B4', team: 'B', label: 'B4', size: 20 },\n    // 团队 C\n    { id: 'C1', team: 'C', label: 'C1', size: 30 },\n    { id: 'C2', team: 'C', label: 'C2', size: 20 },\n    { id: 'C3', team: 'C', label: 'C3', size: 20 },\n    { id: 'C4', team: 'C', label: 'C4', size: 20 },\n  ],\n  edges: [\n    // 团队 A 内部连接\n    { source: 'A1', target: 'A2' },\n    { source: 'A1', target: 'A3' },\n    { source: 'A1', target: 'A4' },\n    // 团队 B 内部连接\n    { source: 'B1', target: 'B2' },\n    { source: 'B1', target: 'B3' },\n    { source: 'B1', target: 'B4' },\n    // 团队 C 内部连接\n    { source: 'C1', target: 'C2' },\n    { source: 'C1', target: 'C3' },\n    { source: 'C1', target: 'C4' },\n    // 团队间的少量连接\n    { source: 'A1', target: 'B1' },\n    { source: 'B1', target: 'C1' },\n  ],\n};\n\nconst graph = new Graph({\n  container: 'container',\n  data,\n  node: {\n    style: {\n      size: (d) => d.size,\n      fill: (d) => {\n        // 不同团队使用不同颜色\n        const colors = {\n          A: '#FF6B6B',\n          B: '#4ECDC4',\n          C: '#45B7D1',\n        };\n        return colors[d.team];\n      },\n      labelText: (d) => d.label,\n      labelPlacement: 'center',\n      labelFill: '#fff',\n    },\n  },\n  edge: {\n    style: {\n      stroke: '#aaa',\n    },\n  },\n  layout: {\n    type: 'd3-force',\n    // 配置链接力 - 团队内部节点更靠近\n    link: {\n      distance: (d) => {\n        // 同一团队内的连接距离更短\n        if (d.source.team === d.target.team) return 50;\n        // 不同团队间的连接距离更长\n        return 200;\n      },\n      strength: (d) => {\n        // 同一团队内的连接强度更大\n        if (d.source.team === d.target.team) return 0.7;\n        // 不同团队间的连接强度更小\n        return 0.1;\n      },\n    },\n    // 配置多体力 - 控制节点间的排斥力\n    manyBody: {\n      strength: (d) => {\n        // 团队领导节点（编号1）的排斥力更强\n        if (d.label.endsWith('1')) return -100;\n        return -30;\n      },\n    },\n    // 配置碰撞力 - 防止节点重叠\n    collide: {\n      radius: 35,\n      strength: 0.8,\n    },\n    // 配置中心力 - 保持图形在画布中心\n    center: {\n      strength: 0.05,\n    },\n  },\n  behaviors: ['drag-element-force'],\n});\n\ngraph.render();\n",
+        "paraId": 29,
+        "tocIndex": 18
+    },
+    {
+        "value": "主要配置说明：",
+        "paraId": 30,
+        "tocIndex": 18
+    },
+    {
+        "value": "link.distance",
+        "paraId": 31,
+        "tocIndex": 18
+    },
+    {
+        "value": "：团队内部距离短，团队间距离长",
+        "paraId": 31,
+        "tocIndex": 18
+    },
+    {
+        "value": "link.strength",
+        "paraId": 31,
+        "tocIndex": 18
+    },
+    {
+        "value": "：团队内部连接强度大，团队间连接强度小",
+        "paraId": 31,
+        "tocIndex": 18
+    },
+    {
+        "value": "manyBody.strength",
+        "paraId": 31,
+        "tocIndex": 18
+    },
+    {
+        "value": "：控制节点间排斥力",
+        "paraId": 31,
+        "tocIndex": 18
+    },
+    {
+        "value": "collide",
+        "paraId": 31,
+        "tocIndex": 18
+    },
+    {
+        "value": "：防止节点重叠",
+        "paraId": 31,
+        "tocIndex": 18
+    },
+    {
+        "value": "center",
+        "paraId": 31,
+        "tocIndex": 18
+    },
+    {
+        "value": "：保持整体布局在画布中心",
+        "paraId": 31,
+        "tocIndex": 18
+    },
+    {
+        "value": "还可以参考 ",
+        "paraId": 32,
+        "tocIndex": 18
+    },
+    {
+        "value": "定制不同节点的参数",
+        "paraId": 33,
+        "tocIndex": 18
+    },
+    {
+        "value": " 示例。",
+        "paraId": 32,
+        "tocIndex": 18
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_layout_D3ForceLayout_zh_md_q_hK4X-async.js.map

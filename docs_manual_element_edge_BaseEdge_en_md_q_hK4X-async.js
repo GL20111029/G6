@@ -1,0 +1,4720 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/element/edge/BaseEdge.en.md?type=text'],
+{ "docs/manual/element/edge/BaseEdge.en.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/element/edge/BaseEdge.en.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "This document introduces the built-in edge common property configurations.",
+        "paraId": 0
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  edge: {\n    type: 'line', // Edge type\n    style: {}, // Edge style\n    state: {}, // State styles\n    palette: {}, // Palette configuration\n    animation: {}, // Animation configuration\n  },\n});\n",
+        "paraId": 1,
+        "tocIndex": 0
+    },
+    {
+        "value": "Property",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Description",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Type",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Default",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Required",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "type",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Edge type, built-in edge type name or custom edge name",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Type",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": "line",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "style",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Edge style configuration, including color, thickness, etc.",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Style",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": "-",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "state",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Style configuration for different states",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "State",
+        "paraId": 5,
+        "tocIndex": 0
+    },
+    {
+        "value": "-",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "palette",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Define edge palette for mapping colors based on different data",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Palette",
+        "paraId": 6,
+        "tocIndex": 0
+    },
+    {
+        "value": "-",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "animation",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Define edge animation effects",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Animation",
+        "paraId": 7,
+        "tocIndex": 0
+    },
+    {
+        "value": "-",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Specify the edge type, built-in edge type name or custom edge name. Default is ",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": "line",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": " (straight line edge). ",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": "⚠️ Note",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": ": This determines the shape of the main graphic.",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    type: 'polyline',\n  },\n});\n",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "⚠️ Dynamic Configuration Note",
+        "paraId": 10,
+        "tocIndex": 1
+    },
+    {
+        "value": ": The ",
+        "paraId": 10,
+        "tocIndex": 1
+    },
+    {
+        "value": "type",
+        "paraId": 10,
+        "tocIndex": 1
+    },
+    {
+        "value": " property also supports dynamic configuration, allowing you to dynamically select edge types based on edge data:",
+        "paraId": 10,
+        "tocIndex": 1
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    // Static configuration\n    type: 'line',\n\n    // Dynamic configuration - arrow function form\n    type: (datum) => datum.data.edgeType || 'line',\n\n    // Dynamic configuration - regular function form (can access graph instance)\n    type: function (datum) {\n      console.log(this); // graph instance\n      return datum.data.importance > 5 ? 'polyline' : 'line';\n    },\n  },\n});\n",
+        "paraId": 11,
+        "tocIndex": 1
+    },
+    {
+        "value": "Available values:",
+        "paraId": 12,
+        "tocIndex": 1
+    },
+    {
+        "value": "line",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": ": ",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "Straight line edge",
+        "paraId": 14,
+        "tocIndex": 1
+    },
+    {
+        "value": "polyline",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": ": ",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "Polyline edge",
+        "paraId": 15,
+        "tocIndex": 1
+    },
+    {
+        "value": "cubic",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": ": ",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "Cubic Bezier curve edge",
+        "paraId": 16,
+        "tocIndex": 1
+    },
+    {
+        "value": "cubic-horizontal",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": ": ",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "Horizontal cubic Bezier curve edge",
+        "paraId": 17,
+        "tocIndex": 1
+    },
+    {
+        "value": "cubic-vertical",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": ": ",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "Vertical cubic Bezier curve edge",
+        "paraId": 18,
+        "tocIndex": 1
+    },
+    {
+        "value": "quadratic",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": ": ",
+        "paraId": 13,
+        "tocIndex": 1
+    },
+    {
+        "value": "Quadratic Bezier curve edge",
+        "paraId": 19,
+        "tocIndex": 1
+    },
+    {
+        "value": "Define edge styles, including color, thickness, etc.",
+        "paraId": 20,
+        "tocIndex": 2
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    style: {},\n  },\n});\n",
+        "paraId": 21,
+        "tocIndex": 2
+    },
+    {
+        "value": "⚠️ Dynamic Configuration Note",
+        "paraId": 22,
+        "tocIndex": 2
+    },
+    {
+        "value": ": All the following style properties support dynamic configuration, meaning you can pass functions to dynamically calculate property values based on edge data:",
+        "paraId": 22,
+        "tocIndex": 2
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    style: {\n      // Static configuration\n      stroke: '#1783FF',\n\n      // Dynamic configuration - arrow function form\n      lineWidth: (datum) => (datum.data.isImportant ? 3 : 1),\n\n      // Dynamic configuration - regular function form (can access graph instance)\n      lineDash: function (datum) {\n        console.log(this); // graph instance\n        return datum.data.type === 'dashed' ? [5, 5] : [];\n      },\n\n      // Nested properties also support dynamic configuration\n      labelText: (datum) => `Edge: ${datum.id}`,\n      endArrow: (datum) => datum.data.hasArrow,\n    },\n  },\n});\n",
+        "paraId": 23,
+        "tocIndex": 2
+    },
+    {
+        "value": "Where the ",
+        "paraId": 24,
+        "tocIndex": 2
+    },
+    {
+        "value": "datum",
+        "paraId": 24,
+        "tocIndex": 2
+    },
+    {
+        "value": " parameter is the edge data object (",
+        "paraId": 24,
+        "tocIndex": 2
+    },
+    {
+        "value": "EdgeData",
+        "paraId": 24,
+        "tocIndex": 2
+    },
+    {
+        "value": "), containing all data information of the edge.",
+        "paraId": 24,
+        "tocIndex": 2
+    },
+    {
+        "value": "A complete edge consists of the following parts:",
+        "paraId": 25,
+        "tocIndex": 2
+    },
+    {
+        "value": "key",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": ": The main graphic of the edge, representing the main path of the edge, such as straight lines, curves, etc.",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "label",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": ": Text label, usually used to display the name or description of the edge",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "badge",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": ": Badge on the edge",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "halo",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": ": The halo effect graphic displayed around the main graphic",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "startArrow",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": ": Arrow at the starting end of the edge",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "endArrow",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": ": Arrow at the ending end of the edge",
+        "paraId": 26,
+        "tocIndex": 2
+    },
+    {
+        "value": "The following style configurations will be explained by atomic graphics in order:",
+        "paraId": 27,
+        "tocIndex": 2
+    },
+    {
+        "value": "The main graphic is the core part of the edge, defining the basic path and appearance of the edge. Here are common configuration scenarios:",
+        "paraId": 28,
+        "tocIndex": 3
+    },
+    {
+        "value": "Set the basic appearance of the edge:",
+        "paraId": 29,
+        "tocIndex": 4
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 40 } },\n      { id: 'node2', style: { x: 180, y: 40 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#5B8FF9', // Blue edge\n      lineWidth: 2, // Edge width\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 30,
+        "tocIndex": 4
+    },
+    {
+        "value": "Create edges with dashed line style:",
+        "paraId": 31,
+        "tocIndex": 5
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 40 } },\n      { id: 'node2', style: { x: 180, y: 40 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#F5222D',\n      lineWidth: 2,\n      lineDash: [6, 4], // Dashed line style\n      lineDashOffset: 0,\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 32,
+        "tocIndex": 5
+    },
+    {
+        "value": "Add shadow effect to edges:",
+        "paraId": 33,
+        "tocIndex": 6
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 40 } },\n      { id: 'node2', style: { x: 180, y: 40 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#722ED1',\n      lineWidth: 3,\n      shadowColor: 'rgba(114, 46, 209, 0.3)',\n      shadowBlur: 8,\n      shadowOffsetX: 2,\n      shadowOffsetY: 2,\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 34,
+        "tocIndex": 6
+    },
+    {
+        "value": "The following is the complete main graphic style configuration:",
+        "paraId": 35,
+        "tocIndex": 6
+    },
+    {
+        "value": "Property",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Description",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Type",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Default",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Required",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "cursor",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Mouse cursor style when hovering over edge, ",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "options",
+        "paraId": 37,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "default",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "increasedLineWidthForHitTesting",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "When lineWidth is small, the interactive area also becomes small. We can increase this area to make \"thin lines\" easier to pick up",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "0",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "lineDash",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge dash line style",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number[]",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "lineDashOffset",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge dash line offset",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "0",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "lineWidth",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge width",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "1",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "opacity",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge opacity",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number | string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "1",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "pointerEvents",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "How edge responds to pointer events, ",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "options",
+        "paraId": 38,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "auto",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "shadowBlur",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge shadow blur",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "shadowColor",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge shadow color",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "shadowOffsetX",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge shadow offset in x direction",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number | string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "shadowOffsetY",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge shadow offset in y direction",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number | string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "shadowType",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge shadow type",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "inner",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": " | ",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "outer",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "outer",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "sourcePort",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Connection port at the source end of the edge",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "stroke",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge color",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "#000",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "strokeOpacity",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge color opacity",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number | string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "1",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "targetPort",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Connection port at the target end of the edge",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "transform",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Transform property allows you to rotate, scale, skew, or translate the given edge",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "transformOrigin",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "The center of rotation and scaling, also known as the transform center",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "string",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "-",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "visibility",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Whether the edge is visible",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "visible",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": " | ",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "hidden",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "visible",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "zIndex",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "Edge rendering layer",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "number",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "1",
+        "paraId": 36,
+        "tocIndex": 6
+    },
+    {
+        "value": "The ",
+        "paraId": 39,
+        "tocIndex": 7
+    },
+    {
+        "value": "pointerEvents",
+        "paraId": 39,
+        "tocIndex": 7
+    },
+    {
+        "value": " property controls how graphics respond to interaction events. Refer to ",
+        "paraId": 39,
+        "tocIndex": 7
+    },
+    {
+        "value": "MDN documentation",
+        "paraId": 39,
+        "tocIndex": 7
+    },
+    {
+        "value": ".",
+        "paraId": 39,
+        "tocIndex": 7
+    },
+    {
+        "value": "Available values: ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblepainted",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblestroke",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "non-transparent-pixel",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblefill",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "painted",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "fill",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "all",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "none",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "auto",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "inherit",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "initial",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": " | ",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "unset",
+        "paraId": 40,
+        "tocIndex": 7
+    },
+    {
+        "value": "In short, both ",
+        "paraId": 41,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 41,
+        "tocIndex": 7
+    },
+    {
+        "value": " and ",
+        "paraId": 41,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 41,
+        "tocIndex": 7
+    },
+    {
+        "value": " can independently or in combination affect hit testing behavior. Currently supports the following keywords:",
+        "paraId": 41,
+        "tocIndex": 7
+    },
+    {
+        "value": "auto",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": ": Default value, equivalent to ",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblepainted",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "none",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": ": Never becomes a target for responding to events",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblepainted",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": ": Responds to events only when the following conditions are met:\n",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": " is set to ",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": ", i.e., the graphic is visible",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "Triggered in the graphic stroke area while ",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": " takes a non-",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "none",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": " value",
+        "paraId": 43,
+        "tocIndex": 7
+    },
+    {
+        "value": "visiblestroke",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": ": Responds to events only when the following conditions are met:\n",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": " is set to ",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": ", i.e., the graphic is visible",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": "Triggered in the graphic stroke area, not affected by ",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": " value",
+        "paraId": 44,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": ": Responds to events only when the following conditions are met:\n",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": " is set to ",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": "visible",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": ", i.e., the graphic is visible",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": "Triggered in the graphic stroke area, not affected by ",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": " value",
+        "paraId": 45,
+        "tocIndex": 7
+    },
+    {
+        "value": "painted",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": ": Responds to events only when the following conditions are met:\n",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "Triggered in the graphic stroke area while ",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": " takes a non-",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": "none",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": " value",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": "Not affected by ",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": " value",
+        "paraId": 46,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": ": Responds to events only when the following conditions are met:\n",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "Triggered in the graphic stroke area, not affected by ",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": " value",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": "Not affected by ",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": " value",
+        "paraId": 47,
+        "tocIndex": 7
+    },
+    {
+        "value": "all",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": ": Responds to events as long as entering the graphic stroke area, not affected by ",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "stroke",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": " or ",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "visibility",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": " values",
+        "paraId": 42,
+        "tocIndex": 7
+    },
+    {
+        "value": "Usage Examples:",
+        "paraId": 48,
+        "tocIndex": 7
+    },
+    {
+        "value": "// Example 1: Only stroke area responds to events\nconst graph = new Graph({\n  edge: {\n    style: {\n      stroke: '#000',\n      lineWidth: 2,\n      pointerEvents: 'stroke', // Only stroke responds to events\n    },\n  },\n});\n\n// Example 2: Completely non-responsive to events\nconst graph = new Graph({\n  edge: {\n    style: {\n      pointerEvents: 'none', // Edge does not respond to any events\n    },\n  },\n});\n",
+        "paraId": 49,
+        "tocIndex": 7
+    },
+    {
+        "value": "Available values: ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "auto",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "default",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "none",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "context-menu",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "help",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "pointer",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "progress",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "wait",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "cell",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "crosshair",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "text",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "vertical-text",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "alias",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "copy",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "move",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "no-drop",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "not-allowed",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "grab",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "grabbing",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "all-scroll",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "col-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "row-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "n-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "e-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "s-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "w-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "ne-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "nw-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "se-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "sw-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "ew-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "ns-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "nesw-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "nwse-resize",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "zoom-in",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": " | ",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "zoom-out",
+        "paraId": 50,
+        "tocIndex": 8
+    },
+    {
+        "value": "Labels are used to display text information for edges, supporting various style configurations and layout options. Here are common usage scenarios:",
+        "paraId": 51,
+        "tocIndex": 9
+    },
+    {
+        "value": "The simplest text label configuration:",
+        "paraId": 52,
+        "tocIndex": 10
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 120,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 60 } },\n      { id: 'node2', style: { x: 180, y: 60 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      labelText: 'Edge Label',\n      labelFill: '#262626',\n      labelFontSize: 12,\n      labelPlacement: 'center',\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 53,
+        "tocIndex": 10
+    },
+    {
+        "value": "When text is long, you can set automatic line wrapping:",
+        "paraId": 54,
+        "tocIndex": 11
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 120,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 60 } },\n      { id: 'node2', style: { x: 180, y: 60 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      labelText: 'This is a very long edge label that needs line wrapping',\n      labelWordWrap: true,\n      labelMaxWidth: '200%',\n      labelMaxLines: 2,\n      labelTextOverflow: 'ellipsis',\n      labelFill: '#434343',\n      labelPlacement: 'center',\n      labelTextAlign: 'center',\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 55,
+        "tocIndex": 11
+    },
+    {
+        "value": "Add background to labels for better readability:",
+        "paraId": 56,
+        "tocIndex": 12
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 120,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 60 } },\n      { id: 'node2', style: { x: 180, y: 60 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      labelText: 'Important Connection',\n      labelBackground: true,\n      labelBackgroundFill: 'rgba(250, 140, 22, 0.1)',\n      labelBackgroundRadius: 6,\n      labelPadding: [4, 8],\n      labelFill: '#D4380D',\n      labelFontWeight: 'bold',\n      labelPlacement: 'center',\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 57,
+        "tocIndex": 12
+    },
+    {
+        "value": "Labels can automatically rotate to align with edge direction:",
+        "paraId": 58,
+        "tocIndex": 13
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 120,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 30 } },\n      { id: 'node2', style: { x: 180, y: 90 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      labelText: 'Auto Rotate',\n      labelAutoRotate: true, // Auto rotate\n      labelFill: '#1890FF',\n      labelFontWeight: 'bold',\n      labelPlacement: 'center',\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 59,
+        "tocIndex": 13
+    },
+    {
+        "value": "The following is the complete label style configuration:",
+        "paraId": 60,
+        "tocIndex": 13
+    },
+    {
+        "value": "Property",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Description",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Type",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Default",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Required",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "label",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Whether to show edge label",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "boolean",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "true",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelAutoRotate",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Whether edge label automatically rotates to align with edge direction",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "boolean",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "true",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelCursor",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Mouse cursor style when hovering over edge label, ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "options",
+        "paraId": 62,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "default",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFill",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label text color",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFontFamily",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label font family",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFontSize",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label font size",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "12",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFontStyle",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label font style",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "normal",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "italic",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "oblique",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFontVariant",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label font variant",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "normal",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "small-caps",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelFontWeight",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label font weight",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "normal",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "bold",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "bolder",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "lighter",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelLeading",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Line spacing",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelLetterSpacing",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label letter spacing",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number | string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelLineHeight",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label line height",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number | string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelMaxLines",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label maximum lines",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "1",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelMaxWidth",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label maximum width, ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "options",
+        "paraId": 63,
+        "tocIndex": 13
+    },
+    {
+        "value": "number | string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "200%",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelOffsetX",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label offset in x direction",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelOffsetY",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label offset in y direction",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelPadding",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label padding",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number | number[]",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelPlacement",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label position relative to edge, ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "options",
+        "paraId": 64,
+        "tocIndex": 13
+    },
+    {
+        "value": "string | number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "center",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelText",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label text content",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "(datum) => string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextAlign",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label text horizontal alignment",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "start",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "center",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "middle",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "end",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "left",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "right",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "left",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextBaseline",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label text baseline",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "top",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "hanging",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "middle",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "alphabetic",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "ideographic",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "bottom",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextDecorationColor",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label text decoration line color",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextDecorationLine",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label text decoration line",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextDecorationStyle",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label text decoration line style",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "solid",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "double",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "dotted",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "dashed",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "wavy",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextOverflow",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label text overflow handling",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "clip",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | ",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "ellipsis",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": " | string",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelTextPath",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label text path",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Path",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "-",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelWordWrap",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Whether to enable automatic line wrapping for edge labels. When enabled, text exceeding labelMaxWidth will wrap",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "boolean",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "false",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "labelZIndex",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label rendering layer",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "number",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "0",
+        "paraId": 61,
+        "tocIndex": 13
+    },
+    {
+        "value": "Edge label position relative to the edge, can be set to:",
+        "paraId": 65,
+        "tocIndex": 14
+    },
+    {
+        "value": "start",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": ": Label positioned at the starting point of the edge",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "center",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": ": Label positioned at the center of the edge (default)",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "end",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": ": Label positioned at the ending point of the edge",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "number",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": ": Value range 0-1, representing the specific position ratio of the label on the edge, 0 for start position, 1 for end position",
+        "paraId": 66,
+        "tocIndex": 14
+    },
+    {
+        "value": "After enabling automatic line wrapping ",
+        "paraId": 67,
+        "tocIndex": 15
+    },
+    {
+        "value": "labelWordWrap",
+        "paraId": 67,
+        "tocIndex": 15
+    },
+    {
+        "value": ", text exceeding this width will wrap:",
+        "paraId": 67,
+        "tocIndex": 15
+    },
+    {
+        "value": "string: Represents the maximum width defined as a percentage relative to the edge length. For example, ",
+        "paraId": 68,
+        "tocIndex": 15
+    },
+    {
+        "value": "50%",
+        "paraId": 68,
+        "tocIndex": 15
+    },
+    {
+        "value": " means the label width does not exceed half the edge length",
+        "paraId": 68,
+        "tocIndex": 15
+    },
+    {
+        "value": "number: Represents the maximum width defined in pixels. For example, 100 means the label's maximum width is 100 pixels",
+        "paraId": 68,
+        "tocIndex": 15
+    },
+    {
+        "value": "For example, setting multi-line label text:",
+        "paraId": 69,
+        "tocIndex": 15
+    },
+    {
+        "value": "{\n  \"labelWordWrap\": true,\n  \"labelMaxWidth\": 200,\n  \"labelMaxLines\": 3\n}\n",
+        "paraId": 70,
+        "tocIndex": 15
+    },
+    {
+        "value": "Label background is used to display the background of edge labels:",
+        "paraId": 71,
+        "tocIndex": 16
+    },
+    {
+        "value": "Property",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Description",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Type",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Default",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackground",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Whether to show edge label background",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "boolean",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "false",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundCursor",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background mouse cursor style, ",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "options",
+        "paraId": 73,
+        "tocIndex": 16
+    },
+    {
+        "value": "string",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "default",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundFill",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background fill color",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "string",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundFillOpacity",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background opacity",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "1",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundHeight",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background height",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "string | number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundLineDash",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background dash line configuration",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number | string |(number | string )[]",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundLineDashOffset",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background dash line offset",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundLineWidth",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background stroke line width",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundRadius",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background border radius ",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": " - number: Uniform radius for all corners ",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": " - number[]: Individual radius for each corner, auto-filled if insufficient",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number | number[]",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "0",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundShadowBlur",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background shadow blur",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundShadowColor",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background shadow color",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "string",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundShadowOffsetX",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background shadow X offset",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundShadowOffsetY",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background shadow Y offset",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundStroke",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background stroke color",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "string",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundStrokeOpacity",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background stroke opacity",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number | string",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "1",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundVisibility",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background visibility",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "visible",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": " | ",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "hidden",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "-",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "labelBackgroundZIndex",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Edge label background rendering layer",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "number",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "1",
+        "paraId": 72,
+        "tocIndex": 16
+    },
+    {
+        "value": "Halo is an effect displayed around the edge main graphic, usually used for highlighting or indicating special states of the edge.",
+        "paraId": 74,
+        "tocIndex": 17
+    },
+    {
+        "value": "Add basic halo effect to edges:",
+        "paraId": 75,
+        "tocIndex": 18
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 50 } },\n      { id: 'node2', style: { x: 180, y: 50 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      lineWidth: 2,\n      halo: true,\n      haloStroke: '#1890FF',\n      haloLineWidth: 6,\n      haloStrokeOpacity: 0.3,\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 76,
+        "tocIndex": 18
+    },
+    {
+        "value": "The following is the complete halo style configuration:",
+        "paraId": 77,
+        "tocIndex": 18
+    },
+    {
+        "value": "Property",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Description",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Type",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Default",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Required",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "halo",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Whether to show edge halo",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "boolean",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "false",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloCursor",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Edge halo mouse cursor style, ",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "options",
+        "paraId": 79,
+        "tocIndex": 18
+    },
+    {
+        "value": "string",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "default",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloDraggable",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Whether edge halo allows dragging",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "boolean",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "true",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloDroppable",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Whether edge halo allows receiving dragged elements",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "boolean",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "true",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloFillRule",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Edge halo fill rule",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "nonzero",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": " | ",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "evenodd",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "-",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloFilter",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Edge halo filter",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "string",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "-",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloLineWidth",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Edge halo stroke width",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "number",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "3",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloPointerEvents",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Whether edge halo responds to pointer events, ",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "options",
+        "paraId": 80,
+        "tocIndex": 18
+    },
+    {
+        "value": "string",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "none",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloStroke",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Edge halo stroke color, ",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "this property sets the color of the halo around the edge",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "string",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Consistent with main graphic stroke color",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloStrokeOpacity",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Edge halo stroke opacity",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "number",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "0.25",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloVisibility",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Edge halo visibility",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "visible",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": " | ",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "hidden",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "visible",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "haloZIndex",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Edge halo rendering layer",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "number",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "-1",
+        "paraId": 78,
+        "tocIndex": 18
+    },
+    {
+        "value": "Edges support adding arrows at the start and end points to indicate the directionality of the edge.",
+        "paraId": 81,
+        "tocIndex": 19
+    },
+    {
+        "value": "Add basic arrow to the end of the edge:",
+        "paraId": 82,
+        "tocIndex": 20
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 50 } },\n      { id: 'node2', style: { x: 180, y: 50 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#1890FF',\n      lineWidth: 2,\n      endArrow: true, // End arrow\n      endArrowType: 'vee', // Arrow type\n      endArrowSize: 10, // Arrow size\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 83,
+        "tocIndex": 20
+    },
+    {
+        "value": "Add arrows to both ends of the edge:",
+        "paraId": 84,
+        "tocIndex": 21
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 50 } },\n      { id: 'node2', style: { x: 180, y: 50 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#52C41A',\n      lineWidth: 2,\n      startArrow: true, // Start arrow\n      startArrowType: 'circle',\n      startArrowSize: 8,\n      endArrow: true, // End arrow\n      endArrowType: 'triangle',\n      endArrowSize: 10,\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 85,
+        "tocIndex": 21
+    },
+    {
+        "value": "Customize arrow color and type:",
+        "paraId": 86,
+        "tocIndex": 22
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 240,\n  height: 100,\n  autoFit: 'center',\n  data: {\n    nodes: [\n      { id: 'node1', style: { x: 60, y: 50 } },\n      { id: 'node2', style: { x: 180, y: 50 } },\n    ],\n    edges: [{ source: 'node1', target: 'node2' }],\n  },\n  edge: {\n    style: {\n      stroke: '#722ED1',\n      lineWidth: 3,\n      endArrow: true,\n      endArrowType: 'diamond', // Diamond arrow\n      endArrowSize: 12,\n      endArrowFill: '#FF4D4F', // Red arrow fill\n      endArrowStroke: '#722ED1', // Arrow stroke color\n      endArrowStrokeOpacity: 0.8,\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 87,
+        "tocIndex": 22
+    },
+    {
+        "value": "Property",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Description",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Type",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Default",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Required",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrow",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Whether to show edge start arrow",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "boolean",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "false",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowCursor",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Edge start arrow mouse cursor style, ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "options",
+        "paraId": 89,
+        "tocIndex": 23
+    },
+    {
+        "value": "string",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "default",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowFill",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Edge start arrow fill color",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "string",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Default consistent with edge color",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowFillOpacity",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Edge start arrow fill opacity",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "number",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "1",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowOffset",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Edge start arrow offset",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "number",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "0",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowSize",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Edge start arrow size",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "number | [number, number]",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "10",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowStroke",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Edge start arrow stroke color",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "string",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Default consistent with edge color",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowStrokeOpacity",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Edge start arrow stroke opacity",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "number",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "1",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "startArrowType",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Edge start arrow type",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "triangle",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "circle",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "diamond",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "vee",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "rect",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "triangleRect",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": " | ",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "simple",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "vee",
+        "paraId": 88,
+        "tocIndex": 23
+    },
+    {
+        "value": "Property",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Description",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Type",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Default",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Required",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrow",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Whether to show edge end arrow",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "boolean",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "false",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowCursor",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge end arrow mouse cursor style, ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "options",
+        "paraId": 91,
+        "tocIndex": 24
+    },
+    {
+        "value": "string",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "default",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowFill",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge end arrow fill color",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "string",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Default consistent with edge color",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowFillOpacity",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge end arrow fill opacity",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "number",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "1",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowOffset",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge end arrow offset",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "number",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "0",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowSize",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge end arrow size",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "number | [number, number]",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "10",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowStroke",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge end arrow stroke color",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "string",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Default consistent with edge color",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowStrokeOpacity",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge end arrow stroke opacity",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "number",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "1",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "endArrowType",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Edge end arrow type",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "triangle",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "circle",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "diamond",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "vee",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "rect",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "triangleRect",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": " | ",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "simple",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "vee",
+        "paraId": 90,
+        "tocIndex": 24
+    },
+    {
+        "value": "Loop edges are special edges where the start and end nodes are the same node.",
+        "paraId": 92,
+        "tocIndex": 25
+    },
+    {
+        "value": "Create a basic loop edge:",
+        "paraId": 93,
+        "tocIndex": 26
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 200,\n  height: 100,\n  autoFit: 'center',\n  data: {\n    nodes: [{ id: 'node1', style: { x: 100, y: 50 } }],\n    edges: [{ source: 'node1', target: 'node1' }],\n  },\n  edge: {\n    style: {\n      stroke: '#1890FF',\n      lineWidth: 2,\n      endArrow: true,\n      loopPlacement: 'top', // Loop position\n      loopDist: 30, // Loop size\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 94,
+        "tocIndex": 26
+    },
+    {
+        "value": "Create multiple loop edges at different positions for the same node:",
+        "paraId": 95,
+        "tocIndex": 27
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 200,\n  height: 120,\n  autoFit: 'center',\n  data: {\n    nodes: [{ id: 'node1', style: { x: 100, y: 60 } }],\n    edges: [\n      { id: 'edge1', source: 'node1', target: 'node1' },\n      { id: 'edge2', source: 'node1', target: 'node1' },\n      { id: 'edge3', source: 'node1', target: 'node1' },\n    ],\n  },\n  edge: {\n    style: {\n      lineWidth: 2,\n      endArrow: true,\n      loopPlacement: (datum) => {\n        const placements = ['top', 'right', 'bottom'];\n        return placements[parseInt(datum.id.slice(-1)) - 1];\n      },\n      loopDist: 25,\n      stroke: (datum) => {\n        const colors = ['#1890FF', '#52C41A', '#722ED1'];\n        return colors[parseInt(datum.id.slice(-1)) - 1];\n      },\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 96,
+        "tocIndex": 27
+    },
+    {
+        "value": "The following is the complete loop edge style configuration:",
+        "paraId": 97,
+        "tocIndex": 27
+    },
+    {
+        "value": "Property",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "Description",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "Type",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "Default",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "Required",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "loop",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "Whether to enable loop edges",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "boolean",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "true",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "loopClockwise",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "Whether to draw the loop clockwise",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "boolean",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "true",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "loopDist",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "Distance from node edge to loop top, used to specify loop curvature",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "number",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "Default to max node size",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "loopPlacement",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "Loop edge position",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "left",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "right",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "top",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "bottom",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "left-top",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "left-bottom",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "right-top",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "right-bottom",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "top-left",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "top-right",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "bottom-left",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": " | ",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "bottom-right",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "top",
+        "paraId": 98,
+        "tocIndex": 27
+    },
+    {
+        "value": "In some interactive behaviors, such as clicking to select an edge or hovering to activate an edge, it's simply marking certain states on that element. To reflect these states in the visual space seen by end users, we need to set different graphic element styles for different states to respond to changes in the state of that graphic element.",
+        "paraId": 99,
+        "tocIndex": 28
+    },
+    {
+        "value": "G6 provides several built-in states, including selected, highlight, active, inactive, and disabled. Additionally, it supports custom states to meet more specific needs. For each state, developers can define a set of style rules that will override the element's default styles.",
+        "paraId": 100,
+        "tocIndex": 28
+    },
+    {
+        "value": "The data structure is as follows:",
+        "paraId": 101,
+        "tocIndex": 28
+    },
+    {
+        "value": "type EdgeState = {\n  [state: string]: EdgeStyle;\n};\n",
+        "paraId": 102,
+        "tocIndex": 28
+    },
+    {
+        "value": "For example, when an edge is in the ",
+        "paraId": 103,
+        "tocIndex": 28
+    },
+    {
+        "value": "focus",
+        "paraId": 103,
+        "tocIndex": 28
+    },
+    {
+        "value": " state, you can add a halo with a width of 6 and orange color.",
+        "paraId": 103,
+        "tocIndex": 28
+    },
+    {
+        "value": "const graph = new Graph({\n  edge: {\n    state: {\n      focus: {\n        halo: true,\n        haloLineWidth: 6,\n        haloStroke: 'orange',\n        haloStrokeOpacity: 0.6,\n      },\n    },\n  },\n});\n",
+        "paraId": 104,
+        "tocIndex": 28
+    },
+    {
+        "value": "The effect is shown in the following image:",
+        "paraId": 105,
+        "tocIndex": 28
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 300,\n  height: 100,\n  autoFit: 'center',\n  data: {\n    nodes: [{ id: 'node1' }, { id: 'node2' }],\n    edges: [{ source: 'node1', target: 'node2', states: ['focus'] }],\n  },\n  edge: {\n    state: {\n      focus: {\n        halo: true,\n        haloLineWidth: 6,\n        haloStroke: 'orange',\n      },\n    },\n  },\n  layout: {\n    type: 'grid',\n    cols: 2,\n  },\n});\n\ngraph.render();\n",
+        "paraId": 106,
+        "tocIndex": 28
+    },
+    {
+        "value": "Define edge animation effects. Supports the following two configuration methods:",
+        "paraId": 107,
+        "tocIndex": 29
+    },
+    {
+        "value": "Disable all edge animations",
+        "paraId": 108,
+        "tocIndex": 29
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"animation\": false\n  }\n}\n",
+        "paraId": 109,
+        "tocIndex": 29
+    },
+    {
+        "value": "Configure stage animations",
+        "paraId": 110,
+        "tocIndex": 29
+    },
+    {
+        "value": "Stage animations refer to the animation effects when edges enter the canvas, update, or leave the canvas. Currently supported stages include:",
+        "paraId": 111,
+        "tocIndex": 29
+    },
+    {
+        "value": "enter",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": Animation when edge enters the canvas",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "update",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": Animation when edge updates",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "exit",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": Animation when edge leaves the canvas",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "show",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": Animation when edge shows from hidden state",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "hide",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": Animation when edge hides",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "collapse",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": Animation when edge collapses",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "expand",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": ": Animation when edge expands",
+        "paraId": 112,
+        "tocIndex": 29
+    },
+    {
+        "value": "You can refer to ",
+        "paraId": 113,
+        "tocIndex": 29
+    },
+    {
+        "value": "Animation Paradigm",
+        "paraId": 114,
+        "tocIndex": 29
+    },
+    {
+        "value": " to use animation syntax to configure edges, such as:",
+        "paraId": 113,
+        "tocIndex": 29
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"animation\": {\n      \"update\": [\n        {\n          \"fields\": [\"stroke\"], // Only animate stroke property during update\n          \"duration\": 1000, // Animation duration\n          \"easing\": \"linear\" // Easing function\n        }\n      ]\n    }\n  }\n}\n",
+        "paraId": 115,
+        "tocIndex": 29
+    },
+    {
+        "value": "You can also use built-in animation effects:",
+        "paraId": 116,
+        "tocIndex": 29
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"animation\": {\n      \"enter\": \"fade\", // Use fade animation\n      \"update\": \"path-in\", // Use path animation\n      \"exit\": \"fade\" // Use fade animation\n    }\n  }\n}\n",
+        "paraId": 117,
+        "tocIndex": 29
+    },
+    {
+        "value": "You can pass false to disable specific stage animations:",
+        "paraId": 118,
+        "tocIndex": 29
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"animation\": {\n      \"enter\": false // Disable edge entrance animation\n    }\n  }\n}\n",
+        "paraId": 119,
+        "tocIndex": 29
+    },
+    {
+        "value": "Define the edge palette, which is a predefined edge color pool that is allocated according to rules and maps colors to the ",
+        "paraId": 120,
+        "tocIndex": 30
+    },
+    {
+        "value": "stroke",
+        "paraId": 120,
+        "tocIndex": 30
+    },
+    {
+        "value": " property.",
+        "paraId": 120,
+        "tocIndex": 30
+    },
+    {
+        "value": "For palette definitions, please refer to ",
+        "paraId": 121,
+        "tocIndex": 30
+    },
+    {
+        "value": "Palette",
+        "paraId": 122,
+        "tocIndex": 30
+    },
+    {
+        "value": ".",
+        "paraId": 121,
+        "tocIndex": 30
+    },
+    {
+        "value": "Property",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "Description",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "Type",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "Default",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "color",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "Palette colors. If the palette is registered, you can directly specify its registration name, or accept a color array",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "string | string[]",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "-",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "field",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "Specify the grouping field in element data. If not specified, defaults to using id as grouping field",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "string | ((datum) => string)",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "id",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "invert",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "Whether to invert the palette",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "boolean",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "false",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "type",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "Specify current palette type. ",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": " - ",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "group",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": ": Discrete palette ",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": " - ",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "value",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": ": Continuous palette",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "group",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": " | ",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "value",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "group",
+        "paraId": 123,
+        "tocIndex": 30
+    },
+    {
+        "value": "For example, to assign edge colors to a group of data by the ",
+        "paraId": 124,
+        "tocIndex": 30
+    },
+    {
+        "value": "direction",
+        "paraId": 124,
+        "tocIndex": 30
+    },
+    {
+        "value": " field, making edges of the same category have the same color:",
+        "paraId": 124,
+        "tocIndex": 30
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"palette\": {\n      \"type\": \"group\",\n      \"field\": \"direction\",\n      \"color\": [\"#F08F56\", \"#00C9C9\", \"#D580FF\"]\n    }\n  }\n}\n",
+        "paraId": 125,
+        "tocIndex": 30
+    },
+    {
+        "value": "The effect is shown in the following image:",
+        "paraId": 126,
+        "tocIndex": 30
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 600,\n  height: 300,\n  data: {\n    nodes: new Array(6).fill(0).map((_, i) => ({ id: `node-${i + 1}` })),\n    edges: [\n      { source: 'node-1', target: 'node-2', data: { direction: 'out' } },\n      { source: 'node-1', target: 'node-3', data: { direction: 'out' } },\n      { source: 'node-1', target: 'node-4', data: { direction: 'out' } },\n      { source: 'node-5', target: 'node-1', data: { direction: 'in' } },\n      { source: 'node-6', target: 'node-1', data: { direction: 'in' } },\n    ],\n  },\n  layout: {\n    type: 'radial',\n    unitRadius: 120,\n    linkDistance: 120,\n  },\n  edge: {\n    style: {\n      endArrow: true,\n    },\n    palette: {\n      type: 'group',\n      field: 'direction',\n      color: ['#F08F56', '#00C9C9'],\n    },\n  },\n});\n\ngraph.render();\n",
+        "paraId": 127,
+        "tocIndex": 30
+    },
+    {
+        "value": "You can also use default configuration:",
+        "paraId": 128,
+        "tocIndex": 30
+    },
+    {
+        "value": "{\n  \"edge\": {\n    \"palette\": \"tableau\" // tableau is the palette name, colors assigned by ID by default\n  }\n}\n",
+        "paraId": 129,
+        "tocIndex": 30
+    },
+    {
+        "value": "The effect is shown in the following image:",
+        "paraId": 130,
+        "tocIndex": 30
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst graph = new Graph({\n  container: 'container',\n  width: 600,\n  height: 300,\n  data: {\n    nodes: new Array(6).fill(0).map((_, i) => ({ id: `node-${i + 1}` })),\n    edges: [\n      { source: 'node-1', target: 'node-2', data: { direction: 'out' } },\n      { source: 'node-1', target: 'node-3', data: { direction: 'out' } },\n      { source: 'node-1', target: 'node-4', data: { direction: 'out' } },\n      { source: 'node-5', target: 'node-1', data: { direction: 'in' } },\n      { source: 'node-6', target: 'node-1', data: { direction: 'in' } },\n    ],\n  },\n  layout: {\n    type: 'radial',\n    unitRadius: 120,\n    linkDistance: 120,\n  },\n  edge: {\n    style: {\n      endArrow: true,\n    },\n    palette: 'tableau',\n  },\n});\n\ngraph.render();\n",
+        "paraId": 131,
+        "tocIndex": 30
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_element_edge_BaseEdge_en_md_q_hK4X-async.js.map

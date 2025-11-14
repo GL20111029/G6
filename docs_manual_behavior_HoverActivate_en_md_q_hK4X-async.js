@@ -1,0 +1,386 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/behavior/HoverActivate.en.md?type=text'],
+{ "docs/manual/behavior/HoverActivate.en.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/behavior/HoverActivate.en.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "HoverActivate is a built-in behavior in G6 used to implement the hover activation effect on elements. When the mouse hovers over nodes or edges, it automatically triggers visual feedback such as highlighting and displaying. This behavior is an important means of enhancing data exploration in graph visualization, helping users quickly focus on target elements and obtain related information.",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "This behavior is mainly used for:",
+        "paraId": 1,
+        "tocIndex": 1
+    },
+    {
+        "value": "Quickly locating elements of interest in complex relationship graphs",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "Displaying additional information of nodes through hover",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "Highlighting connection paths by activating edges when analyzing relationships between nodes",
+        "paraId": 2,
+        "tocIndex": 1
+    },
+    {
+        "value": "createGraph(\n  {\n    data: {\n      nodes: [\n        { id: 'node0', size: 50, label: '0', style: { x: 326, y: 268 } },\n        { id: 'node1', size: 30, label: '1', style: { x: 280, y: 384 } },\n        { id: 'node2', size: 30, label: '2', style: { x: 234, y: 167 } },\n        { id: 'node3', size: 30, label: '3', style: { x: 391, y: 368 } },\n        { id: 'node4', size: 30, label: '4', style: { x: 444, y: 209 } },\n        { id: 'node5', size: 30, label: '5', style: { x: 378, y: 157 } },\n        { id: 'node6', size: 15, label: '6', style: { x: 229, y: 400 } },\n        { id: 'node7', size: 15, label: '7', style: { x: 281, y: 440 } },\n        { id: 'node8', size: 15, label: '8', style: { x: 188, y: 119 } },\n        { id: 'node9', size: 15, label: '9', style: { x: 287, y: 157 } },\n        { id: 'node10', size: 15, label: '10', style: { x: 185, y: 200 } },\n        { id: 'node11', size: 15, label: '11', style: { x: 238, y: 110 } },\n        { id: 'node12', size: 15, label: '12', style: { x: 239, y: 221 } },\n        { id: 'node13', size: 15, label: '13', style: { x: 176, y: 160 } },\n        { id: 'node14', size: 15, label: '14', style: { x: 389, y: 423 } },\n        { id: 'node15', size: 15, label: '15', style: { x: 441, y: 341 } },\n        { id: 'node16', size: 15, label: '16', style: { x: 442, y: 398 } },\n      ],\n      edges: [\n        { source: 'node0', target: 'node1', label: '0-1' },\n        { source: 'node0', target: 'node2', label: '0-2' },\n        { source: 'node0', target: 'node3', label: '0-3' },\n        { source: 'node0', target: 'node4', label: '0-4' },\n        { source: 'node0', target: 'node5', label: '0-5' },\n        { source: 'node1', target: 'node6', label: '1-6' },\n        { source: 'node1', target: 'node7', label: '1-7' },\n        { source: 'node2', target: 'node8', label: '2-8' },\n        { source: 'node2', target: 'node9', label: '2-9' },\n        { source: 'node2', target: 'node10', label: '2-10' },\n        { source: 'node2', target: 'node11', label: '2-11' },\n        { source: 'node2', target: 'node12', label: '2-12' },\n        { source: 'node2', target: 'node13', label: '2-13' },\n        { source: 'node3', target: 'node14', label: '3-14' },\n        { source: 'node3', target: 'node15', label: '3-15' },\n        { source: 'node3', target: 'node16', label: '3-16' },\n      ],\n    },\n    behaviors: ['zoom-canvas', 'drag-canvas', { key: 'hover-activate', type: 'hover-activate' }],\n    autoFit: 'center',\n  },\n  { width: 600, height: 300 },\n  (gui, graph) => {\n    const options = {\n      key: 'hover-activate',\n      type: 'hover-activate',\n      animation: true,\n      enable: true,\n      degree: 1,\n      direction: 'both',\n    };\n    const optionFolder = gui.addFolder('Hover Activate Options');\n    optionFolder.add(options, 'type').disable(true);\n    optionFolder.add(options, 'animation');\n    optionFolder.add(options, 'enable');\n    optionFolder.add(options, 'degree', 0, 10, 1);\n    optionFolder.add(options, 'direction', {\n      both: ['both'],\n      in: ['in'],\n      out: ['out'],\n    });\n\n    optionFolder.onChange(({ property, value }) => {\n      graph.updateBehavior({\n        key: 'hover-activate',\n        [property]: value,\n      });\n      graph.render();\n    });\n  },\n);\n",
+        "paraId": 3,
+        "tocIndex": 2
+    },
+    {
+        "value": "Add this behavior in the graph configuration:",
+        "paraId": 4,
+        "tocIndex": 3
+    },
+    {
+        "value": "1. Quick Configuration (Static)",
+        "paraId": 5,
+        "tocIndex": 3
+    },
+    {
+        "value": "Declare directly using a string form. This method is simple but only supports default configuration and cannot be dynamically modified after configuration:",
+        "paraId": 6,
+        "tocIndex": 3
+    },
+    {
+        "value": "const graph = new Graph({\n  // Other configurations...\n  behaviors: ['hover-activate'],\n});\n",
+        "paraId": 7,
+        "tocIndex": 3
+    },
+    {
+        "value": "2. Object Configuration (Recommended)",
+        "paraId": 8,
+        "tocIndex": 3
+    },
+    {
+        "value": "Configure using an object form, supporting custom parameters, and can dynamically update the configuration at runtime:",
+        "paraId": 9,
+        "tocIndex": 3
+    },
+    {
+        "value": "const graph = new Graph({\n  // Other configurations...\n  behaviors: [\n    {\n      type: 'hover-activate',\n      key: 'hover-activate-1', // Specify an identifier for the behavior for dynamic updates\n    },\n  ],\n});\n",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Option",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Description",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Type",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Default",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Required",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "type",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Behavior type name",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "hover-activate",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "✓",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "animation",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Whether to enable animation",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "boolean",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "true",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "enable",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Whether to enable hover feature",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "boolean | ((event: IPointerEvent) => boolean)",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "true",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "degree",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Degree of relationship to activate elements",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "number | ((event: IPointerEvent) => number);",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "0",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "direction",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Specify edge direction",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "both",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "in",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": " | ",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "out",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "both",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "state",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "State of activated elements",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "active",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "inactiveState",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "State of inactive elements",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "string",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "onHover",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Callback when element is hovered",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "(event: IPointerEvent) => void",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "onHoverEnd",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "Callback when hover ends",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "(event: IPointerEvent) => void",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "-",
+        "paraId": 11,
+        "tocIndex": 4
+    },
+    {
+        "value": "enable",
+        "paraId": 12,
+        "tocIndex": 5
+    },
+    {
+        "value": " is used to control whether to enable hover highlighting of elements, and can receive a function for dynamic control",
+        "paraId": 12,
+        "tocIndex": 5
+    },
+    {
+        "value": "For example: Enable hover highlighting only for nodes",
+        "paraId": 13,
+        "tocIndex": 5
+    },
+    {
+        "value": "const graph = new Graph({\n  // Other configurations...\n  behaviors: [\n    {\n      type: 'hover-activate',\n      enable: (e) => {\n        if (e.targetType === 'node') {\n          return true;\n        }\n        return false;\n      },\n    },\n  ],\n});\n",
+        "paraId": 14,
+        "tocIndex": 5
+    },
+    {
+        "value": "const graph = new Graph({\n  // Other configurations...\n  behaviors: ['hover-activate'],\n});\n",
+        "paraId": 15,
+        "tocIndex": 7
+    },
+    {
+        "value": "const graph = new Graph({\n  // Other configurations...\n  behaviors: [\n    {\n      type: 'hover-activate',\n      enable: (e) => {\n        if (e.targetType === 'node') {\n          return true;\n        }\n        return false;\n      },\n    },\n  ],\n});\n",
+        "paraId": 16,
+        "tocIndex": 8
+    },
+    {
+        "value": "const graph = new Graph({\n  // Other configurations...\n  behaviors: [\n    {\n      type: 'hover-activate',\n      degree: 1,\n      direction: 'out',\n      enable: (e) => {\n        if (e.targetType === 'node') {\n          return true;\n        }\n        return false;\n      },\n    },\n  ],\n});\n",
+        "paraId": 17,
+        "tocIndex": 9
+    },
+    {
+        "value": "import { Graph } from '@antv/g6';\n\nconst format = (data) => {\n  const { nodes, edges } = data;\n  return {\n    nodes: nodes.map(({ id, ...node }) => ({ id, data: node })),\n    edges: edges.map(({ id, source, target, ...edge }) => ({ id, source, target, data: edge })),\n  };\n};\n\nfetch('https://gw.alipayobjects.com/os/antvdemo/assets/data/xiaomi.json')\n  .then((res) => res.json())\n  .then((data) => {\n    const graph = new Graph({\n      container: 'container',\n      autoFit: 'view',\n      data: format(data),\n      behaviors: ['hover-activate'],\n      layout: {\n        type: 'force',\n        preventOverlap: true,\n        nodeSize: 24,\n      },\n      animation: false,\n    });\n\n    graph.render();\n  });\n",
+        "paraId": 18,
+        "tocIndex": 10
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_behavior_HoverActivate_en_md_q_hK4X-async.js.map

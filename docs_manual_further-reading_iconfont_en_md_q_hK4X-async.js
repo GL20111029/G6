@@ -1,0 +1,230 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/further-reading/iconfont.en.md?type=text'],
+{ "docs/manual/further-reading/iconfont.en.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/further-reading/iconfont.en.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "Why use iconfont? It offers great compatibility, a wide variety of icons, and multicolor options. For more details, please visit the ",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "Alibaba Iconfont Platform",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": ".",
+        "paraId": 0,
+        "tocIndex": 0
+    },
+    {
+        "value": "First, you need to download the desired font icons from the ",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "iconfont",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": " website. Create a project, select the required icons, and then download the generated icon files.",
+        "paraId": 1,
+        "tocIndex": 2
+    },
+    {
+        "value": "After downloading, place the directory containing the icon font files (typically including ",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": ".eot",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": ", ",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": ".woff",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": ", ",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": ".ttf",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": ", and ",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": ".svg",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": " files, as well as the ",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": "iconfont.css",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": " stylesheet) into your project.",
+        "paraId": 2,
+        "tocIndex": 3
+    },
+    {
+        "value": "You can choose how to include them. Below is an example of how to include them in HTML:",
+        "paraId": 3,
+        "tocIndex": 3
+    },
+    {
+        "value": "<head>\n  <style>\n    @import 'path-to-iconfont/iconfont.css';\n  </style>\n</head>\n",
+        "paraId": 4,
+        "tocIndex": 3
+    },
+    {
+        "value": "{\n  node: {\n    style: {\n      iconFontFamily: 'iconfont', // Corresponds to the `font-family` value in iconfont.css\n      iconText: '\\ue7f1', // Corresponds to the `content` value in iconfont.css, make sure to add `u`\n      iconFill: '#7863FF'\n    }\n  }\n}\n",
+        "paraId": 5,
+        "tocIndex": 4
+    },
+    {
+        "value": "getIcon()",
+        "paraId": 6
+    },
+    {
+        "value": "To make it easier to retrieve icons, you can create a utility function ",
+        "paraId": 7,
+        "tocIndex": 5
+    },
+    {
+        "value": "getIcon",
+        "paraId": 7,
+        "tocIndex": 5
+    },
+    {
+        "value": ". This function reads the icon information from the ",
+        "paraId": 7,
+        "tocIndex": 5
+    },
+    {
+        "value": "iconfont.json",
+        "paraId": 7,
+        "tocIndex": 5
+    },
+    {
+        "value": " file and returns the corresponding Unicode character. Note that manually concatenating Unicode (",
+        "paraId": 7,
+        "tocIndex": 5
+    },
+    {
+        "value": "\\\\u${icon.unicode}",
+        "paraId": 7,
+        "tocIndex": 5
+    },
+    {
+        "value": ") won't work. Refer to ",
+        "paraId": 7,
+        "tocIndex": 5
+    },
+    {
+        "value": "MDN String.fromCodePoint",
+        "paraId": 7,
+        "tocIndex": 5
+    },
+    {
+        "value": " for details.",
+        "paraId": 7,
+        "tocIndex": 5
+    },
+    {
+        "value": "First, ensure you have an ",
+        "paraId": 8,
+        "tocIndex": 5
+    },
+    {
+        "value": "iconfont.json",
+        "paraId": 8,
+        "tocIndex": 5
+    },
+    {
+        "value": " file containing the detailed icon information.",
+        "paraId": 8,
+        "tocIndex": 5
+    },
+    {
+        "value": "import fonts from 'path-to-iconfont/iconfont.json';\n\nconst icons = fonts.glyphs.map((icon) => {\n  return {\n    name: icon.font_class,\n    unicode: String.fromCodePoint(icon.unicode_decimal), // `\\\\u${icon.unicode}`,\n  };\n});\n\nconst getIcon = (type) => {\n  const matchIcon = icons.find((icon) => {\n    return icon.name === type;\n  }) || { unicode: '', name: 'default' };\n  return matchIcon.unicode;\n};\n",
+        "paraId": 9,
+        "tocIndex": 5
+    },
+    {
+        "value": "Use it in your project:",
+        "paraId": 10,
+        "tocIndex": 5
+    },
+    {
+        "value": "{\n  node: {\n    style: {\n      iconFontFamily: \"iconfont\",\n      iconText: getIcon('logo')\n    }\n  }\n}\n",
+        "paraId": 11,
+        "tocIndex": 5
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_further-reading_iconfont_en_md_q_hK4X-async.js.map

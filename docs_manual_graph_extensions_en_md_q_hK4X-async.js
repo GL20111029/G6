@@ -1,0 +1,1544 @@
+((typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] = (typeof globalThis !== 'undefined' ? globalThis : self)["makoChunk_@antv/g6-site"] || []).push([
+        ['docs/manual/graph/extensions.en.md?type=text'],
+{ "docs/manual/graph/extensions.en.md?type=text": function (module, exports, __mako_require__){
+"use strict";
+__mako_require__.d(exports, "__esModule", {
+    value: true
+});
+__mako_require__.d(exports, "texts", {
+    enumerable: true,
+    get: function() {
+        return texts;
+    }
+});
+var _interop_require_wildcard = __mako_require__("@swc/helpers/_/_interop_require_wildcard");
+var _reactrefresh = /*#__PURE__*/ _interop_require_wildcard._(__mako_require__("../../node_modules/.pnpm/react-refresh@0.14.2/node_modules/react-refresh/runtime.js"));
+__mako_require__("docs/manual/graph/extensions.en.md?watch=parent");
+var prevRefreshReg;
+var prevRefreshSig;
+prevRefreshReg = self.$RefreshReg$;
+prevRefreshSig = self.$RefreshSig$;
+self.$RefreshReg$ = (type, id)=>{
+    _reactrefresh.register(type, module.id + id);
+};
+self.$RefreshSig$ = _reactrefresh.createSignatureFunctionForTransform;
+const texts = [
+    {
+        "value": "title: Built-in Extensions\norder: 4",
+        "paraId": 0
+    },
+    {
+        "value": "The G6 built-in extensions and registered types are as follows:",
+        "paraId": 1
+    },
+    {
+        "value": "Extension",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Registration Type",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "ComboCollapse",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "'combo-collapse'",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "ComboExpand",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "'combo-expand'",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "NodeCollapse",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "'node-collapse'",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "NodeExpand",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "'node-expand'",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "PathIn",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "'path-in'",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "PathOut",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "'path-out'",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Fade",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "'fade'",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Translate",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "'translate'",
+        "paraId": 2,
+        "tocIndex": 0
+    },
+    {
+        "value": "Usage:",
+        "paraId": 3,
+        "tocIndex": 0
+    },
+    {
+        "value": "In ",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": "GraphOptions.[node|edge|combo].animation.[stage]",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": ", for example:",
+        "paraId": 4,
+        "tocIndex": 0
+    },
+    {
+        "value": "const graph = new Graph({\n  // ... other options\n  node: {\n    animation: {\n      update: 'translate', // Only use translation animation in the update stage\n    },\n  },\n});\n",
+        "paraId": 5,
+        "tocIndex": 0
+    },
+    {
+        "value": "Extension",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "Registration Type",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "Description",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "BrushSelect",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'brush-select'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "ClickSelect",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'click-select'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "CollapseExpand",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'collapse-expand'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "CreateEdge",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'create-edge'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "DragCanvas",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'drag-canvas'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "DragElementForce",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'drag-element-force'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "Drag element when use d3-force layout",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "DragElement",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'drag-element'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "FixElementSize",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'fix-element-size'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "Keep the size of element during zooming canvas",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "FocusElement",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'focus-element'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "HoverActivate",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'hover-activate'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "LassoSelect",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'lasso-select'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "OptimizeViewportTransform",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'optimize-viewport-transform'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "Hide elements during manipulate the canvas",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "ScrollCanvas",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'scroll-canvas'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "ZoomCanvas",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "'zoom-canvas'",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "/",
+        "paraId": 6,
+        "tocIndex": 1
+    },
+    {
+        "value": "Usage:",
+        "paraId": 7,
+        "tocIndex": 1
+    },
+    {
+        "value": "In ",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": "GraphOptions.behaviors",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": ", for example:",
+        "paraId": 8,
+        "tocIndex": 1
+    },
+    {
+        "value": "const graph = new Graph({\n  // ... other options\n  behaviors: ['drag-canvas', 'zoom-canvas', 'drag-element'],\n});\n",
+        "paraId": 9,
+        "tocIndex": 1
+    },
+    {
+        "value": "Extension",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Registration Type",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "circle",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Circle",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "diamond",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Diamond",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "ellipse",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Ellipse",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "hexagon",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Hexagon",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "html",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "HTML",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "image",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Image",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "rect",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Rect",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "star",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Star",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "donut",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Donut",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "triangle",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Triangle",
+        "paraId": 10,
+        "tocIndex": 3
+    },
+    {
+        "value": "Usage:",
+        "paraId": 11,
+        "tocIndex": 3
+    },
+    {
+        "value": "1. In ",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "GraphOptions.data.nodes[number].type",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": ";\n2. In ",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "GraphOptions.node.type",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": ";",
+        "paraId": 12,
+        "tocIndex": 3
+    },
+    {
+        "value": "const graph = new Graph({\n  // ... other options\n  data: {\n    nodes: [{ id: 'node-1', type: 'circle' }],\n  },\n  node: {\n    type: 'circle',\n  },\n});\n",
+        "paraId": 13,
+        "tocIndex": 3
+    },
+    {
+        "value": "Extension",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Registration Type",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Description",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Cubic",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "'cubic'",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Cubic Bezier Curve",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Line",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "'line'",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "/",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Polyline",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "'polyline'",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "/",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Quadratic",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "'quadratic'",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Quadratic Bezier Curve",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "CubicHorizontal",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "'cubic-horizontal'",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Horizontal Cubic Bezier Curve",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "CubicVertical",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "'cubic-vertical'",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Vertical Cubic Bezier Curve",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "CubicRadial",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "'cubic-radial'",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Radial Cubic Bezier Curve",
+        "paraId": 14,
+        "tocIndex": 4
+    },
+    {
+        "value": "Usage(like ",
+        "paraId": 15,
+        "tocIndex": 4
+    },
+    {
+        "value": "Nodes",
+        "paraId": 15,
+        "tocIndex": 4
+    },
+    {
+        "value": "):",
+        "paraId": 15,
+        "tocIndex": 4
+    },
+    {
+        "value": "1. In ",
+        "paraId": 16,
+        "tocIndex": 4
+    },
+    {
+        "value": "GraphOptions.data.edges[number].type",
+        "paraId": 16,
+        "tocIndex": 4
+    },
+    {
+        "value": ";\n2. In ",
+        "paraId": 16,
+        "tocIndex": 4
+    },
+    {
+        "value": "GraphOptions.edge.type",
+        "paraId": 16,
+        "tocIndex": 4
+    },
+    {
+        "value": ";",
+        "paraId": 16,
+        "tocIndex": 4
+    },
+    {
+        "value": "Extension",
+        "paraId": 17,
+        "tocIndex": 5
+    },
+    {
+        "value": "Registration Type",
+        "paraId": 17,
+        "tocIndex": 5
+    },
+    {
+        "value": "CircleCombo",
+        "paraId": 17,
+        "tocIndex": 5
+    },
+    {
+        "value": "'circle'",
+        "paraId": 17,
+        "tocIndex": 5
+    },
+    {
+        "value": "RectCombo",
+        "paraId": 17,
+        "tocIndex": 5
+    },
+    {
+        "value": "'rect'",
+        "paraId": 17,
+        "tocIndex": 5
+    },
+    {
+        "value": "Usage(like ",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": "Nodes",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": "):",
+        "paraId": 18,
+        "tocIndex": 5
+    },
+    {
+        "value": "1. In ",
+        "paraId": 19,
+        "tocIndex": 5
+    },
+    {
+        "value": "GraphOptions.data.combos[number].type",
+        "paraId": 19,
+        "tocIndex": 5
+    },
+    {
+        "value": ";\n2. In ",
+        "paraId": 19,
+        "tocIndex": 5
+    },
+    {
+        "value": "GraphOptions.combo.type",
+        "paraId": 19,
+        "tocIndex": 5
+    },
+    {
+        "value": ";",
+        "paraId": 19,
+        "tocIndex": 5
+    },
+    {
+        "value": "Extension",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "Registration Type",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "Description",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "AntVDagreLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'antv-dagre'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "ComboCombinedLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'combo-combined'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "CompactBoxLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'compact-box'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "ForceAtlas2Layout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'force-atlas2'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "CircularLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'circular'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "ConcentricLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'concentric'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "D3ForceLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'d3-force'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "DagreLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'dagre'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "DendrogramLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'dendrogram'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "ForceLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'force'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "FruchtermanLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'fruchterman'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "GridLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'grid'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "IndentedLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'indented'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "MDSLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'mds'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "Multidimensional Scaling Layout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "MindmapLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'mindmap'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "RadialLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'radial'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "RandomLayout",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "'random'",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "/",
+        "paraId": 20,
+        "tocIndex": 6
+    },
+    {
+        "value": "Usage:",
+        "paraId": 21,
+        "tocIndex": 6
+    },
+    {
+        "value": "In ",
+        "paraId": 22,
+        "tocIndex": 6
+    },
+    {
+        "value": "GraphOptions.layout",
+        "paraId": 22,
+        "tocIndex": 6
+    },
+    {
+        "value": ", for example:",
+        "paraId": 22,
+        "tocIndex": 6
+    },
+    {
+        "value": "const graph = new Graph({\n  // ... other options\n  layout: {\n    type: 'force',\n  },\n});\n",
+        "paraId": 23,
+        "tocIndex": 6
+    },
+    {
+        "value": "spectral",
+        "paraId": 24,
+        "tocIndex": 7
+    },
+    {
+        "value": "tableau",
+        "paraId": 25,
+        "tocIndex": 7
+    },
+    {
+        "value": "oranges",
+        "paraId": 26,
+        "tocIndex": 7
+    },
+    {
+        "value": "greens",
+        "paraId": 27,
+        "tocIndex": 7
+    },
+    {
+        "value": "blues",
+        "paraId": 28,
+        "tocIndex": 7
+    },
+    {
+        "value": "Usage:",
+        "paraId": 29,
+        "tocIndex": 7
+    },
+    {
+        "value": "In ",
+        "paraId": 30,
+        "tocIndex": 7
+    },
+    {
+        "value": "GraphOptions.[node|edge|combo].palette",
+        "paraId": 30,
+        "tocIndex": 7
+    },
+    {
+        "value": ", for example:",
+        "paraId": 30,
+        "tocIndex": 7
+    },
+    {
+        "value": "const graph = new Graph({\n  // ... other options\n  node: {\n    palette: 'tableau',\n  },\n});\n",
+        "paraId": 31,
+        "tocIndex": 7
+    },
+    {
+        "value": "Registration Type",
+        "paraId": 32,
+        "tocIndex": 8
+    },
+    {
+        "value": "dark",
+        "paraId": 32,
+        "tocIndex": 8
+    },
+    {
+        "value": "light",
+        "paraId": 32,
+        "tocIndex": 8
+    },
+    {
+        "value": "Usage:",
+        "paraId": 33,
+        "tocIndex": 8
+    },
+    {
+        "value": "In ",
+        "paraId": 34,
+        "tocIndex": 8
+    },
+    {
+        "value": "GraphOptions.theme",
+        "paraId": 34,
+        "tocIndex": 8
+    },
+    {
+        "value": ", for example:",
+        "paraId": 34,
+        "tocIndex": 8
+    },
+    {
+        "value": "const graph = new Graph({\n  // ... other options\n  theme: 'dark',\n});\n",
+        "paraId": 35,
+        "tocIndex": 8
+    },
+    {
+        "value": "Extension",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Registration Type",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "BubbleSets",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'bubble-sets'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "EdgeFilterLens",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'edge-filter-lens'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "GridLine",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'grid-line'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Background",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'background'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Contextmenu",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'contextmenu'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Fisheye",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'fisheye'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Fullscreen",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'fullscreen'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "History",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'history'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Hull",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'hull'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Legend",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'legend'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Minimap",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'minimap'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Snapline",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'snapline'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Timebar",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'timebar'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Toolbar",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'toolbar'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Tooltip",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'tooltip'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Watermark",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "'watermark'",
+        "paraId": 36,
+        "tocIndex": 9
+    },
+    {
+        "value": "Usage:",
+        "paraId": 37,
+        "tocIndex": 9
+    },
+    {
+        "value": "In ",
+        "paraId": 38,
+        "tocIndex": 9
+    },
+    {
+        "value": "GraphOptions.plugins",
+        "paraId": 38,
+        "tocIndex": 9
+    },
+    {
+        "value": ", for example:",
+        "paraId": 38,
+        "tocIndex": 9
+    },
+    {
+        "value": "const graph = new Graph({\n  // ... other options\n  plugins: ['minimap', 'contextmenu'],\n});\n",
+        "paraId": 39,
+        "tocIndex": 9
+    },
+    {
+        "value": "Extension",
+        "paraId": 40,
+        "tocIndex": 10
+    },
+    {
+        "value": "Registration Type",
+        "paraId": 40,
+        "tocIndex": 10
+    },
+    {
+        "value": "Description",
+        "paraId": 40,
+        "tocIndex": 10
+    },
+    {
+        "value": "ProcessParallelEdges",
+        "paraId": 40,
+        "tocIndex": 10
+    },
+    {
+        "value": "'process-parallel-edges'",
+        "paraId": 40,
+        "tocIndex": 10
+    },
+    {
+        "value": "/",
+        "paraId": 40,
+        "tocIndex": 10
+    },
+    {
+        "value": "PlaceRadialLabels",
+        "paraId": 40,
+        "tocIndex": 10
+    },
+    {
+        "value": "'place-radial-labels'",
+        "paraId": 40,
+        "tocIndex": 10
+    },
+    {
+        "value": "径向标签",
+        "paraId": 40,
+        "tocIndex": 10
+    },
+    {
+        "value": "Usage:",
+        "paraId": 41,
+        "tocIndex": 10
+    },
+    {
+        "value": "In ",
+        "paraId": 42,
+        "tocIndex": 10
+    },
+    {
+        "value": "GraphOptions.transform",
+        "paraId": 42,
+        "tocIndex": 10
+    },
+    {
+        "value": ", for example:",
+        "paraId": 42,
+        "tocIndex": 10
+    },
+    {
+        "value": "const graph = new Graph({\n  // ... other options\n  transform: ['process-parallel-edges', 'place-radial-labels'],\n});\n",
+        "paraId": 43,
+        "tocIndex": 10
+    },
+    {
+        "value": "Registration Type",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "circle",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "ellipse",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "group",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "html",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "image",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "line",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "path",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "polygon",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "polyline",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "rect",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "text",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "label",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "badge",
+        "paraId": 44,
+        "tocIndex": 11
+    },
+    {
+        "value": "Usage:",
+        "paraId": 45,
+        "tocIndex": 11
+    },
+    {
+        "value": "In the ",
+        "paraId": 46,
+        "tocIndex": 11
+    },
+    {
+        "value": "upsert",
+        "paraId": 46,
+        "tocIndex": 11
+    },
+    {
+        "value": " method of the element class when customizing the shape, pass the second parameter:",
+        "paraId": 46,
+        "tocIndex": 11
+    },
+    {
+        "value": "this.upsert('shape-key', 'text', { text: 'label', fontSize: 16 }, this);\n",
+        "paraId": 47,
+        "tocIndex": 11
+    }
+];
+if (prevRefreshReg) self.$RefreshReg$ = prevRefreshReg;
+if (prevRefreshSig) self.$RefreshSig$ = prevRefreshSig;
+function registerClassComponent(filename, moduleExports) {
+    for(const key in moduleExports)try {
+        if (key === "__esModule") continue;
+        const exportValue = moduleExports[key];
+        if (_reactrefresh.isLikelyComponentType(exportValue) && exportValue.prototype && exportValue.prototype.isReactComponent) _reactrefresh.register(exportValue, filename + " " + key);
+    } catch (e) {}
+}
+function $RefreshIsReactComponentLike$(moduleExports) {
+    if (_reactrefresh.isLikelyComponentType(moduleExports || moduleExports.default)) return true;
+    for(var key in moduleExports)try {
+        if (_reactrefresh.isLikelyComponentType(moduleExports[key])) return true;
+    } catch (e) {}
+    return false;
+}
+registerClassComponent(module.id, module.exports);
+if ($RefreshIsReactComponentLike$(module.exports)) {
+    module.meta.hot.accept();
+    _reactrefresh.performReactRefresh();
+}
+
+},
+ }]);
+//# sourceMappingURL=docs_manual_graph_extensions_en_md_q_hK4X-async.js.map
